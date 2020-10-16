@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS winterActivity_db;
+DROP DATABASE IF EXISTS winter_activity_db;
 
-CREATE DATABASE winterActivity_db;
+CREATE DATABASE winter_activity_db;

@@ -5,6 +5,8 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false
         }
+    }, {
+        timestamps: false
     });
 
     Resort_Activity.associate = function (models) {

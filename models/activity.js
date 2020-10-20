@@ -10,6 +10,8 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: false
 
         }
+    }, {
+        timestamps: false
     });
 
     Activity.associate = function (models) {

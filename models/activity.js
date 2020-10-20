@@ -2,11 +2,11 @@ module.exports = function (sequelize, DataTypes) {
     var Activity = sequelize.define("Activity", {
         // Giving the Author model a name of type STRING
         name: {
-            DataTypes: STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         slope: {
-            DataTypes: BOOLEAN,
+            type: DataTypes.BOOLEAN,
             defaultValue: false
 
         }

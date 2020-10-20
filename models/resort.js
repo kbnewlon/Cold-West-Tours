@@ -2,19 +2,19 @@ module.exports = function (sequelize, DataTypes) {
     var Resort = sequelize.define("Resort", {
         // Giving the Author model a name of type STRING
         name: {
-            DataTypes: STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         address: {
-            DataTypes: STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         phone: {
-            DataTypes: STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         url: {
-            DataTypes: STRING,
+            type: DataTypes.STRING,
             allowNull: false
         }
     });

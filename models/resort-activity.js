@@ -2,9 +2,11 @@ module.exports = function (sequelize, DataTypes) {
     var Resort_Activity = sequelize.define("Resort_Activity", {
         // Giving the Author model a name of type STRING
         cost: {
-            DataTypes: DECIMAL(10, 2),
+            type: DataTypes.DECIMAL(10, 2),
             allowNull: false
         }
+    }, {
+        timestamps: false
     });
 
     Resort_Activity.associate = function (models) {

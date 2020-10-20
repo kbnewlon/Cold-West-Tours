@@ -13,17 +13,10 @@ INSERT INTO resorts (name, address, phone, url) VALUES ("Alpental Ski Resort","1
 INSERT INTO resorts (name, address, phone, url) VALUES ("Ski Bluewood","Bluewood Road, Dayton, WA 99328" , "509.382.4725", "http://www.bluewood.com/");
 
 
-
-
-
-
-
-
-
-INSERT INTO activities (name, slope) VALUES (skiing, true)
-INSERT INTO activities (name, slope) VALUES (cross country skiing, false)
-INSERT INTO activities (name, slope) VALUES (snow boarding, true)
-INSERT INTO activities (name, slope) VALUES (snow shoeing, false)
-INSERT INTO activities (name, slope) VALUES (snowmobiling, false)
-INSERT INTO activities (name, slope) VALUES (tubing, true)
-INSERT INTO activities (name, slope) VALUES (dining, false)
+INSERT INTO activities (name, slope) VALUES ("skiing", 1);
+INSERT INTO activities (name, slope) VALUES ("cross_country_skiing", 0);
+INSERT INTO activities (name, slope) VALUES ("snow_boarding", 1);
+INSERT INTO activities (name, slope) VALUES ("snow_shoeing", 0);
+INSERT INTO activities (name, slope) VALUES ("snowmobiling", 0);
+INSERT INTO activities (name, slope) VALUES ("tubing", 1);
+INSERT INTO activities (name, slope) VALUES ("dining", 0);

@@ -5,6 +5,7 @@
 // =============================================================
 var express = require("express");
 var exphbs = require("express-handlebars");
+require("dotenv").config();
 
 // Sets up the Express App
 // =============================================================
@@ -24,6 +25,18 @@ app.use(express.static("public"));
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+app.set(`trust proxy`, 1);
+
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        secure: true,
+        maxAge: 2*60*60*1000
+    }
+}));
 
 // Routes
 // =============================================================

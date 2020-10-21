@@ -13,25 +13,32 @@ var db = require("../models");
 // =============================================================
 module.exports = function (app) {
 
-  // GET route for getting all of the resorts
-  app.get("/api/resorts", function (req, res) {
-    // Write code here to retrieve all of the resorts from the database and res.json them
-    // back to the user
-    db.Resort.findAll({}).then(function (getResort) {
-      res.json(getResort);
-    }.catch(err=>{
-      res.status(500).json(getResort)
-    }));
-  });
-
-  // GET route for getting a resort by id
-  app.get("/api/resorts/:id", function (req, res) {
-    // Write code here to retrieve one of the resorts from the database and res.json them
-    // back to the user
-    db.Resort.findOne({where: {id: req.param.id}}).then(function (getResort) {
-      res.json(getResort);
-    }.catch(err=>{
-      res.status(500).json(getResort)
-    }));
-  });
+    // GET route for getting all of the resorts
+    app.get("/api/resorts", function (req, res) {
+        // Write code here to retrieve all of the resorts from the database and res.json them
+        // back to the user
+        db.Resort.findAll({}).then(function (getResort) {
+            res.json(getResort);
+        }.catch(err => {
+            res.status(500).json(getResort)
+        }));
+    });
+    
+    // GET route for getting a resort by id
+    app.get("/api/resorts/:id", function (req, res) {
+        // Write code here to retrieve one of the resorts from the database and res.json them
+        // back to the user
+        db.Resort.findOne({ where: { id: req.params.id } })
+        .then(function (getResort) {
+            // res.json(getResort);
+            const resortJson = {
+                name: getResort.name,
+                address: getResort.address,
+                phone: getResort.phone
+            }
+            res.render("resort", resortJson);
+        }).catch(err => {
+            res.status(500).json(getResort)
+        });
+    });
 };

@@ -13,22 +13,6 @@ var db = require("../models");
 // =============================================================
 module.exports = function (app) {
 
-app.get("/", function(req, res) {
-    res.render("index");
-});
-
-app.get("/resort", function(req, res) {
-    res.render("resort");
-});
-
-app.get("/activity", function(req, res) {
-    res.render("activity");
-});
-
-app.get("/aboutus", function(req, res) {
-    res.render("aboutUs");
-});
-
 //   // GET route for getting all of the todos
 //   app.get("/api/todos", function (req, res) {
 //     // Write code here to retrieve all of the todos from the database and res.json them

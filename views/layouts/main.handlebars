@@ -3,21 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <link rel="stylesheet" href="../../public/css/styles.css" type="text/html" />
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <title>The Cold West</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-    {{!-- <script src=""></script> --}}
+    
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <a href="#" data-target="sidenav" class="sidenav-trigger"><i class="material-icons"
+                    id="menu-icon">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
                 <li><a href="/resort">Resort</a></li>
                 <li><a href="/activity">Activity</a></li>
@@ -25,7 +27,19 @@
             </ul>
         </div>
     </nav>
-    {{{ body }}}
+
+    <ul id="slide-out" class="sidenav">
+        <li><a class="waves-effect" href="/">Home</a></li>
+        <li><a class="waves-effect" href="/resort">Resort</a></li>
+        <li><a class="waves-effect" href="/activity">Activity</a></li>
+        <li><a class="waves-effect" href="/aboutus">About Us</a></li>
+    </ul>
+    <div class="container">
+        {{{ body }}}
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script><script src="./js/script.js"></script>
 </body>
 
 </html>

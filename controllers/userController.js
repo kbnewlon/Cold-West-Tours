@@ -6,31 +6,31 @@
 // =============================================================
 
 // Requiring our Todo model
-const { Sequelize } = require("../models");
-const session = require("express-session"); // npm install
-const bcrypt = require("bcrypt"); //npm install
-var db = require("../models");
+const express = require("express"); // npm install express
+const router = express.Router();
+const bcrypt = require("bcrypt"); //npm install bcrypt
+const db = require("../models");
 
 // Routes
 // =============================================================
-module.exports = function (app) {
+
     // GET route for getting all of the activities
-    app.get("/api/signup", function (req, res) {
+    router.get(`/api/signup`, function (req, res) {
         // Write code here to retrieve all of the activities from the database and res.json them
         // back to the user
         db.User.create({
-            email:req.body.email,
+            name:req.body.name,
             password:req.body.password
         }).then(function (newUser) {
             res.json(newUser);
-        }.catch(err => {
+        }).catch(err => {
             res.status(500).json(newUser)
-        }));
+        });
     });
 
-    app.post(`/login`, function(req, res) {
+    router.post(`/login`, function(req, res) {
         db.User.findOne({
-            where: {email:req.body.email}
+            where: {name:req.body.name}
         }).then(function(user){
             if(!user){
                 req.session.destroy();
@@ -38,7 +38,7 @@ module.exports = function (app) {
             }
             else if(bcrypt.compareSync(req.body.password, user.password)){
                 req.session.user - {
-                    email:user.email,
+                    name:user.name,
                     id:user.id
                 }
                 return res.status(200).json(req.session);
@@ -49,23 +49,9 @@ module.exports = function (app) {
         });
     });
 
-    app.get(`/logout`, function (req, res) {
+    router.get(`/logout`, function (req, res) {
         req.session.destroy();
         return res.status(200).send("logged out");
     });
 
-    // npm install express-session
-    app.get(`/secretstuff`, function (req, res) {
-        // Write code here to retrieve all of the activities from the database and res.json them
-        // back to the user
-        db.User.create({
-            email:req.body.email,
-            password:req.body.password
-        }).then(function (newUser) {
-            res.json(newUser);
-        }.catch(err => {
-            res.status(500).json(newUser)
-        }));
-    });
-
-};
+    module.exports = router;

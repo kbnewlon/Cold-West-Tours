@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 
 module.exports = function (sequelize, DataTypes) {
-    var Resort = sequelize.define("Resort", {
+    var User = sequelize.define("User", {
         // Giving the Author model a name of type STRING
         name: {
             type: DataTypes.STRING,
@@ -19,18 +19,18 @@ module.exports = function (sequelize, DataTypes) {
         timestamps: false
     });
 
-    Resort.associate = function (models) {
-        // Associating Resort with Activity and Resort_Activity
-        // When an Resort is deleted, also delete any associated Resort_Activity
-        Resort.hasMany(models.Resort_Activity, {
-            onDelete: "cascade"
-        });
-        Resort.belongsToMany(models.Activity, { through: models.Resort_Activity });
-    };
+    // User.associate = function (models) {
+    //     // Associating Resort with Activity and Resort_Activity
+    //     // When an Resort is deleted, also delete any associated Resort_Activity
+    //     Resort.hasMany(models.Resort_Activity, {
+    //         onDelete: "cascade"
+    //     });
+    //     Resort.belongsToMany(models.Activity, { through: models.Resort_Activity });
+    // };
 
     User.beforeCreate(function(user){
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);   
     });
 
-    return Resort;
+    return User;
 };

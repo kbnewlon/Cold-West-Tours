@@ -24,7 +24,7 @@ module.exports = function (app) {
     });
 
     // GET route for getting an activity by id
-    app.get("/api/resorts/:id", function (req, res) {
+    app.get("/api/activities/:id", function (req, res) {
         // Write code here to retrieve one of the activities from the database and res.json them
         // back to the user
         db.Activity.findOne({ where: { id: req.param.id } }).then(function (getActivity) {

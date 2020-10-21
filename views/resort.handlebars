@@ -16,12 +16,13 @@
             hic dicta, velit eveniet quo molestias ex temporibus iusto quas repellat harum enim porro quasi fugit!</p>
         <h2>Location</h2>
         {{!-- Map by leaflet --}}
-        <img src="https://via.placeholder.com/300" alt="placeholder image">
+        <aside id="mapId" style="width: 600px; height: 400px;"></aside>
         <p>123 Main St, Seattle, WA</p>
         <h2>Policies</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat expedita sapiente cum nostrum labore hic
             ipsum atque voluptas quia enim dolores voluptatem velit facilis aperiam autem incidunt soluta, fugiat earum.
         </p>
+        <li><div class="divider"></div></li>
     </div>
 </section>
 
@@ -38,3 +39,5 @@
         </ul>
     </div>
 </section>
+
+{{> map/map-block}}

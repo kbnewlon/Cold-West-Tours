@@ -6,7 +6,7 @@ USE winter_activity_db;
 
 CREATE TABLE `resorts`
 (
-    id int NOT NULL,
+    id INTEGER AUTO_INCREMENT NOT NULL,
     name VARCHAR(255) NOT NULL,
     address VARCHAR (255) NOT NULL,
     phone VARCHAR(15) NOT NULL,
@@ -16,8 +16,8 @@ CREATE TABLE `resorts`
 
 CREATE TABLE `activities`
 (
-     id int NOT NULL,
+     id INTEGER AUTO_INCREMENT NOT NULL,
      name VARCHAR (255) NOT NULL, 
-     slope BOOLEAN DEFAULT FALSE,
+     slope TINYINT(1) DEFAULT false,
+     PRIMARY KEY(id)
 );
-

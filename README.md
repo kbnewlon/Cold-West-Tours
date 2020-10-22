@@ -41,6 +41,11 @@ To Repo:
 <br>To Demo:  
 
 ## Questions 
-Please contact me if you have any questions at:
+Please contact our team if you have any questions:
 <br>Email: 
+<br>Devin Gillogly virlym@gmail.com
+<br>Scott Dancer scottpdancer@gmail.com
+<br> Chris MacGeorge christopher.s.macgeorge@gmail.com
+<br> Zhuoyi Wang wzyzhouyi@gmail.com
+<br> Kayla Newlon kayla.b.newlon@gmail.com
 <br>Github: 

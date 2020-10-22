@@ -1,12 +1,5 @@
 <script>
-	console.log("hi");
-const lat = 47.606;
-const lon = -122.12;
-const lat2 = 47.600417;
-const lon2 = -122.148786;
-const locName = "This is your resort";
-const locAddress = "resort address here";
-	var mymap = L.map('mapId').setView([lat, lon], 13);
+	var mymap = L.map('mapId').setView([{{resortLat}}, {{resortLon}}], 16);
 
 	L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={{envToken}}", {
 		maxZoom: 18,
@@ -18,8 +11,8 @@ const locAddress = "resort address here";
 		zoomOffset: -1
 	}).addTo(mymap);
 
-	L.marker([lat2, lon2]).addTo(mymap)
-		.bindPopup(`<b>${locName}</b><br />${locAddress}`).openPopup();
+	L.marker([{{resortLat}}, {{resortLon}}]).addTo(mymap)
+		.bindPopup(`<b>{{name}}</b><br />{{address}}`).openPopup();
 
 
 	var popup = L.popup();

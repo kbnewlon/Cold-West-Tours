@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
+router.get("/", function (req, res) {
+    res.render("index");
+});
+
 router.get("/resort", function (req, res) {
     //let newString = process.env.A_TOKEN;
     //console.log(typeof newString);
@@ -19,12 +23,20 @@ router.get("/resort/:id", function (req, res) {
         const resortJson = {
             name: getResort.name,
             address: getResort.address,
-            phone: getResort.phone
+            phone: getResort.phone,
+            envToken: process.env.A_TOKEN,
+            user: req.session.user
         }
         res.render("resort", resortJson);
     }).catch(err => {
         res.status(500).json(getResort)
     });
+});
+
+router.get("/activity", function (req, res) {
+    //let newString = process.env.A_TOKEN;
+    //console.log(typeof newString);
+    res.render("activity", { user: req.session.user });
 });
 
 // Route to get activity by id and render to html
@@ -35,7 +47,8 @@ router.get("/activity/:id", function (req, res) {
         }
     }).then(function (getActivity) {
         const activityJson = {
-            name: getActivity.name
+            name: getActivity.name,
+            user: req.session.user
         }
         res.render("activity", activityJson);
     }).catch(err => {
@@ -61,7 +74,7 @@ router.get("/activity/:id", function (req, res) {
 // });
 
 router.get("/aboutus", function (req, res) {
-    res.render("aboutUs");
+    res.render("aboutUs", { user: req.session.user });
 });
 
 // router.get("*", function (req, res) {

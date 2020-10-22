@@ -1,7 +1,7 @@
 {
     "development": {
         "username": "root",
-        "password": "Franklin33!!",
+        "password": "password",
         "database": "winter_activity_db",
         "host": "127.0.0.1",
         "dialect": "mysql"

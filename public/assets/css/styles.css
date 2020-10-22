@@ -4,20 +4,16 @@
     height: 180px; 
 }
 
-
 body {
-    background-image: url("https://res.cloudinary.com/dpnjzg0ar/image/upload/v1603303328/TD1uDeJc_xp3ogk.jpg");
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-size: cover;
-    width: 100%;
-    margin: none; 
+    background-color: white;
+  
 
 }
 #indexTitle {
     color: #36507A;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size:138px;
+    margin: none;
 }
 .nav-wrapper { 
     background-color :#36507A ;
@@ -26,4 +22,30 @@ body {
 }
 .overlayBackground {
     background-color: #36507A  ;
+}
+
+.coverImg{
+     background: url("https://res.cloudinary.com/dpnjzg0ar/image/upload/v1603303328/TD1uDeJc_xp3ogk.jpg") no-repeat center center fixed;
+     background-size: cover;
+     height: 100vh;
+     width: 100vw;
+     margin: none;
+
+}
+#coverCard{
+    margin-top: -2.8rem;
+    padding-top: none;
+}
+
+
+.overlayBackground {
+    background-color: #36507A;
+}
+
+.resortBackground {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    margin: none;
+    background-color: #36507A;
 }

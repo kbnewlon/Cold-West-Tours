@@ -1,14 +1,14 @@
 <script>
+	console.log("hi");
 const lat = 47.606;
 const lon = -122.12;
 const lat2 = 47.600417;
 const lon2 = -122.148786;
 const locName = "This is your resort";
 const locAddress = "resort address here";
-const aToken = "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw";
 	var mymap = L.map('mapId').setView([lat, lon], 13);
 
-	L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${aToken}`, {
+	L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={{envToken}}", {
 		maxZoom: 18,
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
 			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +

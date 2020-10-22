@@ -2,8 +2,8 @@
 
 THIS IS JUST THE OUTLINE
 
-![issues](https://img.shields.io/github/issues/kbnewlon/README-generator)
-![GitHub top language](https://img.shields.io/github/languages/top/kbnewlon/README-generator)
+![issues](https://img.shields.io/github/issues/kbnewlon/project2)
+![GitHub top language](https://img.shields.io/github/languages/top/kbnewlon/project2)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
 ## Description 
@@ -23,7 +23,7 @@ THIS IS JUST THE OUTLINE
 Run npm install in your command terminal
 
 ## Usage
-Run node index.js to begin the program
+Run node server.js to begin the program
 
 ## License
 
@@ -37,7 +37,7 @@ No tests available
 ## Visuals
 ![]()
 ## Links
-To Repo: 
+[To Repo](https://github.com/kbnewlon/project2)
 <br>To Demo:  
 
 ## Questions 

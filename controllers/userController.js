@@ -15,35 +15,65 @@ const db = require("../models");
 // =============================================================
 
     // GET route for getting all of the activities
-    router.get(`/api/signup`, function (req, res) {
+    router.post(`/signup`, function (req, res) {
         // Write code here to retrieve all of the activities from the database and res.json them
         // back to the user
         db.User.create({
-            name:req.body.name,
-            password:req.body.password
+            username:req.body.username,
+            password:req.body.password,
+            fav_activity: req.body.fav_activity,
+            fav_resort: req.body.fav_resort
         }).then(function (newUser) {
+            req.session.user = {
+                id: newUser.id,
+                username: newUser.username,
+                fav_activity: newUser.fav_activity,
+                fav_resort: newUser.fav_resort
+            }
             res.json(newUser);
         }).catch(err => {
-            res.status(500).json(newUser)
+            //console.log(err.errors[0].message);
+            if(err.errors[0].message === "users.username must be unique"){
+                res.status(422).json("that username already exists");
+            }
+            else if(err.errors[0].message === "Validation is on username failed"){
+                res.status(422).json("username must only contain letters and numbers");
+            }
+            else if(err.errors[0].message === "Validation len on username failed"){
+                res.status(422).json("username must be between 4 and 24 characters");
+            }
+            else if(err.errors[0].message === "Validation is on password failed"){
+                res.status(422).json("password must only contain letters and numbers");
+            }
+            else if(err.errors[0].message === "Validation len on password failed"){
+                res.status(422).json("password must be between 6 and 24 characters");
+            }
+            else{
+                res.status(500).json("internal server error");
+            }
         });
     });
 
     router.post(`/login`, function(req, res) {
         db.User.findOne({
-            where: {name:req.body.name}
+            where: {username: req.body.username}
         }).then(function(user){
             if(!user){
                 req.session.destroy();
                 return res.status(401).send("incorrect username or password");
             }
             else if(bcrypt.compareSync(req.body.password, user.password)){
-                req.session.user - {
-                    name:user.name,
-                    id:user.id
+                req.session.user = {
+                    id: user.id,
+                    username: user.username,
+                    fav_activity: user.fav_activity,
+                    fav_resort: user.fav_resort
                 }
                 return res.status(200).json(req.session);
+                //return res.redirect("/myprofile");
             }
             else{
+                req.session.destroy();
                 return res.status(401).send("incorrect username or password");
             }
         });
@@ -51,7 +81,41 @@ const db = require("../models");
 
     router.get(`/logout`, function (req, res) {
         req.session.destroy();
-        return res.status(200).send("logged out");
+        return res.send("logged out");
+    });
+
+    router.get("/api/session", (req, res) => {
+        res.json(req.session);
+    });
+
+    router.put("/:id", function (req, res) {
+        if(req.session.user){
+            db.User.findOne({
+                where:{id: req.params.id}
+            }).then( function (user){
+                if(!user){
+                    return res.status(404).send("user not found")
+                }
+                else{
+                    db.User.update({
+                        username: req.body.username,
+                        fav_activity: req.body.fav_activity,
+                        fav_resort: req.body.fav_resort
+                    }, {
+                        where: {
+                            id: req.params.id
+                        }
+                    }).then( function (editUser) {
+                        res.json(editUser);
+                    }).catch( function (err) {
+                        res.status(500).send("ERROR ERROR ERROR!");
+                    });
+                }
+            });
+        }
+        else{
+            res.status(401).send("not logged in");
+        }
     });
 
     module.exports = router;

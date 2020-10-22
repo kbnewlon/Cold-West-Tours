@@ -29,7 +29,7 @@ const db = require("../models");
   router.get("/:id", function (req, res) {
     // Write code here to retrieve one of the resorts from the database and res.json them
     // back to the user
-    db.Resort.findOne({where: {id: req.param.id}}).then(function (getResort) {
+    db.Resort.findOne({where: {id: req.params.id}}).then(function (getResort) {
       res.json(getResort);
     }).catch(err=>{
       res.status(500).json(getResort)

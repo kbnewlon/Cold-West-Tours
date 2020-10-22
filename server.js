@@ -34,7 +34,6 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: {
-        secure: true,
         maxAge: 2*60*60*1000
     }
 }));
@@ -43,17 +42,17 @@ app.use(session({
 // =============================================================
 // require("./routes/api-routes.js")(app);
 const resortRoutes = require('./controllers/resortController');
-app.use("/api/resorts",resortRoutes);
+app.use("/api/resort",resortRoutes);
 const activityRoutes = require('./controllers/activityController');
 app.use("/api/activity",activityRoutes);
 const userRoutes = require('./controllers/userController');
-app.use(userRoutes);
+app.use("/user", userRoutes);
 const htmlRoutes = require('./controllers/htmlController');
 app.use(htmlRoutes);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync().then(function () {
+db.sequelize.sync({force: true}).then(function () {
     app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
     });

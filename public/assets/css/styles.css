@@ -49,3 +49,16 @@ body {
     margin: none;
     background-color: #36507A;
 }
+.overlayText {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 75px;
+
+}
+.overlaySmText {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 35px;
+
+
+}

@@ -10,19 +10,22 @@
     </div>
 
     <div class="col s12 m6">
-        <h1>Resort Name</h1>
+        <h1>{{name}}</h1>
         <h2>Overview</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum suscipit asperiores similique corrupti quia
             hic dicta, velit eveniet quo molestias ex temporibus iusto quas repellat harum enim porro quasi fugit!</p>
+        <span>Phone Number: {{phone}}</span>
         <h2>Location</h2>
         {{!-- Map by leaflet --}}
         <aside id="mapId" style="width: 600px; height: 400px;"></aside>
-        <p>123 Main St, Seattle, WA</p>
+        <p>{{address}}</p>
         <h2>Policies</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat expedita sapiente cum nostrum labore hic
             ipsum atque voluptas quia enim dolores voluptatem velit facilis aperiam autem incidunt soluta, fugiat earum.
         </p>
-        <li><div class="divider"></div></li>
+        <li>
+            <div class="divider"></div>
+        </li>
     </div>
 </section>
 
@@ -30,12 +33,9 @@
     <div class="col">
         <h2>Activities</h2>
         <ul>
-            <li>Skiing</li>
-            <li>Cross-Country Skiing</li>
-            <li>Snow Boarding</li>
-            <li>Snowshoeing</li>
-            <li>Snowmobiling</li>
-            <li>Snow Tubing</li>
+            {{#each activity}}
+            {{> activityList/activity-block}}
+            {{/each}}
         </ul>
     </div>
 </section>

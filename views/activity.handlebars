@@ -10,7 +10,7 @@
     </div>
 
     <div class="col s12 m6">
-        <h1>Activity Name</h1>
+        <h1>{{name}}</h1>
         <h2>Highlights</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum suscipit asperiores similique corrupti quia
             hic dicta, velit eveniet quo molestias ex temporibus iusto quas repellat harum enim porro quasi fugit!</p>
@@ -29,11 +29,9 @@
             exercitationem ipsa asperiores recusandae.</p>
         <h3>Resorts</h3>
         <ul>
-            <li>Resort1</li>
-            <li>Resort2</li>
-            <li>Resort3</li>
-            <li>Resort4</li>
-            <li>Resort5</li>
+            {{#each resort}}
+            {{> resortList/resort-block}}
+            {{/each}}
         </ul>
     </div>
 </section>

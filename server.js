@@ -3,13 +3,15 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
-var express = require("express");
-var exphbs = require("express-handlebars");
+const express = require("express"); // npm install express
+const exphbs = require("express-handlebars"); // npm install express-handlebars
+const session = require("express-session"); // npm install express-session
 
 // Sets up the Express App
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+require('dotenv').config(); // npm install dotenv
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -25,14 +27,32 @@ app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+app.set(`trust proxy`, 1);
+
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 2*60*60*1000
+    }
+}));
+
 // Routes
 // =============================================================
 // require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+const resortRoutes = require('./controllers/resortController');
+app.use("/api/resort",resortRoutes);
+const activityRoutes = require('./controllers/activityController');
+app.use("/api/activity",activityRoutes);
+const userRoutes = require('./controllers/userController');
+app.use("/user", userRoutes);
+const htmlRoutes = require('./controllers/htmlController');
+app.use(htmlRoutes);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync().then(function () {
+db.sequelize.sync({force: true}).then(function () {
     app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
     });

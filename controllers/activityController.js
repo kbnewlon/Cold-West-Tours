@@ -28,7 +28,7 @@ const db = require("../models");
     router.get("/:id", function (req, res) {
         // Write code here to retrieve one of the activities from the database and res.json them
         // back to the user
-        db.Activity.findOne({ where: { id: req.param.id } }).then(function (getActivity) {
+        db.Activity.findOne({ where: { id: req.params.id } }).then(function (getActivity) {
             res.json(getActivity);
         }).catch(err => {
             res.status(500).json(getActivity)

@@ -29,11 +29,9 @@
             exercitationem ipsa asperiores recusandae.</p>
         <h3>Resorts</h3>
         <ul>
-            <li>Resort1</li>
-            <li>Resort2</li>
-            <li>Resort3</li>
-            <li>Resort4</li>
-            <li>Resort5</li>
+            {{#each resort}}
+            {{> resortList/resort-block}}
+            {{/each}}
         </ul>
     </div>
 </section>

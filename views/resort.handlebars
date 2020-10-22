@@ -33,13 +33,9 @@
     <div class="col">
         <h2>Activities</h2>
         <ul>
-            {{!-- <a href="/Skiing"></a> --}}
-            <li>Skiing</li>
-            <li>Cross-Country Skiing</li>
-            <li>Snow Boarding</li>
-            <li>Snowshoeing</li>
-            <li>Snowmobiling</li>
-            <li>Snow Tubing</li>
+            {{#each activity}}
+            {{> activityList/activity-block}}
+            {{/each}}
         </ul>
     </div>
 </section>

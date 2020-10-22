@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
+router.get("/", function (req, res) {
+    res.render("index");
+});
+
 router.get("/resort", function (req, res) {
     //let newString = process.env.A_TOKEN;
     //console.log(typeof newString);
@@ -27,6 +31,12 @@ router.get("/resort/:id", function (req, res) {
     }).catch(err => {
         res.status(500).json(getResort)
     });
+});
+
+router.get("/activity", function (req, res) {
+    //let newString = process.env.A_TOKEN;
+    //console.log(typeof newString);
+    res.render("activity", { user: req.session.user });
 });
 
 // Route to get activity by id and render to html

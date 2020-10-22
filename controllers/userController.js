@@ -106,7 +106,14 @@ const db = require("../models");
                             id: req.params.id
                         }
                     }).then( function (editUser) {
+                        req.session.user = {
+                            id: user.id,
+                            username: req.body.username,
+                            fav_activity: req.body.fav_activity,
+                            fav_resort: req.body.fav_resort
+                        }
                         res.json(editUser);
+                        
                     }).catch( function (err) {
                         res.status(500).send("ERROR ERROR ERROR!");
                     });

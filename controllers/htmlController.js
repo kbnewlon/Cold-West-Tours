@@ -9,7 +9,16 @@ router.get("/", function (req, res) {
 router.get("/resort", function (req, res) {
     //let newString = process.env.A_TOKEN;
     //console.log(typeof newString);
-    res.render("resort", { envToken: process.env.A_TOKEN });
+    const defaultObj = {
+        name: "Mini Mountain Indoor Ski Center",
+        address: "1900 132nd Ave NE a3, Bellevue, WA 98005",
+        phone: "425.746.7547",
+        resortLat: 47.6245138,
+        resortLon: -122.1650769,
+        envToken: process.env.A_TOKEN,
+        user: req.session.user
+    }
+    res.render("resort", defaultObj);
 });
 
 // Route to get resort by id and render to html
@@ -20,14 +29,16 @@ router.get("/resort/:id", function (req, res) {
             id: req.params.id
         }
     }).then(function (getResort) {
-        const resortJson = {
+        const resortObj = {
             name: getResort.name,
             address: getResort.address,
             phone: getResort.phone,
+            resortLat: getResort.lat,
+            resortLon: getResort.lon,
             envToken: process.env.A_TOKEN,
             user: req.session.user
         }
-        res.render("resort", resortJson);
+        res.render("resort", resortObj);
     }).catch(err => {
         res.status(500).json(getResort)
     });

@@ -1,14 +1,11 @@
-
-
 #mapId { 
     height: 180px; 
 }
 
 body {
     background-color: white;
-  
-
 }
+
 #indexTitle {
     color: #D4DFEA;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -25,23 +22,24 @@ body {
     font-weight: bold;
 
 }
+
 .overlayBackground {
     background-color: #36507A;
 }
 
 .coverImg{
-     background: url("https://res.cloudinary.com/dpnjzg0ar/image/upload/v1603303328/TD1uDeJc_xp3ogk.jpg") no-repeat center center fixed;
-     background-size: cover;
-     height: 100vh;
-     width: 100vw;
-     margin: none;
+    background: url("https://res.cloudinary.com/dpnjzg0ar/image/upload/v1603303328/TD1uDeJc_xp3ogk.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    margin: none;
 
 }
+
 #coverCard{
     margin-top: -2.8rem;
     padding-top: none;
 }
-
 
 .overlayBackground {
     background-color: #36507A;
@@ -54,12 +52,14 @@ body {
     margin: none;
     background-color: #36507A;
 }
+
 .overlayText {
     color:#D4DFEA;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 75px;
 
 }
+
 .overlaySmText {
     color: #BFCFDF;
     font-family: Georgia, 'Times New Roman', Times, serif;

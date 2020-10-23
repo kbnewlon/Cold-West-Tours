@@ -7,18 +7,24 @@ body {
 }
 
 #indexTitle {
-    color: #36507A;
+    color: #D4DFEA;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size:138px;
     margin: none;
+    text-align: center;
+    font-weight: 900;
+    text-shadow: -4px -4px #36507A;
 }
 
 .nav-wrapper { 
-    background-color :#36507A ;
+    background-color :#36507A;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+
 }
 
 .overlayBackground {
-    background-color: #36507A  ;
+    background-color: #36507A;
 }
 
 .coverImg{
@@ -48,14 +54,39 @@ body {
 }
 
 .overlayText {
-    color: white;
+    color:#D4DFEA;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 75px;
 
 }
 
 .overlaySmText {
-    color: white;
+    color: #BFCFDF;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 35px;
+} 
+
+#tagLine{
+    color: #36507A;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 63px;
+    margin: none;
+    text-align: center;
+    margin-top: -2.8rem;
+    font-weight: 525;
+    text-shadow: 2px 2px #D4DFEA;
 }
+
+
+#bottomCard{
+    position: absolute; 
+    bottom: 0; 
+    left: 0; width: 100%;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+    color: #051631;
+    text-shadow: -1px -1px #D4DFEA;
+    /* margin-bottom: -2.8rem */
+    font-weight: bold;
+} 

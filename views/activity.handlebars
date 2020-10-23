@@ -1,46 +1,47 @@
-<div class = "activityPage">
-
-<div class = "container">
+<div class="container">
 
 
-<section class="row">
-    {{!-- Activity Pic --}}
-    <div class="col s12 m6">
-        <div class="row">
-            <img src="https://via.placeholder.com/500" alt="placeholder image">
-        </div>
-        {{!-- Add carousel --}}
-        {{!-- <div class="row">
+    <section class="row">
+        {{!-- Activity Pic --}}
+        <div class="col s12 m6">
+            <div class="row">
+                <img src="https://via.placeholder.com/500" alt="placeholder image">
+            </div>
+            {{!-- Add carousel --}}
+            {{!-- <div class="row">
         </div> --}}
-    </div>
+        </div>
 
-    <div class="col s12 m6">
-        <h1>{{name}}</h1>
-        <h2>Highlights</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum suscipit asperiores similique corrupti quia
-            hic dicta, velit eveniet quo molestias ex temporibus iusto quas repellat harum enim porro quasi fugit!</p>
-    </div>
-</section>
+        <div class="col s12 m6">
+            <h1>{{name}}</h1>
+            <h2>Highlights</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum suscipit asperiores similique corrupti
+                quia
+                hic dicta, velit eveniet quo molestias ex temporibus iusto quas repellat harum enim porro quasi fugit!
+            </p>
+        </div>
+    </section>
 
-<section class="row">
-    <div class="col">
-        <h2>About this activity</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus minus similique dolorum illo alias commodi
-            iure perferendis eaque necessitatibus sunt voluptates aliquam deleniti est quam beatae fuga aut, reiciendis
-            quas.</p>
-        <h3>Policies</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reiciendis molestiae officia? Assumenda,
-            dolorum iure. Maxime commodi corporis porro, molestiae architecto earum, suscipit eius ipsum excepturi
-            exercitationem ipsa asperiores recusandae.</p>
-        <h3>Resorts</h3>
-        <ul>
-            {{#each resort}}
-            {{> resortList/resort-block}}
-            {{/each}}
-        </ul>
-    </div>
-</section>
+    <section class="row">
+        <div class="col">
+            <h2>About this activity</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus minus similique dolorum illo alias
+                commodi
+                iure perferendis eaque necessitatibus sunt voluptates aliquam deleniti est quam beatae fuga aut,
+                reiciendis
+                quas.</p>
+            <h3>Policies</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid reiciendis molestiae officia? Assumenda,
+                dolorum iure. Maxime commodi corporis porro, molestiae architecto earum, suscipit eius ipsum excepturi
+                exercitationem ipsa asperiores recusandae.</p>
+            <h3>Resorts</h3>
+            <ul>
+                {{#each resort}}
+                {{> resortList/resort-block}}
+                {{/each}}
+            </ul>
+        </div>
+    </section>
 
 
-</div>
 </div>

@@ -32,6 +32,26 @@ module.exports = function (sequelize, DataTypes) {
         overview: {
             type: DataTypes.STRING(1234),
             allowNull: false
+        },
+        pic1: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        pic2: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        pic3: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        pic4: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        pic5: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     }, {
         timestamps: false

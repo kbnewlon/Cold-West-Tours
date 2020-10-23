@@ -32,7 +32,11 @@ module.exports = function (sequelize, DataTypes) {
         overview: {
             type: DataTypes.STRING(1234),
             allowNull: false
-        }
+        },
+        pass_cost:{
+            type: DataTypes.DECIMAL(10,2),
+            allowNull: false
+        },
     }, {
         timestamps: false
     });

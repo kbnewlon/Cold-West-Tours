@@ -39,12 +39,13 @@ body {
     background-color: #36507A;
 }
 
-.resortBackground {
-    background-size: cover;
+.resortBackground, .activityPage{
+    /* background-size: cover;
     height: 100%;
     width: 100%;
     margin: none;
-    background-color: #36507A;
+    background-color: #36507A; */
+    margin-top: 40px;
 }
 
 .overlayText {

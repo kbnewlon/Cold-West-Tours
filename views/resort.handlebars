@@ -1,50 +1,54 @@
-<div class= "resortBackground">
+<div class="resortBackground">
 
-<div class = "container">
+    <div class="container">
 
-<section class="row">
-    {{!-- Resort Pic --}}
-    <div class="col s12 m6">
-        <div class="row">
-            <img src="https://via.placeholder.com/500" alt="placeholder image">
-        </div>
-        {{!-- Add carousel --}}
-        {{!-- <div class="row">
+        <section class="row">
+            {{!-- Resort Pic --}}
+            <div class="col s12 m6">
+                <div class="row">
+                    <img src="https://via.placeholder.com/500" alt="placeholder image">
+                </div>
+                {{!-- Add carousel --}}
+                {{!-- <div class="row">
         </div> --}}
-    </div>
+            </div>
 
-    <div class="col s12 m6">
-        <h1>{{name}}</h1>
-        <h2>Overview</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum suscipit asperiores similique corrupti quia
-            hic dicta, velit eveniet quo molestias ex temporibus iusto quas repellat harum enim porro quasi fugit!</p>
-        <span>Phone Number: {{phone}}</span>
-        <h2>Location</h2>
-        {{!-- Map by leaflet --}}
-        <aside id="mapId" style="width: 600px; height: 400px;"></aside>
-        <p>{{address}}</p>
-        <h2>Policies</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat expedita sapiente cum nostrum labore hic
-            ipsum atque voluptas quia enim dolores voluptatem velit facilis aperiam autem incidunt soluta, fugiat earum.
-        </p>
-        <li>
-            <div class="divider"></div>
-        </li>
-    </div>
-</section>
-<section class="row">
-    <div class="col">
-        <h2>Activities</h2>
-        <ul>
-            {{#each activity}}
-            {{> activityList/activity-block}}
-            {{/each}}
-        </ul>
-    </div>
-</section>
+            <div class="col s12 m6">
+                <h1>{{name}}</h1>
+                <h2>Overview</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum suscipit asperiores similique
+                    corrupti quia
+                    hic dicta, velit eveniet quo molestias ex temporibus iusto quas repellat harum enim porro quasi
+                    fugit!</p>
+                <span>Phone Number: {{phone}}</span>
+                <h2>Location</h2>
+                {{!-- Map by leaflet --}}
+                <aside id="mapId" style="width: 600px; height: 400px;"></aside>
+                <p>{{address}}</p>
+                <h2>Policies</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat expedita sapiente cum nostrum labore
+                    hic
+                    ipsum atque voluptas quia enim dolores voluptatem velit facilis aperiam autem incidunt soluta,
+                    fugiat earum.
+                </p>
+                <li>
+                    <div class="divider"></div>
+                </li>
+            </div>
+        </section>
+        <section class="row">
+            <div class="col">
+                <h2>Activities</h2>
+                <ul>
+                    {{#each activityList}}
+                    <li><a href="/activity/{{id}}">{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
 
-{{> map/map-block}}
+        {{> map/map-block}}
 
-</div>
+    </div>
 
 </div>

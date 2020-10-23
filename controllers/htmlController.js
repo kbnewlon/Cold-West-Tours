@@ -21,7 +21,7 @@ router.get("/resort", function (req, res) {
     res.render("resort", defaultObj);
 });
 
-// Route to get resort by id and render to html
+// Route to get resort by id 
 router.get("/resort/:id", function (req, res) {
 
     db.Resort.findOne({
@@ -29,16 +29,28 @@ router.get("/resort/:id", function (req, res) {
             id: req.params.id
         }
     }).then(function (getResort) {
-        const resortObj = {
-            name: getResort.name,
-            address: getResort.address,
-            phone: getResort.phone,
-            resortLat: getResort.lat,
-            resortLon: getResort.lon,
-            envToken: process.env.A_TOKEN,
-            user: req.session.user
-        }
-        res.render("resort", resortObj);
+        // Get all activities
+        db.Activity.findAll({}).then(function (getActivityList) {
+            // Create activity list 
+            let activityList = [];
+            getActivityList.forEach(function (activityEl) {
+                activityList.push(activityEl.dataValues);
+            })
+            // Create resort object to be rendered
+            const resortObj = {
+                name: getResort.name,
+                address: getResort.address,
+                phone: getResort.phone,
+                resortLat: getResort.lat,
+                resortLon: getResort.lon,
+                envToken: process.env.A_TOKEN,
+                activityList: activityList,
+                user: req.session.user
+            }
+            res.render("resort", resortObj);
+        }).catch(err => {
+            res.status(500).json(getActivityList)
+        });
     }).catch(err => {
         res.status(500).json(getResort)
     });
@@ -50,18 +62,31 @@ router.get("/activity", function (req, res) {
     res.render("activity", { user: req.session.user });
 });
 
-// Route to get activity by id and render to html
+// Route to get activity by id 
 router.get("/activity/:id", function (req, res) {
     db.Activity.findOne({
         where: {
             id: req.params.id
         }
     }).then(function (getActivity) {
-        const activityJson = {
-            name: getActivity.name,
-            user: req.session.user
-        }
-        res.render("activity", activityJson);
+        // Get all resorts
+        db.Resort.findAll({}).then(function (getResortList) {
+            // Create resort list 
+            let resortList = [];
+            getResortList.forEach(function (resortEl) {
+                resortList.push(resortEl.dataValues);
+            });
+            // Create activity object to be rendered
+            const activityJson = {
+                name: getActivity.name,
+                resortList: resortList,
+                user: req.session.user
+            }
+            res.render("activity", activityJson);
+        }).catch(err => {
+            res.status(500).json(getResortList);
+        });
+        // console.log(activityJson);
     }).catch(err => {
         res.status(500).json(getActivity)
     });

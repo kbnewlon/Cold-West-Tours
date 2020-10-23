@@ -39,7 +39,7 @@
                 {{!-- If user is signed in, the account and sing out tab will show up --}}
                 {{#if user}}
                 <li><a href="/account">Account</a></li>
-                <li><a href="/singout">Sign out</a></li>
+                <li><a href="/user/logout">Sign out</a></li>
                 {{/if}}
             </ul>
         </div>
@@ -55,7 +55,7 @@
         {{/unless}}
         {{#if user}}
         <li><a class="waves-effect" href="/account">Account</a></li>
-        <li><a class="waves-effect" href="/signout">Sign out</a></li>
+        <li><a class="waves-effect" href="/user/logout">Sign out</a></li>
         {{/if}}
     </ul>
   

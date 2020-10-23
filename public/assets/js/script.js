@@ -18,4 +18,5 @@ $(document).ready(function () {
     $(".container").on("click", function () {
         instance.close();
     });
+
 });

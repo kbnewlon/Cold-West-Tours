@@ -88,8 +88,8 @@ router.get("/aboutus", function (req, res) {
     res.render("aboutUs", { user: req.session.user });
 });
 
-// router.get("*", function (req, res) {
-//     res.render("index");
-// });
+router.get("*", function (req, res) {
+    res.render("index");
+});
 
 module.exports = router;

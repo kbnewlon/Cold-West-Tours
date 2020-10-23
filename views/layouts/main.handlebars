@@ -28,8 +28,17 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/resort">Resort</a></li>
                 <li><a href="/activity">Activity</a></li>
-                <li><a href="/signin">Sign in</a></li>
                 <li><a href="/aboutus">About Us</a></li>
+                {{!-- Unless user is signed in, the sign in tab will always show up --}}
+                {{#unless user}}
+                <li><a href="/signin">Sign in</a></li>
+                {{/unless}}
+
+                {{!-- If user is signed in, the account and sing out tab will show up --}}
+                {{#if user}}
+                <li><a href="/account">Account</a></li>
+                <li><a href="/singout">Sign out</a></li>
+                {{/if}}
             </ul>
         </div>
     </nav>
@@ -38,11 +47,18 @@
         <li><a class="waves-effect" href="/">Home</a></li>
         <li><a class="waves-effect" href="/resort">Resort</a></li>
         <li><a class="waves-effect" href="/activity">Activity</a></li>
-        <li><a class="waves-effect" href="/signin">Sign in</a></li>
         <li><a class="waves-effect" href="/aboutus">About Us</a></li>
+        {{#unless user}}
+        <li><a class="waves-effect" href="/signin">Sign in</a></li>
+        {{/unless}}
+        {{#if user}}
+        <li><a class="waves-effect" href="/account">Account</a></li>
+        <li><a class="waves-effect" href="/signout">Sign out</a></li>
+        {{/if}}
     </ul>
+
     {{!-- <div class="container"> --}}
-        {{{ body }}}
+    {{{ body }}}
     {{!-- </div> --}}
 
     <script src="https://code.jquery.com/jquery.js"></script>

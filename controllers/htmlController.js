@@ -72,13 +72,21 @@ router.get("/signin", function (req, res) {
     res.render("signIn");
 });
 
+// Route to sign up
 router.get("/signup", function (req, res) {
     res.render("signUp");
 });
 
+// Route to account page
 router.get("/account", function (req, res) {
     res.render("account");
 });
+
+// Route to signout
+router.get("/signout", function (req, res) {
+    res.render("signOut");
+});
+
 
 // router.get("/resort-activity/:id", function (req, res) {
 //     db.Resort_Activity.findOne({

@@ -1,0 +1,61 @@
+<main class="container">
+    <header class="row">
+        <h3>Welcome back, {{firstName}}!</h3>
+    </header>
+    <section class="row">
+        <h3>Favorites</h3>
+    </section>
+    <section class="row">
+
+        {{!-- Favorite resort --}}
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image">
+                    <img src={{url}}>
+                    <span class="card-title">{{favResort}}</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                            class="material-icons">delete</i></a>
+                </div>
+                <div class="card-content">
+                    <p>{{overview}}</p>
+                </div>
+            </div>
+        </div>
+
+        {{!-- Favorite activity --}}
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image">
+                    <img src={{url}}>
+                    <span class="card-title">{{favActivity}}</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                            class="material-icons">delete</i></a>
+                </div>
+                <div class="card-content">
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    {{!-- Past favorites --}}
+    <section class="row">
+        <h3>Past favorites</h3>
+    </section>
+
+    <section class="row">
+        <div class="col s12 m6">
+            <h4>Resort</h4>
+            {{#each pastFavResort}}
+            {{> pastFavs/pastFavResort-block}}
+            {{/each}}
+        </div>
+        <div class="col s12 m6">
+            <h4>Activity</h4>
+            {{#each pastFavActivity}}
+            {{> pastFavs/pastFavActivity-block}}
+            {{/each}}
+        </div>
+    </section>
+</main>

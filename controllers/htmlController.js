@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../models');
 
 router.get("/", function (req, res) {
-    res.render("index");
+    res.render("index", {user: req.session.user});
 });
 
 router.get("/resort", function (req, res) {
@@ -69,22 +69,61 @@ router.get("/activity/:id", function (req, res) {
 
 // Route to sign in
 router.get("/signin", function (req, res) {
-    res.render("signIn");
+    res.render("signIn", {user: req.session.user});
 });
 
 // Route to sign up
 router.get("/signup", function (req, res) {
-    res.render("signUp");
+    res.render("signUp", {user: req.session.user});
 });
 
 // Route to account page
 router.get("/account", function (req, res) {
-    res.render("account");
+    console.log("entered");
+    db.Activity.findOne({
+        where: {
+            id: req.session.user.fav_activity
+        }
+    }).then(function (getActivity) {
+        console.log(getActivity);
+        let activityObj = {
+            name: ""
+        }
+        if(getActivity){
+            activityObj = {
+                name: getActivity.name
+            }
+        }
+        db.Resort.findOne({
+            where: {
+                id: req.session.user.fav_resort
+            }
+        }).then(function (getResort) {
+            let resortObj = {
+                name: "",
+                url: "",
+                overview: ""
+            }
+            if(getResort){
+                resortObj = {
+                    name: getResort.name,
+                    url: getResort.url,
+                    overview: getResort.overview
+                }
+            }
+            res.render("account", {activity: activityObj, resort: resortObj, user: req.session.user });
+        }).catch(err => {
+            res.status(500).json("internal server error")
+        });
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json("internal server error")
+    });
 });
 
 // Route to signout
 router.get("/signout", function (req, res) {
-    res.render("signOut");
+    res.render("signOut", {user: req.session.user});
 });
 
 
@@ -110,7 +149,7 @@ router.get("/aboutus", function (req, res) {
 });
 
 router.get("*", function (req, res) {
-    res.render("index");
+    res.render("index", {user: req.session.user});
 });
 
 module.exports = router;

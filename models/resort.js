@@ -24,6 +24,14 @@ module.exports = function (sequelize, DataTypes) {
         lon: {
             type: DataTypes.DECIMAL(10, 7),
             allowNull: false
+        }, 
+        policy: {
+            type: DataTypes.STRING(1234),
+            allowNull: false
+        }, 
+        overview: {
+            type: DataTypes.STRING(1234),
+            allowNull: false
         }
     }, {
         timestamps: false

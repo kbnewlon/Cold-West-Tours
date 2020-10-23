@@ -16,7 +16,7 @@ router.get("/resort", function (req, res) {
         resortLat: 47.6245138,
         resortLon: -122.1650769,
         envToken: process.env.A_TOKEN,
-        user: req.session.user
+        user: req.session.user,
     }
     res.render("resort", defaultObj);
 });
@@ -29,17 +29,32 @@ router.get("/resort/:id", function (req, res) {
             id: req.params.id
         }
     }).then(function (getResort) {
-        const resortObj = {
-            name: getResort.name,
-            address: getResort.address,
-            phone: getResort.phone,
-            resortLat: getResort.lat,
-            resortLon: getResort.lon,
-            envToken: process.env.A_TOKEN,
-            user: req.session.user
-        }
-        res.render("resort", resortObj);
-    }).catch(err => {
+        // console.log(getResort);
+        db.Activity.findAll({}).then(function (getActivityList) {
+            // console.log(getActivityList);
+            let activityList = [];
+            getActivityList.forEach(function (activityEl) {
+                // console.log(activityEl);
+                activityList.push(activityEl.dataValues);
+            })
+            console.log(activityList);
+            const resortObj = {
+                name: getResort.name,
+                address: getResort.address,
+                phone: getResort.phone,
+                resortLat: getResort.lat,
+                resortLon: getResort.lon,
+                envToken: process.env.A_TOKEN,
+                activityList: activityList,
+                user: req.session.user
+            }
+            res.render("resort", resortObj);
+        })
+        .catch(err => {
+            res.status(500).json(getActivity)
+        });
+    })
+    .catch(err => {
         res.status(500).json(getResort)
     });
 });
@@ -47,6 +62,12 @@ router.get("/resort/:id", function (req, res) {
 router.get("/activity", function (req, res) {
     //let newString = process.env.A_TOKEN;
     //console.log(typeof newString);
+    // db.Activity.findAll({}).then(function (getActivityList) {
+    //     const activityJson = {
+    //         activityList: getActivityList,
+    //         user: req.session.user
+    //     }
+    // })
     res.render("activity", { user: req.session.user });
 });
 
@@ -61,6 +82,7 @@ router.get("/activity/:id", function (req, res) {
             name: getActivity.name,
             user: req.session.user
         }
+        console.log(activityJson);
         res.render("activity", activityJson);
     }).catch(err => {
         res.status(500).json(getActivity)

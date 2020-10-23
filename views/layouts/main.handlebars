@@ -50,6 +50,13 @@
         <li><a class="waves-effect" href="/resort">play</a></li>
         <li><a class="waves-effect" href="/activity">activity</a></li>
         <li><a class="waves-effect" href="/aboutus">about</a></li>
+        {{#unless user}}
+        <li><a class="waves-effect" href="/signin">Sign in</a></li>
+        {{/unless}}
+        {{#if user}}
+        <li><a class="waves-effect" href="/account">Account</a></li>
+        <li><a class="waves-effect" href="/signout">Sign out</a></li>
+        {{/if}}
     </ul>
   
     {{!-- <div class="container"> --}}

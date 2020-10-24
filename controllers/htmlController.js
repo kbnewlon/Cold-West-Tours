@@ -32,13 +32,13 @@ router.get("/resort", function (req, res) {
 
 // Route to get resort by id 
 router.get("/resort/:id", function (req, res) {
- console.log(req.params.id)
+//  console.log(req.params.id)
     db.Resort.findOne({
         where: {
             id: req.params.id
         }
     }).then(function (getResort) {
-        console.log(getResort)
+        // console.log(getResort)
         // Get all activities
         db.Activity.findAll({}).then(function (getActivityList) {
             // Create activity list 
@@ -53,6 +53,8 @@ router.get("/resort/:id", function (req, res) {
                 phone: getResort.phone,
                 resortLat: getResort.lat,
                 resortLon: getResort.lon,
+                policy: getResort.policy,
+                overview: getResort.overview,
                 envToken: process.env.A_TOKEN,
                 activityList: activityList,
                 user: req.session.user

@@ -2,37 +2,29 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
+// Route to homepage
 router.get("/", function (req, res) {
     res.render("index", {user: req.session.user});
 });
 
+// Test page for resort
 router.get("/resort", function (req, res) {
     //let newString = process.env.A_TOKEN;
     //console.log(typeof newString);
-    // const defaultObj = {
-    //     name: "Mini Mountain Indoor Ski Center",
-    //     address: "1900 132nd Ave NE a3, Bellevue, WA 98005",
-    //     phone: "425.746.7547",
-    //     resortLat: 47.6245138,
-    //     resortLon: -122.1650769,
-    //     envToken: process.env.A_TOKEN,
-    //     user: req.session.user
-    // }
-    // res.render("resort", defaultObj);
-    db.Resort.findAll({
-    
-    }).then(function (getResort){
-        const resortObj = {
-            id: getResort.id,
-            name: getResort.name           
-        }
-        res.render("resort", resortObj)
-    })
+    const defaultObj = {
+        name: "Mini Mountain Indoor Ski Center",
+        address: "1900 132nd Ave NE a3, Bellevue, WA 98005",
+        phone: "425.746.7547",
+        resortLat: 47.6245138,
+        resortLon: -122.1650769,
+        envToken: process.env.A_TOKEN,
+        user: req.session.user
+    }
+    res.render("resort", defaultObj);
 });
 
 // Route to get resort by id 
 router.get("/resort/:id", function (req, res) {
- console.log(req.params.id)
     db.Resort.findOne({
         where: {
             id: req.params.id
@@ -68,14 +60,11 @@ router.get("/resort/:id", function (req, res) {
 });
 
 router.get("/activity", function (req, res) {
-    //let newString = process.env.A_TOKEN;
-    //console.log(typeof newString);
     res.render("activity", { user: req.session.user });
 });
 
 // Route to get activity by id 
 router.get("/activity/:id", function (req, res) {
-    // console.log(req.params.id);
     db.Activity.findOne({
         where: {
             id: req.params.id
@@ -98,18 +87,17 @@ router.get("/activity/:id", function (req, res) {
         }).catch(err => {
             res.status(500).json(getResortList);
         });
-        // console.log(activityJson);
     }).catch(err => {
         res.status(500).json(getActivity)
     });
 });
 
-// Route to sign in
+// Route to sign in page
 router.get("/signin", function (req, res) {
     res.render("signIn", {user: req.session.user});
 });
 
-// Route to sign up
+// Route to sign up page
 router.get("/signup", function (req, res) {
     res.render("signUp", {user: req.session.user});
 });
@@ -148,42 +136,24 @@ router.get("/account", function (req, res) {
             }
             res.render("account", {activity: activityObj, resort: resortObj, user: req.session.user });
         }).catch(err => {
-            console.log(err);
             res.status(500).json("internal server error")
         });
     }).catch(err => {
-        console.log(err);
         res.status(500).json("internal server error")
     });
 });
 
-// Route to signout
+// Route to sign out page
 router.get("/signout", function (req, res) {
     res.render("signOut", {user: req.session.user});
 });
 
-
-// router.get("/resort-activity/:id", function (req, res) {
-//     db.Resort_Activity.findOne({
-//         where: {
-//             id: req.params.id
-//         }
-//     }).then(function (getActivityList) {
-//         // const activityJson = {
-//         //     name: getActivity.name
-//         // }
-//         // res.render("activity", activityJson);
-//         // res.render(getActivityList);
-//         console.log(getActivityList);
-//     }).catch(err => {
-//         res.status(500).json(getActivityList)
-//     });
-// });
-
+// Route to about us page
 router.get("/aboutus", function (req, res) {
     res.render("aboutUs", { user: req.session.user });
 });
 
+// Route to homepage if url not found above
 router.get("*", function (req, res) {
     res.render("index", {user: req.session.user});
 });

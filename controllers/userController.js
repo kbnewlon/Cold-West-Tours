@@ -18,7 +18,8 @@ const db = require("../models");
     router.post(`/signup`, function (req, res) {
         // Write code here to retrieve all of the activities from the database and res.json them
         // back to the user
-        console.log("hi");
+        // console.log("hi");
+        // console.log(req.body.username, req.body.password);
         db.User.create({
             username:req.body.username,
             password:req.body.password,
@@ -57,9 +58,12 @@ const db = require("../models");
     });
 
     router.post(`/login`, function(req, res) {
+        // console.log("here");
+        console.log(req.body.username, req.body.password);
         db.User.findOne({
             where: {username: req.body.username}
         }).then(function(user){
+            console.log(user.password);
             if(!user){
                 req.session.destroy();
                 return res.status(401).send("incorrect username or password");
@@ -72,6 +76,7 @@ const db = require("../models");
                     fav_resort: user.fav_resort
                 }
                 //return res.status(200).json(req.session);
+                console.log("redirect wrong");
                 return res.redirect("/account");
             }
             else{

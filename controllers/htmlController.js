@@ -104,13 +104,13 @@ router.get("/signup", function (req, res) {
 
 // Route to account page
 router.get("/account", function (req, res) {
-    console.log("entered");
+    // console.log("entered");
     db.Activity.findOne({
         where: {
             id: req.session.user.fav_activity
         }
     }).then(function (getActivity) {
-        console.log(getActivity);
+        // console.log(getActivity);
         let activityObj = {
             name: ""
         }
@@ -138,10 +138,12 @@ router.get("/account", function (req, res) {
             }
             res.render("account", {activity: activityObj, resort: resortObj, user: req.session.user });
         }).catch(err => {
+            console.log("find resort: " + err);
             res.status(500).json("internal server error")
         });
     }).catch(err => {
-        console.log(err);
+        console.log("find activity: " + err);
+        // console.log(err);
         res.status(500).json("internal server error")
     });
 });

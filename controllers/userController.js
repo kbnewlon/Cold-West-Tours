@@ -66,7 +66,7 @@ const db = require("../models");
             console.log(user.password);
             if(!user){
                 req.session.destroy();
-                return res.status(401).send("incorrect username or password");
+                res.status(401).send("incorrect username or password");
             }
             else if(bcrypt.compareSync(req.body.password, user.password)){
                 req.session.user = {
@@ -81,7 +81,7 @@ const db = require("../models");
             }
             else{
                 req.session.destroy();
-                return res.status(401).send("incorrect username or password");
+                res.status(401).send("incorrect username or password");
             }
         });
     });

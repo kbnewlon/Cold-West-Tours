@@ -52,11 +52,13 @@ router.get("/activity", function (req, res) {
 
 // Route to get activity by id and render to html
 router.get("/activity/:id", function (req, res) {
+    console.log(req.params.id);
     db.Activity.findOne({
         where: {
             id: req.params.id
         }
     }).then(function (getActivity) {
+        console.log(getActivity)
         const activityJson = {
             name: getActivity.name,
             user: req.session.user

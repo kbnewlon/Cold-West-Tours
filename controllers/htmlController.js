@@ -9,26 +9,36 @@ router.get("/", function (req, res) {
 router.get("/resort", function (req, res) {
     //let newString = process.env.A_TOKEN;
     //console.log(typeof newString);
-    const defaultObj = {
-        name: "Mini Mountain Indoor Ski Center",
-        address: "1900 132nd Ave NE a3, Bellevue, WA 98005",
-        phone: "425.746.7547",
-        resortLat: 47.6245138,
-        resortLon: -122.1650769,
-        envToken: process.env.A_TOKEN,
-        user: req.session.user
-    }
-    res.render("resort", defaultObj);
+    // const defaultObj = {
+    //     name: "Mini Mountain Indoor Ski Center",
+    //     address: "1900 132nd Ave NE a3, Bellevue, WA 98005",
+    //     phone: "425.746.7547",
+    //     resortLat: 47.6245138,
+    //     resortLon: -122.1650769,
+    //     envToken: process.env.A_TOKEN,
+    //     user: req.session.user
+    // }
+    // res.render("resort", defaultObj);
+    db.Resort.findAll({
+    
+    }).then(function (getResort){
+        const resortObj = {
+            id: getResort.id,
+            name: getResort.name           
+        }
+        res.render("resort", resortObj)
+    })
 });
 
 // Route to get resort by id 
 router.get("/resort/:id", function (req, res) {
-
+ console.log(req.params.id)
     db.Resort.findOne({
         where: {
             id: req.params.id
         }
     }).then(function (getResort) {
+        console.log(getResort)
         // Get all activities
         db.Activity.findAll({}).then(function (getActivityList) {
             // Create activity list 
@@ -51,7 +61,8 @@ router.get("/resort/:id", function (req, res) {
         }).catch(err => {
             res.status(500).json(getActivityList)
         });
-    }).catch(err => {
+    })
+    .catch(err => {
         res.status(500).json(getResort)
     });
 });
@@ -64,7 +75,7 @@ router.get("/activity", function (req, res) {
 
 // Route to get activity by id 
 router.get("/activity/:id", function (req, res) {
-    console.log(req.params.id);
+    // console.log(req.params.id);
     db.Activity.findOne({
         where: {
             id: req.params.id

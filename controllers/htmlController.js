@@ -104,17 +104,15 @@ router.get("/signup", function (req, res) {
 
 // Route to account page
 router.get("/account", function (req, res) {
-    console.log("entered");
     db.Activity.findOne({
         where: {
             id: req.session.user.fav_activity
         }
     }).then(function (getActivity) {
-        console.log(getActivity);
         let activityObj = {
             name: ""
         }
-        if(getActivity){
+        if((getActivity) && (getActivity !== null)){
             activityObj = {
                 name: getActivity.name
             }
@@ -129,7 +127,7 @@ router.get("/account", function (req, res) {
                 url: "",
                 overview: ""
             }
-            if(getResort){
+            if((getResort) && (getResort !== null)){
                 resortObj = {
                     name: getResort.name,
                     url: getResort.url,
@@ -138,6 +136,7 @@ router.get("/account", function (req, res) {
             }
             res.render("account", {activity: activityObj, resort: resortObj, user: req.session.user });
         }).catch(err => {
+            console.log(err);
             res.status(500).json("internal server error")
         });
     }).catch(err => {

@@ -22,9 +22,9 @@ INSERT INTO resorts (name, address, phone, url, lat, lon, policy, overview, pic1
  ("Ski Bluewood","Bluewood Road, Dayton, WA 99328" , "509.382.4725", "http://www.bluewood.com/", 46.0824903, -117.853356, "Will operate on the normal schedule for 2020/2021 Season. -Mandatory face coverings in all indoor spaces. Only a limited number of day tickets will be sold each day" , "High atop the Blue Mountains, just 52 miles northeast of Walla Walla in southeast Washington, our ski area occupies the second-highest base elevation (4,545 feet) in the state. Bluewood also has a reputation of possibly having the best snow in the state as well as memorable tree skiing. For those who are unfamiliar with this area, the Blue Mountains rise out of a high-desert region, which provides clear skies and cold, smoke-dry powder. The average annual snowfall is more than 300 inches. The mountain offers nearly 400 skiable acres of lift-serviced terrain for every ability level and interest. With 24 trails, three terrain parks, amazing tree skiing areas and snowcat accessible terrain, we have something for everyone at Bluewood. They are an affordable, family-friendly ski area that really is closer than you think!", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603315190/Bluewood/bw2_ukjcdg.jpg", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603315189/Bluewood/bw3_fraxvq.jpg", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603315190/Bluewood/bw4_ekwfqp.jpg", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603315189/Bluewood/bw5_sphenl.jpg", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603315191/Bluewood/bw1_qpbeup.jpg");
 
 
-INSERT INTO activities (name, slope) VALUES ("skiing", 1);
-INSERT INTO activities (name, slope) VALUES ("cross_country_skiing", 0);
-INSERT INTO activities (name, slope) VALUES ("snow_boarding", 1);
-INSERT INTO activities (name, slope) VALUES ("snow_shoeing", 0);
-INSERT INTO activities (name, slope) VALUES ("tubing", 1);
-INSERT INTO activities (name, slope) VALUES ("dining", 0);
+INSERT INTO activities (name, slope) VALUES ("skiing", 1),
+("cross_country_skiing", 0),
+("snow_boarding", 1),
+("snow_shoeing", 0),
+("tubing", 1),
+("dining", 0);

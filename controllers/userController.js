@@ -18,11 +18,12 @@ const db = require("../models");
     router.post(`/signup`, function (req, res) {
         // Write code here to retrieve all of the activities from the database and res.json them
         // back to the user
+        console.log("hi");
         db.User.create({
             username:req.body.username,
             password:req.body.password,
-            fav_activity: req.body.fav_activity,
-            fav_resort: req.body.fav_resort
+            fav_activity: req.body.fav_activity||null,
+            fav_resort: req.body.fav_resort||null
         }).then(function (newUser) {
             req.session.user = {
                 id: newUser.id,
@@ -30,7 +31,8 @@ const db = require("../models");
                 fav_activity: newUser.fav_activity,
                 fav_resort: newUser.fav_resort
             }
-            res.json(newUser);
+            //res.json(newUser);
+            res.redirect("/account");
         }).catch(err => {
             //console.log(err.errors[0].message);
             if(err.errors[0].message === "users.username must be unique"){
@@ -60,7 +62,7 @@ const db = require("../models");
         }).then(function(user){
             if(!user){
                 req.session.destroy();
-                return res.status(401).send("incorrect username or password");
+                res.status(401).send("incorrect username or password");
             }
             else if(bcrypt.compareSync(req.body.password, user.password)){
                 req.session.user = {
@@ -69,19 +71,19 @@ const db = require("../models");
                     fav_activity: user.fav_activity,
                     fav_resort: user.fav_resort
                 }
-                return res.status(200).json(req.session);
-                //return res.redirect("/myprofile");
+                //return res.status(200).json(req.session);
+                return res.redirect("/account");
             }
             else{
                 req.session.destroy();
-                return res.status(401).send("incorrect username or password");
+                res.status(401).send("incorrect username or password");
             }
         });
     });
 
     router.get(`/logout`, function (req, res) {
         req.session.destroy();
-        return res.send("logged out");
+        res.redirect("/signOut");
     });
 
     router.get("/api/session", (req, res) => {

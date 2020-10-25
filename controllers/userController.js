@@ -82,7 +82,7 @@ const db = require("../models");
                     fav_resort: user.fav_resort
                 }
                 //return res.status(200).json(req.session);
-                console.log("redirect wrong");
+                // console.log("redirect wrong");
                 return res.redirect("/account");
             }
             else{

@@ -1,4 +1,4 @@
-<div class = "container">
+<div class="container">
 
 
 <section class="row">
@@ -13,7 +13,21 @@
     </div>
 
     <div class="col s12 m6">
-        <h1>{{name}}</h1>
+            {{!-- When user is logged in, show star or empty star --}}
+            {{#if user}}
+
+            {{!-- If it matches user favorite, display filled star --}}
+            {{#if checkFav}}
+            <h1>{{name}}<i id="star-icon-filled" class="material-icons">star</i></h1>
+            {{!-- If not, display empty star --}}
+            {{else}}
+            <h1>{{name}}<i id="star-icon-empty" class="material-icons">star_border</i></h1>
+            {{/if}}
+
+            {{!-- User who is not logged in will not see stars --}}
+            {{else}}
+            <h1>{{name}}</h1>
+            {{/if}}
         <h2>About</h2>
         <p>{{about}}</p>
     </div>
@@ -23,7 +37,7 @@
     <div class="col">
         <h2>Beginner's Guide</h2>
         <p>{{guide}}</p>
-      
+
         <h3>Resorts</h3>
         <ul>
             {{#each resortList}}

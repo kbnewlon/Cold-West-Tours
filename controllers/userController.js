@@ -104,11 +104,6 @@ const db = require("../models");
     });
 
     router.put("/:id", function (req, res) {
-        console.log("entered user update");
-        console.log(req.params.id);
-        console.log(req.body.username);
-        console.log(req.body.fav_activity);
-        console.log(req.body.fav_resort);
         if(req.session.user){
             db.User.findOne({
                 where:{id: req.params.id}

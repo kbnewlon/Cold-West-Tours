@@ -30,7 +30,7 @@ router.get("/resort/:id", function (req, res) {
             id: req.params.id
         }
     }).then(function (getResort) {
-        console.log(getResort)
+        // console.log(getResort)
         // Get all activities
         db.Activity.findAll({}).then(function (getActivityList) {
             // Create activity list 
@@ -52,6 +52,8 @@ router.get("/resort/:id", function (req, res) {
                 phone: getResort.phone,
                 resortLat: getResort.lat,
                 resortLon: getResort.lon,
+                policy: getResort.policy,
+                overview: getResort.overview,
                 envToken: process.env.A_TOKEN,
                 activityList: activityList,
                 checkFav: checkFav,
@@ -95,6 +97,9 @@ router.get("/activity/:id", function (req, res) {
             // Create activity object to be rendered
             const activityJson = {
                 name: getActivity.name,
+                about: getActivity.about,
+                guide: getActivity.guide,
+                actImage: getActivity.actImage,
                 resortList: resortList,
                 checkFav: checkFav,
                 user: req.session.user

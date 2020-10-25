@@ -1,27 +1,39 @@
-<div class="row">
-    <div class="col s12 m6 card-panel">
-        <div class="row">
-            <span id="create-account">Create your account</span>
+<main class="container">
+    <div class="row">
+        <div class="col s12 m6 card-panel">
+            <h4>Sign-up </h4>
+            <form action="/user/signup" method="POST">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" name="username" placeholder="Username">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="password" type="password" placeholder="Password">
+                    </div>
+                </div>
+                {{#if error}}
+                <div class="row">
+                    <div class="col s12">
+                        <p class="user-error">{{error.message}}</p>
+                    </div>
+                </div>
+                {{/if}}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button type="submit" class="btn waves-effect waves-light col s12">
+                            Sign up
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <form action="/user/signup" method="POST">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input type="text" name="username" placeholder="Username">
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input name="password" type="password" placeholder="Password">
-                    {{!-- TODO: add password restriction --}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <button type="submit" class="btn waves-effect waves-light col s12">
-                        Sign up
-                    </button>
-                </div>
-            </div>
-        </form>
     </div>
-</div>
+
+    <div class="row">
+        <div class="input-field col s6 m6 l6">
+            <p class="margin medium-small"><a href="/signin">Sign in</a></p>
+        </div>
+    </div>
+</main>

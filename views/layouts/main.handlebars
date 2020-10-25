@@ -38,12 +38,14 @@
         <li><a href="/activity/3">Snow-Boarding</a></li>
         <li><a href="/activity/4">Snow Shoeing</a></li>
         <li><a href="/activity/5">Tubing</a></li>
+     
+
     </ul>
 
     {{!-- Navbar --}}
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">CW</a>
+            <a href="/" class="brand-logo">CW</a>
             <a href="#" data-target="sidenav" class="sidenav-trigger"><i class="material-icons"
                     id="menu-icon">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -68,11 +70,11 @@
     </nav>
 
     {{!-- Slide out navbar when on mobile screen --}}
-    <ul id="slide-out" class="sidenav">
-        <li><a class="waves-effect" href="/">Home</a></li>
-        <li><a class="waves-effect" href="/resort">Play</a></li>
-        <li><a class="waves-effect" href="/activity">Activity</a></li>
-        <li><a class="waves-effect" href="/aboutus">About</a></li>
+    <ul id="slide-out" class="sidenav navText">
+        <li><a class="waves-effect" href="/">home</a></li>
+        <li><a class="waves-effect" href="/resort">play</a></li>
+        <li><a class="waves-effect" href="/activity">activity</a></li>
+        <li><a class="waves-effect" href="/aboutus">about</a></li>
         {{#unless user}}
         <li><a class="waves-effect" href="/signin">Sign in</a></li>
         {{/unless}}

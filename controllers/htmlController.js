@@ -55,14 +55,16 @@ router.get("/resort/:id", function (req, res) {
                 policy: getResort.policy,
                 overview: getResort.overview,
                 envToken: process.env.A_TOKEN,
+                id: getResort.id,
                 activityList: activityList,
                 checkFav: checkFav,
                 user: req.session.user
             }
             res.render("resort", resortObj);
-        }).catch(err => {
-            res.status(500).json(getActivityList)
-        });
+        })
+        // .catch(err => {
+        //     res.status(500).json(getActivityList)
+        // });
     })
     .catch(err => {
         res.status(500).json(getResort)
@@ -100,6 +102,7 @@ router.get("/activity/:id", function (req, res) {
                 about: getActivity.about,
                 guide: getActivity.guide,
                 actImage: getActivity.actImage,
+                id: getActivity.id,
                 resortList: resortList,
                 checkFav: checkFav,
                 user: req.session.user
@@ -126,43 +129,48 @@ router.get("/signup", function (req, res) {
 
 // Route to account page
 router.get("/account", function (req, res) {
-    db.Activity.findOne({
-        where: {
-            id: req.session.user.fav_activity
-        }
-    }).then(function (getActivity) {
-        let activityObj = {
-            name: ""
-        }
-        if((getActivity) && (getActivity !== null)){
-            activityObj = {
-                name: getActivity.name
-            }
-        }
-        db.Resort.findOne({
+    if(req.session.user){
+        db.Activity.findOne({
             where: {
-                id: req.session.user.fav_resort
+                id: req.session.user.fav_activity
             }
-        }).then(function (getResort) {
-            let resortObj = {
-                name: "",
-                url: "",
-                overview: ""
+        }).then(function (getActivity) {
+            let activityObj = {
+                name: ""
             }
-            if((getResort) && (getResort !== null)){
-                resortObj = {
-                    name: getResort.name,
-                    url: getResort.url,
-                    overview: getResort.overview
+            if((getActivity) && (getActivity !== null)){
+                activityObj = {
+                    name: getActivity.name
                 }
             }
-            res.render("account", {activity: activityObj, resort: resortObj, user: req.session.user });
+            db.Resort.findOne({
+                where: {
+                    id: req.session.user.fav_resort
+                }
+            }).then(function (getResort) {
+                let resortObj = {
+                    name: "",
+                    url: "",
+                    overview: ""
+                }
+                if((getResort) && (getResort !== null)){
+                    resortObj = {
+                        name: getResort.name,
+                        url: getResort.url,
+                        overview: getResort.overview
+                    }
+                }
+                res.render("account", {activity: activityObj, resort: resortObj, user: req.session.user });
+            }).catch(err => {
+                res.status(500).json("internal server error")
+            });
         }).catch(err => {
             res.status(500).json("internal server error")
         });
-    }).catch(err => {
-        res.status(500).json("internal server error")
-    });
+    }
+    else{
+        res.render("index");
+    }
 });
 
 // Route to sign out page

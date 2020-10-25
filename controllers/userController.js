@@ -113,9 +113,8 @@ const db = require("../models");
                 }
                 else{
                     db.User.update({
-                        username: req.body.username,
-                        fav_activity: req.body.fav_activity,
-                        fav_resort: req.body.fav_resort
+                        fav_activity: req.body.fav_activity||null,
+                        fav_resort: req.body.fav_resort||null
                     }, {
                         where: {
                             id: req.params.id
@@ -123,9 +122,9 @@ const db = require("../models");
                     }).then( function (editUser) {
                         req.session.user = {
                             id: user.id,
-                            username: req.body.username,
-                            fav_activity: req.body.fav_activity,
-                            fav_resort: req.body.fav_resort
+                            username: user.username,
+                            fav_activity: req.body.fav_activity||null,
+                            fav_resort: req.body.fav_resort||null
                         }
                         res.json(editUser);
                         

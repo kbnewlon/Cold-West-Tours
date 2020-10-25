@@ -38,7 +38,107 @@ $(document).ready(function () {
     // });
     
 });
+function activityFav(icon, id, username, resort, userId){
+    if(icon.textContent === "star"){
+        const userObj = {
+            username : username,
+            fav_activity : null,
+            fav_resort : resort
+        }
+        $.ajax({
+            method : "PUT",
+            url : `/user/${userId}`,
+            data : userObj
+        }).then(function (apiResponse) {
+            console.log(apiResponse[0]);
+            console.log(`removing : ${id}`);
+            icon.textContent = "star_border";
+        });
+    }
+    else{
+        const userObj = {
+            username : username,
+            fav_activity : id,
+            fav_resort : resort
+        }
+        $.ajax({
+            method : "PUT",
+            url : `/user/${userId}`,
+            data : userObj
+        }).then(function (apiResponse) {
+            console.log("hi");
+            console.log(apiResponse[0]);
+            console.log(`adding : ${id}`);
+            icon.textContent = "star";
+        });
+    }
+}
 
+function resortFav(icon, id, username, activity, userId){
+    if(icon.textContent === "star"){
+        const userObj = {
+            username : username,
+            fav_activity : activity,
+            fav_resort : null
+        }
+        $.ajax({
+            method : "PUT",
+            url : `/user/${userId}`,
+            data : userObj
+        }).then(function (apiResponse) {
+            console.log(apiResponse[0]);
+            console.log(`removing : ${id}`);
+            icon.textContent = "star_border";
+        });
+    }
+    else{
+        const userObj = {
+            username : username,
+            fav_activity : activity,
+            fav_resort : id
+        }
+        $.ajax({
+            method : "PUT",
+            url : `/user/${userId}`,
+            data : userObj
+        }).then(function (apiResponse) {
+            console.log("hi");
+            console.log(apiResponse[0]);
+            console.log(`adding : ${id}`);
+            icon.textContent = "star";
+        });
+    }
+}
+
+function delActivity(username, resort, userId){
+    const userObj = {
+        username : username,
+        fav_activity : null,
+        fav_resort : resort
+    }
+    $.ajax({
+        method : "PUT",
+        url : `/user/${userId}`,
+        data : userObj
+    }).then(function (apiResponse) {
+        window.location.reload();
+    });
+}
+
+function delResort(username, activity, userId){
+    const userObj = {
+        username : username,
+        fav_activity : activity,
+        fav_resort : null
+    }
+    $.ajax({
+        method : "PUT",
+        url : `/user/${userId}`,
+        data : userObj
+    }).then(function (apiResponse) {
+        window.location.reload();
+    });
+}
 
 // document.addEventListener('DOMContentLoaded', function() {
 //     var elems = document.querySelectorAll('.dropdown-trigger');

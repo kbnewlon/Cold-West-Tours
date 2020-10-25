@@ -90,3 +90,7 @@ body {
     /* margin-bottom: -2.8rem */
     font-weight: bold;
 } 
+
+.user-error{
+    color: red;
+}

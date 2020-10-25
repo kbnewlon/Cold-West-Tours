@@ -23,7 +23,27 @@ $(document).ready(function () {
         constrain_width: false
     });
 
+
+    // $("#star-icon-filled").on("click", function () {
+    //     $.ajax({
+    //         type: "PUT",
+    //         url: "/activity",
+    //         success: function (result) {
+    //             console.log(result);
+    //         }
+    //     })
+    //     // $("#star-icon-filled").html(`<i id="star-icon-empty" class="material-icons">star_border</i>`);
+    //     // $("#star-icon-filled").html("star_border");
+
+    // });
+    
 });
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     var elems = document.querySelectorAll('.dropdown-trigger');
+//     var instances = M.Dropdown.init(elems, {});
+//   });
 
 
 $('.dropdown-trigger').dropdown({

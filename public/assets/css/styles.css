@@ -12,7 +12,11 @@ html, body {
     width: 100vw;
 }
 
-#map-id, #resort-img { 
+.responsive-img { 
+    width: 100%;
+}
+
+#map-id { 
     height: 30vh;
     width: 100%;
 }
@@ -170,6 +174,3 @@ nav .brand-logo{
     margin-top: 40px;
 } */
 
-/* .responsive-image{
-    margin-top: 40px;
-} */

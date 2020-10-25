@@ -38,6 +38,13 @@ router.get("/resort/:id", function (req, res) {
             getActivityList.forEach(function (activityEl) {
                 activityList.push(activityEl.dataValues);
             })
+
+            let checkFav = false;
+            // If user is signed in and current resort matches user favorite resort
+            if (req.session.user && req.params.id === req.session.user.fav_resort) {
+                    checkFav = true; 
+            }
+
             // Create resort object to be rendered
             const resortObj = {
                 name: getResort.name,
@@ -47,6 +54,7 @@ router.get("/resort/:id", function (req, res) {
                 resortLon: getResort.lon,
                 envToken: process.env.A_TOKEN,
                 activityList: activityList,
+                checkFav: checkFav,
                 user: req.session.user
             }
             res.render("resort", resortObj);
@@ -77,16 +85,25 @@ router.get("/activity/:id", function (req, res) {
             getResortList.forEach(function (resortEl) {
                 resortList.push(resortEl.dataValues);
             });
+            
+            let checkFav = false;
+            // If user is signed in and current activity matches user favorite activity
+            if (req.session.user && req.params.id === req.session.user.fav_activity) {
+                    checkFav = true; 
+            }
+
             // Create activity object to be rendered
             const activityJson = {
                 name: getActivity.name,
                 resortList: resortList,
+                checkFav: checkFav,
                 user: req.session.user
             }
             res.render("activity", activityJson);
-        }).catch(err => {
-            res.status(500).json(getResortList);
-        });
+        })
+        // .catch(err => {
+        //     res.status(500).json(getResortList);
+        // });
     }).catch(err => {
         res.status(500).json(getActivity)
     });

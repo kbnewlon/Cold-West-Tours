@@ -25,7 +25,11 @@ body {
 }
 nav ul li a{
     color: #36507A;
-  }
+}
+
+nav .brand-logo{
+    color: #36507A;
+}
 
 .overlayBackground {
     background-color: #36507A;
@@ -95,8 +99,8 @@ nav ul li a{
     font-weight: bold;
 } 
 
-.overlayBackgound{
-
+.user-error{
+    color: red;
 }
 
 .overlayText{

@@ -19,21 +19,19 @@ $(document).ready(function () {
         instance.close();
     });
 
+    $('.collapsible').collapsible({
+        constrain_width: false
+    });
+
 });
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     var elems = document.querySelectorAll('.dropdown-trigger');
-//     var instances = M.Dropdown.init(elems, {});
-//   });
-
-// Dropdown menu addEventListener with jquery
-//   $('.dropdown-trigger').dropdown();
 
 $('.dropdown-trigger').dropdown({
     inDuration: 300,
     outDuration: 225,
     constrain_width: false, // Does not change width of dropdown to that of the activator
     hover: true, // Activate on hover
+    constrainWidth: false, //changed width of dropdown due to content size 
     gutter: 0, // Spacing from edge
     belowOrigin: false, // Displays dropdown below the button
     alignment: 'left' // Displays dropdown with edge aligned to the left of button

@@ -33,7 +33,6 @@ const db = require("../models");
             //res.json(newUser);
             res.redirect("/account");
         }).catch(err => {
-            //console.log(err.errors[0].message);
             if(err.errors[0].message === "users.username must be unique"){
                 //res.status(422).json("that username already exists");
                 res.status(422);
@@ -66,12 +65,9 @@ const db = require("../models");
     });
 
     router.post(`/login`, function(req, res) {
-        // console.log("here");
-        console.log(req.body.username, req.body.password);
         db.User.findOne({
             where: {username: req.body.username}
         }).then(function(user){
-            console.log(user.password);
             if(!user){
                 req.session.destroy();
                 //res.status(401).send("incorrect username or password");

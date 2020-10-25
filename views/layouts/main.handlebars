@@ -14,37 +14,62 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
-
 </head>
 
-
 <body>
+    {{!-- Drop down for resorts --}}
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/resort/1">Mt. Baker Ski</a></li>
+        <li><a href="/resort/2">The Summit at Snoqualmie</a></li>
+        <li><a href="/resort/3">Crystal Mountain Resort</a></li>
+        <li><a href="/resort/4">Stevens Pass Resort</a></li>
+        <li><a href="/resort/5">49 Degrees North Mountain Ski & Snowboard Resort</a></li>
+        <li><a href="/resort/6">White Pass Ski Area</a></li>
+        <li><a href="/resort/7">Mission Ridge Ski & Board Resort</a></li>
+        <li><a href="/resort/8">Mt. Spokane Ski and Snowboard</a></li>
+        <li><a href="/resort/9">Alpental Ski Resort</a></li>
+        <li><a href="/resort/10">Ski Bluewood</a></li>
+    </ul>
 
+    {{!-- Drop down for activities --}}
+    <ul id="dropdown2" class="dropdown-content">
+        <li><a href="/activity/1">Skiing</a></li>
+        <li><a href="/activity/2">Cross-Country Skiing</a></li>
+        <li><a href="/activity/3">Snow-Boarding</a></li>
+        <li><a href="/activity/4">Snow Shoeing</a></li>
+        <li><a href="/activity/5">Tubing</a></li>
+     
+
+    </ul>
+
+    {{!-- Navbar --}}
     <nav>
- 
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">CW</a>
             <a href="#" data-target="sidenav" class="sidenav-trigger"><i class="material-icons"
                     id="menu-icon">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down navText">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/">home</a></li>
-                <li><a href="/resort">play</a></li>
-                <li><a href="/activity">activity</a></li>
+                <li><a class="dropdown-trigger" href="/resort" data-target="dropdown1">play<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-trigger" href="/activity" data-target="dropdown2">activity<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a href="/aboutus">about</a></li>
                 {{!-- Unless user is signed in, the sign in tab will always show up --}}
                 {{#unless user}}
-                <li><a href="/signin">Sign in</a></li>
+                <li><a href="/signin">sign in</a></li>
                 {{/unless}}
 
                 {{!-- If user is signed in, the account and sing out tab will show up --}}
                 {{#if user}}
                 <li><a href="/account">Account</a></li>
-                <li><a href="/singout">Sign out</a></li>
+                <li><a href="/user/logout">Sign out</a></li>
                 {{/if}}
             </ul>
         </div>
     </nav>
 
+    {{!-- Slide out navbar when on mobile screen --}}
     <ul id="slide-out" class="sidenav navText">
         <li><a class="waves-effect" href="/">home</a></li>
         <li><a class="waves-effect" href="/resort">play</a></li>
@@ -55,15 +80,11 @@
         {{/unless}}
         {{#if user}}
         <li><a class="waves-effect" href="/account">Account</a></li>
-        <li><a class="waves-effect" href="/signout">Sign out</a></li>
+        <li><a class="waves-effect" href="/user/logout">Sign out</a></li>
         {{/if}}
     </ul>
 
- 
-  
-    {{!-- <div class="container"> --}}
     {{{ body }}}
-    {{!-- </div> --}}
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

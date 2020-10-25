@@ -5,7 +5,7 @@
         <div class="row section">
             {{!-- Resort Pic --}}
             <div class="col">
-                <img src="http://placehold.it/300x200" srcset="http://placehold.it/300x200 300w" sizes="100vw"
+                <img id="resort-img" src="http://placehold.it/300x200" srcset="http://placehold.it/300x200 300w"
                     alt="Placeholder" />
             </div>
             {{!-- Add carousel --}}
@@ -43,10 +43,10 @@
         <div class="divider"></div>
 
         <div class="row section">
-            <div class="col">
+            <div class="col s12">
                 <h2>Location</h2>
                 {{!-- Map by leaflet --}}
-                <aside id="mapId"></aside>
+                <aside id="map-id"></aside>
                 {{!-- <aside id="mapId" style="width: 600px; height: 400px;"></aside> --}}
                 <p>Address: {{address}}</p>
                 <span>Phone Number: {{phone}}</span>

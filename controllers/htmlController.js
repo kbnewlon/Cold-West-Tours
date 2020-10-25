@@ -82,6 +82,9 @@ router.get("/activity/:id", function (req, res) {
             // Create activity object to be rendered
             const activityJson = {
                 name: getActivity.name,
+                about: getActivity.about,
+                guide: getActivity.guide,
+                actImage: getActivity.actImage,
                 resortList: resortList,
                 user: req.session.user
             }

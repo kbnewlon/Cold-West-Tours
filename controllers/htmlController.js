@@ -2,10 +2,12 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
+// Route to homepage
 router.get("/", function (req, res) {
     res.render("index", {user: req.session.user});
 });
 
+// Test page for resort
 router.get("/resort", function (req, res) {
     //let newString = process.env.A_TOKEN;
     //console.log(typeof newString);
@@ -23,12 +25,12 @@ router.get("/resort", function (req, res) {
 
 // Route to get resort by id 
 router.get("/resort/:id", function (req, res) {
-
     db.Resort.findOne({
         where: {
             id: req.params.id
         }
     }).then(function (getResort) {
+        // console.log(getResort)
         // Get all activities
         db.Activity.findAll({}).then(function (getActivityList) {
             // Create activity list 
@@ -43,6 +45,8 @@ router.get("/resort/:id", function (req, res) {
                 phone: getResort.phone,
                 resortLat: getResort.lat,
                 resortLon: getResort.lon,
+                policy: getResort.policy,
+                overview: getResort.overview,
                 envToken: process.env.A_TOKEN,
                 activityList: activityList,
                 user: req.session.user
@@ -51,14 +55,13 @@ router.get("/resort/:id", function (req, res) {
         }).catch(err => {
             res.status(500).json(getActivityList)
         });
-    }).catch(err => {
+    })
+    .catch(err => {
         res.status(500).json(getResort)
     });
 });
 
 router.get("/activity", function (req, res) {
-    //let newString = process.env.A_TOKEN;
-    //console.log(typeof newString);
     res.render("activity", { user: req.session.user });
 });
 
@@ -79,6 +82,9 @@ router.get("/activity/:id", function (req, res) {
             // Create activity object to be rendered
             const activityJson = {
                 name: getActivity.name,
+                about: getActivity.about,
+                guide: getActivity.guide,
+                actImage: getActivity.actImage,
                 resortList: resortList,
                 user: req.session.user
             }
@@ -86,18 +92,17 @@ router.get("/activity/:id", function (req, res) {
         }).catch(err => {
             res.status(500).json(getResortList);
         });
-        // console.log(activityJson);
     }).catch(err => {
         res.status(500).json(getActivity)
     });
 });
 
-// Route to sign in
+// Route to sign in page
 router.get("/signin", function (req, res) {
     res.render("signIn", {user: req.session.user});
 });
 
-// Route to sign up
+// Route to sign up page
 router.get("/signup", function (req, res) {
     res.render("signUp", {user: req.session.user});
 });
@@ -136,42 +141,24 @@ router.get("/account", function (req, res) {
             }
             res.render("account", {activity: activityObj, resort: resortObj, user: req.session.user });
         }).catch(err => {
-            console.log(err);
             res.status(500).json("internal server error")
         });
     }).catch(err => {
-        console.log(err);
         res.status(500).json("internal server error")
     });
 });
 
-// Route to signout
+// Route to sign out page
 router.get("/signout", function (req, res) {
     res.render("signOut", {user: req.session.user});
 });
 
-
-// router.get("/resort-activity/:id", function (req, res) {
-//     db.Resort_Activity.findOne({
-//         where: {
-//             id: req.params.id
-//         }
-//     }).then(function (getActivityList) {
-//         // const activityJson = {
-//         //     name: getActivity.name
-//         // }
-//         // res.render("activity", activityJson);
-//         // res.render(getActivityList);
-//         console.log(getActivityList);
-//     }).catch(err => {
-//         res.status(500).json(getActivityList)
-//     });
-// });
-
+// Route to about us page
 router.get("/aboutus", function (req, res) {
     res.render("aboutUs", { user: req.session.user });
 });
 
+// Route to homepage if url not found above
 router.get("*", function (req, res) {
     res.render("index", {user: req.session.user});
 });

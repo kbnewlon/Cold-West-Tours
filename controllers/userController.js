@@ -66,9 +66,12 @@ const db = require("../models");
     });
 
     router.post(`/login`, function(req, res) {
+        // console.log("here");
+        console.log(req.body.username, req.body.password);
         db.User.findOne({
             where: {username: req.body.username}
         }).then(function(user){
+            console.log(user.password);
             if(!user){
                 req.session.destroy();
                 //res.status(401).send("incorrect username or password");
@@ -83,6 +86,7 @@ const db = require("../models");
                     fav_resort: user.fav_resort
                 }
                 //return res.status(200).json(req.session);
+                console.log("redirect wrong");
                 return res.redirect("/account");
             }
             else{

@@ -110,6 +110,36 @@ function resortFav(icon, id, username, activity, userId){
     }
 }
 
+function delActivity(username, resort, userId){
+    const userObj = {
+        username : username,
+        fav_activity : null,
+        fav_resort : resort
+    }
+    $.ajax({
+        method : "PUT",
+        url : `/user/${userId}`,
+        data : userObj
+    }).then(function (apiResponse) {
+        window.location.reload();
+    });
+}
+
+function delResort(username, activity, userId){
+    const userObj = {
+        username : username,
+        fav_activity : activity,
+        fav_resort : null
+    }
+    $.ajax({
+        method : "PUT",
+        url : `/user/${userId}`,
+        data : userObj
+    }).then(function (apiResponse) {
+        window.location.reload();
+    });
+}
+
 // document.addEventListener('DOMContentLoaded', function() {
 //     var elems = document.querySelectorAll('.dropdown-trigger');
 //     var instances = M.Dropdown.init(elems, {});

@@ -11,17 +11,28 @@
         <div class="col s12 m6">
             <div class="card">
                 <div class="card-image">
+                    {{#if user.fav_resort}}
                     <!-- <img src={{resort.img}}> -->
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                            class="material-icons">delete</i></a>
+                        <a class="btn-floating halfway-fab waves-effect waves-light red">
+                            <i onclick="delResort('{{user.username}}', '{{user.fav_activity}}', {{user.id}})"class="material-icons">delete</i>
+                        </a>
+                    {{/if}}
                 </div>
                 <div class="card-content">
-                    <span class="card-title">{{resort.name}}</span>
-                    <p>{{resort.overview}}</p>
+                    {{#if user.fav_resort}}
+                        <span class="card-title">{{resort.name}}</span>
+                        <p>{{resort.overview}}</p>
+                    {{/if}}
+                    {{#unless user.fav_resort}}
+                        <span class="card-title">No favorite resort</span>
+                    {{/unless}}
                 </div>
-                <div class="card-action">
-                    <a href={{resort.url}}>Resort Website</a>
-                </div>
+                {{#if user.fav_resort}}
+                    <div class="card-action">
+                        <a href="/resort/{{user.fav_resort}}">Resort Page</a>
+                        <a href={{resort.url}} target="_blank">Resort Website</a>
+                    </div>
+                {{/if}}
             </div>
         </div>
 
@@ -29,36 +40,30 @@
         <div class="col s12 m6">
             <div class="card">
                 <div class="card-image">
+                    {{#if user.fav_activity}}
                     <!-- <img src={{activity.img}}> -->
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                            class="material-icons">delete</i></a>
+                        <a class="btn-floating halfway-fab waves-effect waves-light red">
+                            <i onclick="delActivity('{{user.username}}', '{{user.fav_resort}}', {{user.id}})"class="material-icons">delete</i>
+                        </a>
+                    {{/if}}
                 </div>
                 <div class="card-content">
-                    <span class="card-title">{{activity.name}}</span>
-                    <p>{{activity.name}}</p>
+                    {{#if user.fav_activity}}
+                        <span class="card-title">{{activity.name}}</span>
+                        <p>{{activity.name}}</p>
+                    {{/if}}
+                    {{#unless user.fav_activity}}
+                        <span class="card-title">No favorite activity</span>
+                    {{/unless}}
                 </div>
+                {{#if user.fav_activity}}
+                    <div class="card-action">
+                        <a href="/activity/{{user.fav_activity}}">Activity Page</a>
+                    </div>
+                {{/if}}
             </div>
         </div>
 
     </section>
-
-    {{!-- Past favorites --}}
-    {{!-- <section class="row">
-        <h3>Past favorites</h3>
-    </section>
-
-    <section class="row">
-        <div class="col s12 m6">
-            <h4>Resort</h4>
-            {{#each pastFavResort}}
-            {{> pastFavs/pastFavResort-block}}
-            {{/each}}
-        </div>
-        <div class="col s12 m6">
-            <h4>Activity</h4>
-            {{#each pastFavActivity}}
-            {{> pastFavs/pastFavActivity-block}}
-            {{/each}}
-        </div>
-    </section> --}}
+    
 </main>

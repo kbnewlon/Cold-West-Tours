@@ -12,10 +12,12 @@ html, body {
     width: 100vw;
 }
 
+/* Images in resort and activity page */
 .responsive-img { 
     width: 100%;
 }
 
+/* Map in resort page */
 #map-id { 
     height: 30vh;
     width: 100%;

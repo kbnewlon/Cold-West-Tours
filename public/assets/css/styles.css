@@ -23,7 +23,13 @@ html, body {
     width: 100%;
 }
 
-/* .delete-btn {
+/* .card {
+    position: relative;
+    z-index: 1;
+}
+
+.delete-btn {
+    position: relative;
     z-index: 2;
 } */
 

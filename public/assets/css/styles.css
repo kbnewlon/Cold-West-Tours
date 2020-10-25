@@ -1,6 +1,10 @@
 #mapId { 
     height: 180px; 
 }
+@font-face{
+    font-family: Rockwell;
+    src: url(Rockwell-Font/rockb.ttf)
+}
 
 body {
     background-color: white;
@@ -8,7 +12,7 @@ body {
 
 #indexTitle {
     color: #D4DFEA;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Kameron', serif;
     font-size:138px;
     margin: none;
     text-align: center;
@@ -18,7 +22,7 @@ body {
 /*  #36507A*/
 .nav-wrapper { 
   
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Kameron', serif;
     font-weight: bold;
   
     background-color: #D4DFEA;
@@ -63,20 +67,20 @@ nav .brand-logo{
 
 .overlayText {
     color:#D4DFEA;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Kameron', serif;
     font-size: 75px;
 
 }
 
 .overlaySmText {
     color: #BFCFDF;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Kameron', serif;
     font-size: 35px;
 } 
 
 #tagLine{
     color: #36507A;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Kameron', serif;
     font-size: 63px;
     margin: none;
     text-align: center;
@@ -155,3 +159,11 @@ nav .brand-logo{
    border-top-color: #a4d5ed;
    background: #a4d5ed;
    }
+
+.activityBackground {
+   margin-top: 40px;
+}
+   
+.responsive-image{
+   margin-top: 40px;
+}

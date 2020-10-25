@@ -23,6 +23,10 @@ html, body {
     width: 100%;
 }
 
+/* .delete-btn {
+    z-index: 2;
+} */
+
 #indexTitle {
     color: #D4DFEA;
     font-family: 'Kameron', serif;

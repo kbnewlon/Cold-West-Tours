@@ -9,26 +9,29 @@
 
         {{!-- Favorite resort --}}
         <div class="col s12 m6">
-            <div class="card">
+            <div class="card medium sticky-action">
                 <div class="card-image">
                     {{#if user.fav_resort}}
                     <!-- <img src={{resort.img}}> -->
-                    <img class="responsive-img" src="http://placehold.it/300x200"
+                    <img class="responsive-img activator" src="http://placehold.it/300x200"
                         srcset="http://placehold.it/300x200 300w" alt="Placeholder" />
                     <a class="btn-floating halfway-fab waves-effect waves-light red">
                         <i onclick="delResort('{{user.username}}', '{{user.fav_activity}}', {{user.id}})"
-                            class="material-icons">delete</i>
+                            class="material-icons delete-btn">delete</i>
                     </a>
                     {{/if}}
                 </div>
                 <div class="card-content">
                     {{#if user.fav_resort}}
-                    <span class="card-title">{{resort.name}}</span>
-                    <p>{{resort.overview}}</p>
+                    <span class="card-title activator">{{resort.name}}</span>
                     {{/if}}
                     {{#unless user.fav_resort}}
                     <span class="card-title">No favorite resort</span>
                     {{/unless}}
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title">{{resort.name}}<i class="material-icons right">close</i></span>
+                    <p>{{resort.overview}}</p>
                 </div>
                 {{#if user.fav_resort}}
                 <div class="card-action">
@@ -41,27 +44,32 @@
 
         {{!-- Favorite activity --}}
         <div class="col s12 m6">
-            <div class="card">
+            <div class="card medium">
                 <div class="card-image">
                     {{#if user.fav_activity}}
                     <!-- <img src={{activity.img}}> -->
-                    <img class="responsive-img" src="http://placehold.it/300x200"
+                    <img class="responsive-img activator" src="http://placehold.it/300x200"
                         srcset="http://placehold.it/300x200 300w" alt="Placeholder" />
                     <a class="btn-floating halfway-fab waves-effect waves-light red">
                         <i onclick="delActivity('{{user.username}}', '{{user.fav_resort}}', {{user.id}})"
-                            class="material-icons">delete</i>
+                            class="material-icons delete-btn">delete</i>
                     </a>
                     {{/if}}
                 </div>
                 <div class="card-content">
                     {{#if user.fav_activity}}
-                    <span class="card-title">{{activity.name}}</span>
-                    <p>{{activity.about}}</p>
+                    <span class="card-title activator">{{activity.name}}</span>
                     {{/if}}
                     {{#unless user.fav_activity}}
                     <span class="card-title">No favorite activity</span>
                     {{/unless}}
                 </div>
+
+                <div class="card-reveal">
+                    <span class="card-title">{{activity.name}}<i class="material-icons right">close</i></span>
+                    <p>{{activity.about}}</p>
+                </div>
+
                 {{#if user.fav_activity}}
                 <div class="card-action">
                     <a href="/activity/{{user.fav_activity}}">Activity Page</a>

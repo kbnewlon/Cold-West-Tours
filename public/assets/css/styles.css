@@ -14,7 +14,7 @@ html, body {
 
 /* Images in resort and activity page */
 .responsive-img { 
-    width: 100%;
+    width: 100vw;
 }
 
 /* Map in resort page */

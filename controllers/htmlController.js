@@ -55,14 +55,16 @@ router.get("/resort/:id", function (req, res) {
                 policy: getResort.policy,
                 overview: getResort.overview,
                 envToken: process.env.A_TOKEN,
+                id: getResort.id,
                 activityList: activityList,
                 checkFav: checkFav,
                 user: req.session.user
             }
             res.render("resort", resortObj);
-        }).catch(err => {
-            res.status(500).json(getActivityList)
-        });
+        })
+        // .catch(err => {
+        //     res.status(500).json(getActivityList)
+        // });
     })
     .catch(err => {
         res.status(500).json(getResort)
@@ -100,6 +102,7 @@ router.get("/activity/:id", function (req, res) {
                 about: getActivity.about,
                 guide: getActivity.guide,
                 actImage: getActivity.actImage,
+                id: getActivity.id,
                 resortList: resortList,
                 checkFav: checkFav,
                 user: req.session.user

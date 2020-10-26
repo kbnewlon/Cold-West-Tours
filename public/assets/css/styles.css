@@ -21,6 +21,7 @@ body {
 .carousel {
     width: 100%;
     height: 50vh;
+    margin-bottom: -10%;
 }
 
 /* Map in resort page */
@@ -176,3 +177,26 @@ nav .brand-logo {
   background: #a4d5ed;
   color: #ffffff;
 }
+
+.carousel-pics {
+    width: 100vw; 
+    height: 35vh;
+    object-fit: cover;
+}
+
+.prev {
+    position: absolute;
+    left: 45%;
+    margin-top: 0%;
+    
+}
+
+.next {
+    position: absolute;
+    right: 45%;
+}
+
+/* .activityBackground {
+    margin-top: 40px;
+} */
+

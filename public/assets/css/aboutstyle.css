@@ -1,0 +1,22 @@
+.about-background {
+  background: url("https://res.cloudinary.com/dpnjzg0ar/image/upload/v1603680229/about_two_pyfa1j.png")
+    no-repeat center center fixed;
+  background-size: cover;
+
+  height: 100vh;
+  width: 100vw;
+  margin: none;
+}
+
+.row {
+  margin-left: 15rem;
+}
+.our-names {
+  font-size: 35px;
+  font-family: "Kameron", serif;
+  color: white;
+}
+
+.about-text {
+  color: white;
+}

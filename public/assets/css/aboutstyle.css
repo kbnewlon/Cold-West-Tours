@@ -11,6 +11,7 @@
 .row {
   margin-left: 15%;
 }
+
 .our-names {
   font-size: 35px;
   font-family: "Kameron", serif;
@@ -27,4 +28,4 @@
   .about-text {
     font-size: 10px;
   }
- 
+}

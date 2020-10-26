@@ -28,6 +28,8 @@ $(document).ready(function () {
     // });
 
     $('.carousel').slick({
+        nextArrow: '.next',
+        prevArrow: '.prev',
         centerMode: true,
         centerPadding: '60px',
         slidesToShow: 3,

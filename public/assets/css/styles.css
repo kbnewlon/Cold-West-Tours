@@ -1,6 +1,3 @@
-#mapId { 
-    height: 180px; 
-}
 @font-face{
     font-family: Rockwell;
     src: url(Rockwell-Font/rockb.ttf)
@@ -9,6 +6,32 @@
 body {
     background-color: white;
 }
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Images in resort and activity page */
+.responsive-img { 
+    width: 100vw;
+}
+
+/* Map in resort page */
+#map-id { 
+    height: 30vh;
+    width: 100%;
+}
+
+/* .card {
+    position: relative;
+    z-index: 1;
+}
+
+.delete-btn {
+    position: relative;
+    z-index: 2;
+} */
 
 #indexTitle {
     color: #D4DFEA;
@@ -21,12 +44,11 @@ body {
 }
 /*  #36507A*/
 .nav-wrapper { 
-  
     font-family: 'Kameron', serif;
     font-weight: bold;
-  
     background-color: #D4DFEA;
 }
+
 nav ul li a{
     color: #36507A;
 }
@@ -39,7 +61,7 @@ nav .brand-logo{
     background-color: #36507A;
 }
 
-.coverImg{
+.coverImg{ 
     background: url("https://res.cloudinary.com/dpnjzg0ar/image/upload/v1603303328/TD1uDeJc_xp3ogk.jpg") no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
@@ -56,14 +78,14 @@ nav .brand-logo{
 .overlayBackground {
     background-color: #36507A;
 }
-
-.resortBackground {
+/* Commented */
+/* .resortBackground {
     background-size: cover;
     height: 100%;
     width: 100%;
     margin: none;
     background-color:#D4DFEA;
-}
+} */
 
 .overlayText {
     color:#D4DFEA;
@@ -114,8 +136,6 @@ nav .brand-logo{
     width: 100vw;
     /* margin-left: -10rem;
     margin-right: 10rem; */
-    
-
 }
 
 .overlaySmText{
@@ -127,43 +147,42 @@ nav .brand-logo{
 
 
 .button {
-   border-top: 1px solid #36507a;
-   background: #36507a;
-   background: -webkit-gradient(linear, left top, left bottom, from(#36507a), to(#36507a));
-   background: -webkit-linear-gradient(top, #36507a, #36507a);
-   background: -moz-linear-gradient(top, #36507a, #36507a);
-   background: -ms-linear-gradient(top, #36507a, #36507a);
-   background: -o-linear-gradient(top, #36507a, #36507a);
-   padding: 20px 40px;
-   -webkit-border-radius: 0px;
-   -moz-border-radius: 0px;
-   border-radius: 0px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 3px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 3px 0;
-   box-shadow: rgba(0,0,0,1) 0 0px 0;
-   text-shadow: rgba(0,0,0,.4) 0 3px 0;
-   color: #d4dfea;
-   font-size: 16px;
-   font-family: Georgia, Serif;
-   text-decoration: none;
-   vertical-align: middle;
-   margin-top: 0;
-   cursor: pointer;
-   }
-.button:hover {
-   border-top-color: #3b79b6;
-   background: #3b79b6;
-   color: #36507a;
-   }
-.button:active {
-   border-top-color: #a4d5ed;
-   background: #a4d5ed;
-   }
+    border-top: 1px solid #36507a;
+    background: #36507a;
+    background: -webkit-gradient(linear, left top, left bottom, from(#36507a), to(#36507a));
+    background: -webkit-linear-gradient(top, #36507a, #36507a);
+    background: -moz-linear-gradient(top, #36507a, #36507a);
+    background: -ms-linear-gradient(top, #36507a, #36507a);
+    background: -o-linear-gradient(top, #36507a, #36507a);
+    padding: 20px 40px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 3px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 3px 0;
+    box-shadow: rgba(0,0,0,1) 0 0px 0;
+    text-shadow: rgba(0,0,0,.4) 0 3px 0;
+    color: #d4dfea;
+    font-size: 16px;
+    font-family: Georgia, Serif;
+    text-decoration: none;
+    vertical-align: middle;
+    margin-top: 0;
+    cursor: pointer;
+}
 
-.activityBackground {
-   margin-top: 40px;
+.button:hover {
+    border-top-color: #3b79b6;
+    background: #3b79b6;
+    color: #36507a;
 }
-   
-.responsive-image{
-   margin-top: 40px;
+
+.button:active {
+    border-top-color: #a4d5ed;
+    background: #a4d5ed;
 }
+
+/* .activityBackground {
+    margin-top: 40px;
+} */
+

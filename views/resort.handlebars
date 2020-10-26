@@ -1,63 +1,85 @@
-<div class="resortBackground">
+{{!-- <div class="resortBackground"> --}}
 
-    <div class="container">
+<main class="container">
 
-        <section class="row">
-            {{!-- Resort Pic --}}
-            <div class="col s12 m6">
-                <div class="row">
-                    <img src="https://via.placeholder.com/500" alt="placeholder image">
-                </div>
-                {{!-- Add carousel --}}
-                {{!-- <div class="row">
-        </div> --}}
-            </div>
+    {{!-- Resort Pic --}}
+    <section class="row section">
+        <div class="col">
+            <img class="responsive-img" src="http://placehold.it/300x200" srcset="http://placehold.it/300x200 300w"
+                alt="Placeholder" />
+        </div>
+        {{!-- Add carousel --}}
+    </section>
 
-            <div class="col s12 m6">
-                {{#if user}}
+    {{!-- Title --}}
+    <section class="row section">
+        <div class="col">
+            {{#if user}}
 
-                {{!-- If it matches user favorite, display filled star --}}
-                {{#if checkFav}}
-                <h1>{{name}}</h1>
-                <i onclick="resortFav(this, {{id}}, '{{user.username}}', '{{user.fav_activity}}', {{user.id}})" class="material-icons">star</i>
-                {{!-- If not, display empty star --}}
-                {{else}}
-                <h1>{{name}}</h1>
-                <i onclick="resortFav(this, {{id}}, '{{user.username}}', '{{user.fav_activity}}', {{user.id}})" class="material-icons">star_border</i>
-                {{/if}}
+            {{!-- If it matches user favorite, display filled star --}}
+            {{#if checkFav}}
+            <h1>{{name}}</h1>
+            <i onclick="resortFav(this, {{id}}, '{{user.username}}', '{{user.fav_activity}}', {{user.id}})"
+                class="material-icons">star</i>
+            {{!-- If not, display empty star --}}
+            {{else}}
+            <h1>{{name}}</h1>
+            <i onclick="resortFav(this, {{id}}, '{{user.username}}', '{{user.fav_activity}}', {{user.id}})"
+                class="material-icons">star_border</i>
+            {{/if}}
 
-                {{!-- User who is not logged in will not see stars --}}
-                {{else}}
-                <h1>{{name}}</h1>
-                {{/if}}
-                
-                <h2>Overview</h2>
-                <p>{{overview}}</p>
-                <h2>Location</h2>
-                {{!-- Map by leaflet --}}
-                <aside id="mapId" style="width: 600px; height: 400px;"></aside>
-                <p>Address: {{address}}</p>
-                <span>Phone Number: {{phone}}</span>
-                <h2>Policies</h2>
-                <p>{{policy}}</p>
+            {{!-- User who is not logged in will not see stars --}}
+            {{else}}
+            <h1>{{name}}</h1>
+            {{/if}}
+        </div>
+    </section>
 
-                <div class="divider"></div>
+    {{!-- Overview --}}
+    <section class="row section">
+        <div class="col">
+            <h2>Overview</h2>
+            <p>{{overview}}</p>
+        </div>
+    </section>
+    <div class="divider"></div>
 
-            </div>
-        </section>
-        <section class="row">
-            <div class="col">
-                <h2>Activities</h2>
-                <ul>
-                    {{#each activityList}}
-                    <li><a href="/activity/{{id}}">{{name}}</a></li>
-                    {{/each}}
-                </ul>
-            </div>
-        </section>
+    {{!-- Location --}}
+    <section class="row section">
+        <div class="col">
+            <h2>Location</h2>
+            {{!-- Map by leaflet --}}
+            <aside id="map-id"></aside>
+            {{!-- <aside id="mapId" style="width: 600px; height: 400px;"></aside> --}}
+            <p>Address: {{address}}</p>
+            <span>Phone Number: {{phone}}</span>
+        </div>
+    </section>
+    <div class="divider"></div>
 
-        {{> map/map-block}}
+    {{!-- Policies --}}
+    <section class="row section">
+        <div class="col">
+            <h2>Policy</h2>
+            <p>{{policy}}</p>
+        </div>
+    </section>
+    <div class="divider"></div>
 
-    </div>
+    {{!-- List of Activity --}}
+    <section class="row section">
+        <div class="col">
+            <h2>Activity</h2>
+            <ul>
+                {{#each activityList}}
+                <li><a href="/activity/{{id}}">{{name}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
 
-</div>
+    {{!-- Map script file --}}
+    {{> map/map-block}}
+</main>
+
+{{!-- </div> --}}

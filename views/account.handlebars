@@ -1,10 +1,13 @@
 <main class="container">
+
     <header class="row">
         <span class="sub-title">Welcome back, {{user.username}}!</span>
     </header>
+
     <section class="row">
         <span class="text">See your favorites here.</span>
     </section>
+    
     <section class="row">
 
         {{!-- Favorite resort --}}
@@ -68,7 +71,7 @@
 
                 {{#if user.fav_activity}}
                 <div class="card-action">
-                    <a class="card-link" href="/activity/{{user.fav_activity}}">Activity Page</a>
+                    <a href="/activity/{{user.fav_activity}}">Activity Page</a>
                 </div>
                 {{/if}}
             </div>

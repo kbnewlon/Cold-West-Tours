@@ -25,12 +25,11 @@
             {{/if}}
         </div>
     </section>
-    
+
     {{!-- Resort Pic --}}
     <section class="row section">
         <div class="col">
-            <img class="responsive-img" src={{pic1}} 
-                alt="Placeholder" />
+            <img class="responsive-img" src={{pic1}} alt="Placeholder" />
         </div>
         {{!-- Add carousel --}}
         <div class="carousel">
@@ -45,45 +44,50 @@
     {{!-- Overview --}}
     <section class="row section">
         <div class="col">
-            <span class="sub-title">Overview</span>
-            <p class="text">{{overview}}</p>
+            <div class="card-panel">
+                <span class="sub-title">Overview</span>
+                <p class="text">{{overview}}</p>
+            </div>
         </div>
     </section>
-    <div class="divider"></div>
 
     {{!-- Location --}}
     <section class="row section">
         <div class="col s12">
-            <span class="sub-title">Location</span>
+            <div class="card-panel">
+                <span class="sub-title">Location</span>
 
-            {{!-- Map by leaflet --}}
-            <aside id="map-id"></aside>
-            <span class="text">Address: {{address}}</span>
-            <br>
-            <span class="text">Phone Number: {{phone}}</span>
+                {{!-- Map by leaflet --}}
+                <aside id="map-id"></aside>
+                <span class="text">Address: {{address}}</span>
+                <br>
+                <span class="text">Phone Number: {{phone}}</span>
+            </div>
         </div>
     </section>
-    <div class="divider"></div>
 
     {{!-- Policies --}}
     <section class="row section">
         <div class="col">
-            <span class="sub-title">Policy</span>
-            <p class="text">{{policy}}</p>
+            <div class="card-panel">
+                <span class="sub-title">Policy</span>
+                <p class="text">{{policy}}</p>
+            </div>
         </div>
     </section>
-    <div class="divider"></div>
 
     {{!-- List of Activity --}}
     <section class="row section">
-        <div class="col">
-            <span class="sub-title">Activity</span>
-            <ul>
-                {{#each activityList}}
-                <li class="text"><a class="list" href="/activity/{{id}}"><i
-                            class="material-icons chevron-icon">chevron_right</i>{{name}}</a></li>
-                {{/each}}
-            </ul>
+        <div class="col s12">
+            <div class="card-panel">
+                <span class="sub-title">Activity</span>
+                <ul>
+                    {{#each activityList}}
+                    <li class="text"><a class="list" href="/activity/{{id}}"><i
+                                class="material-icons chevron-icon">chevron_right</i>{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
         </div>
     </section>
 

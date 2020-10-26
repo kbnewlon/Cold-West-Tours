@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: #F5F5F5;
     font-family: 'Roboto Slab', serif;
     color: #848484;
 }
@@ -17,6 +17,13 @@ html, body {
 /* Section class from Materialize */
 .section {
     margin-bottom: 0;
+}
+
+.card-panel {
+    width: 100%;
+    margin-top: 1vmax;
+    margin-bottom: 0;
+    padding: 3vw;
 }
 
 /* Images in resort and activity page */
@@ -74,7 +81,6 @@ html, body {
 .card {
     height: 55vh;
     margin-top: 2vmax;
-    /* z-index: 1; */
 }
 
 .signin-title {
@@ -142,9 +148,6 @@ html, body {
     background-color: #848484;
 }
 
-/* .card-link {
-    color: #36507A;
-} */
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: #36507A;
 }

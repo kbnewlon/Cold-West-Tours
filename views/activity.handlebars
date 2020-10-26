@@ -26,7 +26,7 @@
             {{/if}}
         </div>
     </section>
-    
+
     {{!-- Activity Pic --}}
     <section class="row section">
         <div class="col">
@@ -38,31 +38,35 @@
     {{!-- About Activity --}}
     <section class="row section">
         <div class="col">
-            <span class="sub-title">About</span>
-            <p class="text">{{about}}</p>
+            <div class="card-panel">
+                <span class="sub-title">About</span>
+                <p class="text">{{about}}</p>
+            </div>
         </div>
     </section>
-    <div class="divider"></div>
 
     {{!-- Beginner's Guide --}}
     <section class="row section">
         <div class="col">
-            <span class="sub-title">Beginner's Guide</span>
-            <p class="text">{{guide}}</p>
+            <div class="card-panel">
+                <span class="sub-title">Beginner's Guide</span>
+                <p class="text">{{guide}}</p>
+            </div>
         </div>
     </section>
-    <div class="divider"></div>
 
     {{!-- List of Resorts --}}
     <section class="row section">
-        <div class="col">
-            <span class="sub-title">Resort</span>
-            <ul>
-                {{#each resortList}}
-                <li class="text"><a class="list" href="/resort/{{id}}"><i
-                            class="material-icons chevron-icon">chevron_right</i>{{name}}</a></li>
-                {{/each}}
-            </ul>
+        <div class="col s12">
+            <div class="card-panel">
+                <span class="sub-title">Resort</span>
+                <ul>
+                    {{#each resortList}}
+                    <li class="text"><a class="list" href="/resort/{{id}}"><i
+                                class="material-icons chevron-icon">chevron_right</i>{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
         </div>
     </section>
 

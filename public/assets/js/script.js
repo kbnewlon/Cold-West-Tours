@@ -4,7 +4,7 @@ $(document).ready(function () {
     var elem = document.querySelector(".sidenav");
 
     // Create new sidenav instance 
-    var instance = new M.Sidenav(elem); 
+    var instance = new M.Sidenav(elem);
 
     // Initiate sidenav
     $(".sidenav").sidenav();
@@ -13,7 +13,7 @@ $(document).ready(function () {
     $("#menu-icon").on("click", function () {
         instance.open();
     });
-    
+
     // If clicked on places other than sidenav, close sidenav
     $(".container").on("click", function () {
         instance.close();
@@ -32,26 +32,26 @@ $(document).ready(function () {
         centerPadding: '60px',
         slidesToShow: 3,
         responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 3
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
             }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }
-          }
         ]
-      });
+    });
 
 
     // $("#star-icon-filled").on("click", function () {
@@ -66,35 +66,35 @@ $(document).ready(function () {
     //     // $("#star-icon-filled").html("star_border");
 
     // });
-    
+
 });
-function activityFav(icon, id, username, resort, userId){
-    if(icon.textContent === "star"){
+function activityFav(icon, id, username, resort, userId) {
+    if (icon.textContent === "star") {
         const userObj = {
-            username : username,
-            fav_activity : null,
-            fav_resort : resort
+            username: username,
+            fav_activity: null,
+            fav_resort: resort
         }
         $.ajax({
-            method : "PUT",
-            url : `/user/${userId}`,
-            data : userObj
+            method: "PUT",
+            url: `/user/${userId}`,
+            data: userObj
         }).then(function (apiResponse) {
             console.log(apiResponse[0]);
             console.log(`removing : ${id}`);
             icon.textContent = "star_border";
         });
     }
-    else{
+    else {
         const userObj = {
-            username : username,
-            fav_activity : id,
-            fav_resort : resort
+            username: username,
+            fav_activity: id,
+            fav_resort: resort
         }
         $.ajax({
-            method : "PUT",
-            url : `/user/${userId}`,
-            data : userObj
+            method: "PUT",
+            url: `/user/${userId}`,
+            data: userObj
         }).then(function (apiResponse) {
             console.log("hi");
             console.log(apiResponse[0]);
@@ -104,33 +104,33 @@ function activityFav(icon, id, username, resort, userId){
     }
 }
 
-function resortFav(icon, id, username, activity, userId){
-    if(icon.textContent === "star"){
+function resortFav(icon, id, username, activity, userId) {
+    if (icon.textContent === "star") {
         const userObj = {
-            username : username,
-            fav_activity : activity,
-            fav_resort : null
+            username: username,
+            fav_activity: activity,
+            fav_resort: null
         }
         $.ajax({
-            method : "PUT",
-            url : `/user/${userId}`,
-            data : userObj
+            method: "PUT",
+            url: `/user/${userId}`,
+            data: userObj
         }).then(function (apiResponse) {
             console.log(apiResponse[0]);
             console.log(`removing : ${id}`);
             icon.textContent = "star_border";
         });
     }
-    else{
+    else {
         const userObj = {
-            username : username,
-            fav_activity : activity,
-            fav_resort : id
+            username: username,
+            fav_activity: activity,
+            fav_resort: id
         }
         $.ajax({
-            method : "PUT",
-            url : `/user/${userId}`,
-            data : userObj
+            method: "PUT",
+            url: `/user/${userId}`,
+            data: userObj
         }).then(function (apiResponse) {
             console.log("hi");
             console.log(apiResponse[0]);
@@ -140,31 +140,31 @@ function resortFav(icon, id, username, activity, userId){
     }
 }
 
-function delActivity(username, resort, userId){
+function delActivity(username, resort, userId) {
     const userObj = {
-        username : username,
-        fav_activity : null,
-        fav_resort : resort
+        username: username,
+        fav_activity: null,
+        fav_resort: resort
     }
     $.ajax({
-        method : "PUT",
-        url : `/user/${userId}`,
-        data : userObj
+        method: "PUT",
+        url: `/user/${userId}`,
+        data: userObj
     }).then(function (apiResponse) {
         window.location.reload();
     });
 }
 
-function delResort(username, activity, userId){
+function delResort(username, activity, userId) {
     const userObj = {
-        username : username,
-        fav_activity : activity,
-        fav_resort : null
+        username: username,
+        fav_activity: activity,
+        fav_resort: null
     }
     $.ajax({
-        method : "PUT",
-        url : `/user/${userId}`,
-        data : userObj
+        method: "PUT",
+        url: `/user/${userId}`,
+        data: userObj
     }).then(function (apiResponse) {
         window.location.reload();
     });
@@ -184,5 +184,7 @@ $('.dropdown-trigger').dropdown({
     constrainWidth: false, //changed width of dropdown due to content size 
     gutter: 0, // Spacing from edge
     belowOrigin: false, // Displays dropdown below the button
+    coverTrigger: false,
     alignment: 'left' // Displays dropdown with edge aligned to the left of button
-  });
+});
+

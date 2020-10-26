@@ -1,8 +1,3 @@
-@font-face{
-    font-family: Rockwell;
-    src: url(Rockwell-Font/rockb.ttf)
-}
-
 body {
     background-color: #F5F5F5;
     font-family: 'Roboto Slab', serif;
@@ -12,6 +7,30 @@ body {
 html, body {
     height: 100vh;
     width: 100vw;
+}
+
+/* NavBar */
+.nav-wrapper { 
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    background-color: #F5F5F5;
+    margin-bottom: 5vh;
+}
+
+nav {
+    height: 12vh;
+    background-color: #F5F5F5;
+    box-shadow: none;
+}
+
+nav ul a, nav .brand-logo {
+    font-size: 3rem;
+    padding: 2vw;
+    color: #36507A;
+}
+
+#menu-icon, .dropdown-content li>a {
+    color: #36507A;
 }
 
 /* Section class from Materialize */
@@ -49,6 +68,7 @@ html, body {
     font-family: 'Anton', sans-serif;
     font-size: 6vmin;
     color: #36507A;
+    margin-top: 5vh;
 }
 
 /* Resort and activity sub title */
@@ -160,21 +180,6 @@ html, body {
     text-align: center;
     font-weight: 900;
     text-shadow: -4px -4px #36507A;
-}
-
-/*  #36507A*/
-.nav-wrapper { 
-    font-family: 'Kameron', serif;
-    font-weight: bold;
-    background-color: #D4DFEA;
-}
-
-nav ul li a{
-    color: #36507A;
-}
-
-nav .brand-logo{
-    color: #36507A;
 }
 
 .overlayBackground {

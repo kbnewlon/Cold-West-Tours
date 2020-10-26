@@ -1,59 +1,72 @@
-<div class="activityBackground">
+{{!-- <div class="activityBackground"> --}}
 
-    <div class="container">
+<main class="container">
 
+    {{!-- Activity Pic --}}
+    <section class="row section">
+        <div class="col">
+            <img class="responsive-img" src="{{actImage}}" alt="{{name}} Image">
+            {{!-- Add carousel --}}
+        </div>
+    </section>
 
-        <section class="row">
-            {{!-- Activity Pic --}}
-            <div class="col s12 m6">
-                <div class="row">
-                    <img src="{{actImage}}" alt="{{name}} Image" class="responsive-img">
-                </div>
-                {{!-- Add carousel --}}
-                {{!-- <div class="row">
-        </div> --}}
-            </div>
+    {{!-- Title --}}
+    <section class="row section">
+        <div class="col">
+            {{!-- When user is logged in, show star or empty star --}}
+            {{#if user}}
 
-            <div class="col s12 m6">
-                {{!-- When user is logged in, show star or empty star --}}
-                {{#if user}}
+            {{!-- If it matches user favorite, display filled star --}}
+            {{#if checkFav}}
+            <!-- <h1>{{name}}<i id="star-icon-filled" class="material-icons">star</i></h1> -->
+            <h1>{{name}}</h1>
+            <i onclick="activityFav(this, {{id}}, '{{user.username}}', '{{user.fav_resort}}', {{user.id}})"
+                class="material-icons">star</i>
+            {{!-- If not, display empty star --}}
+            {{else}}
+            <!-- <h1>{{name}}<i id="star-icon-empty" class="material-icons">star_border</i></h1> -->
+            <h1>{{name}}</h1>
+            <i onclick="activityFav(this, {{id}}, '{{user.username}}', '{{user.fav_resort}}', {{user.id}})"
+                class="material-icons">star_border</i>
+            {{/if}}
 
-                {{!-- If it matches user favorite, display filled star --}}
-                {{#if checkFav}}
-                <!-- <h1>{{name}}<i id="star-icon-filled" class="material-icons">star</i></h1> -->
-                <h1>{{name}}</h1>
-                <i onclick="activityFav(this, {{id}}, '{{user.username}}', '{{user.fav_resort}}', {{user.id}})" class="material-icons">star</i>
-                {{!-- If not, display empty star --}}
-                {{else}}
-                <!-- <h1>{{name}}<i id="star-icon-empty" class="material-icons">star_border</i></h1> -->
-                <h1>{{name}}</h1>
-                <i onclick="activityFav(this, {{id}}, '{{user.username}}', '{{user.fav_resort}}', {{user.id}})" class="material-icons">star_border</i>
-                {{/if}}
+            {{!-- User who is not logged in will not see stars --}}
+            {{else}}
+            <h1>{{name}}</h1>
+            {{/if}}
+        </div>
+    </section>
 
-                {{!-- User who is not logged in will not see stars --}}
-                {{else}}
-                <h1>{{name}}</h1>
-                {{/if}}
-                <h2>About</h2>
-                <p>{{about}}</p>
-            </div>
-        </section>
+    {{!-- About Activity --}}
+    <section class="row section">
+        <div class="col">
+            <h2>About</h2>
+            <p>{{about}}</p>
+        </div>
+    </section>
+    <div class="divider"></div>
 
-        <section class="row">
-            <div class="col">
-                <h2>Beginner's Guide</h2>
-                <p>{{guide}}</p>
+    {{!-- Beginner's Guide --}}
+    <section class="row section">
+        <div class="col">
+            <h2>Beginner's Guide</h2>
+            <p>{{guide}}</p>
+        </div>
+    </section>
+    <div class="divider"></div>
 
-                <h3>Resorts</h3>
-                <ul>
-                    {{#each resortList}}
-                    <li><a href="/resort/{{id}}">{{name}}</a></li>
-                    {{/each}}
-                </ul>
-            </div>
-        </section>
+    {{!-- List of Resorts --}}
+    <section class="row section">
+        <div class="col">
+            <h3>Resort</h3>
+            <ul>
+                {{#each resortList}}
+                <li><a href="/resort/{{id}}">{{name}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
 
+</main>
 
-    </div>
-
-</div>
+{{!-- </div> --}}

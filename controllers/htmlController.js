@@ -140,7 +140,8 @@ router.get("/account", function (req, res) {
             }
             if((getActivity) && (getActivity !== null)){
                 activityObj = {
-                    name: getActivity.name
+                    name: getActivity.name,
+                    about: getActivity.about
                 }
             }
             db.Resort.findOne({

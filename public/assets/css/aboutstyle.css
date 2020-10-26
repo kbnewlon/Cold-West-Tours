@@ -2,14 +2,14 @@
   background: url("https://res.cloudinary.com/dpnjzg0ar/image/upload/v1603680229/about_two_pyfa1j.png")
     no-repeat center center fixed;
   background-size: cover;
-
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
   margin: none;
 }
 
 .row {
-  margin-left: 15rem;
+  margin-left: 15%;
 }
 .our-names {
   font-size: 35px;
@@ -20,3 +20,11 @@
 .about-text {
   color: white;
 }
+@media only screen and (max-width: 1610px) {
+  .our-names {
+    font-size: 20px;
+  }
+  .about-text {
+    font-size: 10px;
+  }
+ 

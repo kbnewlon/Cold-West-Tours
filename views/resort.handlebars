@@ -2,22 +2,6 @@
 
 <main class="container">
 
-    {{!-- Resort Pic --}}
-    <section class="row section">
-        <div class="col">
-            <img class="responsive-img" src={{pic1}} 
-                alt="Placeholder" />
-        </div>
-        {{!-- Add carousel --}}
-        <div class="carousel">
-            <img src={{pic1}} alt="placeholder">
-            <img src={{pic2}} alt="placeholder">
-            <img src={{pic3}} alt="placeholder">
-            <img src={{pic4}} alt="placeholder">
-            <img src={{pic5}} alt="placeholder">
-        </div>
-    </section>
-
     {{!-- Title --}}
     <section class="row section">
         <div class="col">
@@ -39,6 +23,22 @@
             {{else}}
             <span class="page-title">{{name}}</span>
             {{/if}}
+        </div>
+    </section>
+    
+    {{!-- Resort Pic --}}
+    <section class="row section">
+        <div class="col">
+            <img class="responsive-img" src={{pic1}} 
+                alt="Placeholder" />
+        </div>
+        {{!-- Add carousel --}}
+        <div class="carousel">
+            <img src={{pic1}} alt="placeholder">
+            <img src={{pic2}} alt="placeholder">
+            <img src={{pic3}} alt="placeholder">
+            <img src={{pic4}} alt="placeholder">
+            <img src={{pic5}} alt="placeholder">
         </div>
     </section>
 

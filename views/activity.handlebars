@@ -2,14 +2,6 @@
 
 <main class="container">
 
-    {{!-- Activity Pic --}}
-    <section class="row section">
-        <div class="col">
-            <img class="responsive-img" src="{{actImage}}" alt="{{name}} Image">
-            {{!-- Add carousel --}}
-        </div>
-    </section>
-
     {{!-- Title --}}
     <section class="row section">
         <div class="col">
@@ -32,6 +24,14 @@
             {{else}}
             <span class="page-title">{{name}}</span>
             {{/if}}
+        </div>
+    </section>
+    
+    {{!-- Activity Pic --}}
+    <section class="row section">
+        <div class="col">
+            <img class="responsive-img" src="{{actImage}}" alt="{{name}} Image">
+            {{!-- Add carousel --}}
         </div>
     </section>
 
@@ -59,7 +59,8 @@
             <span class="sub-title">Resort</span>
             <ul>
                 {{#each resortList}}
-                <li class="text"><a class="list" href="/resort/{{id}}"><i class="material-icons chevron-icon">chevron_right</i>{{name}}</a></li>
+                <li class="text"><a class="list" href="/resort/{{id}}"><i
+                            class="material-icons chevron-icon">chevron_right</i>{{name}}</a></li>
                 {{/each}}
             </ul>
         </div>

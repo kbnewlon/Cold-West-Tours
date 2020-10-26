@@ -48,8 +48,13 @@ nav ul a, nav .brand-logo {
 
 /* Images in resort and activity page */
 .responsive-img { 
-    width: 100vw;
+    width: 50vw;
     margin-top: 2vmax;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* display: flex;
+    justify-content: center; */
 }
 
 .carousel {
@@ -314,7 +319,7 @@ nav .brand-logo {
 
 .carousel-pics {
     width: 100vw; 
-    height: 35vh;
+    height: 20vh;
     object-fit: cover;
 }
 

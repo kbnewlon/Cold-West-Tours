@@ -21,27 +21,29 @@ module.exports = function (sequelize, DataTypes) {
                 is: /[a-zA-Z0-9]+$/g,
                 len: [6,24]
             }
-        },
-        fav_activity: {
-            type: DataTypes.INTEGER,
-            allowNull: true
-        },
-        fav_resort: {
-            type: DataTypes.INTEGER,
-            allowNull: true
         }
+        
     }, {
         timestamps: false
     });
 
-    // User.associate = function (models) {
-    //     // Associating Resort with Activity and Resort_Activity
-    //     // When an Resort is deleted, also delete any associated Resort_Activity
-    //     Resort.hasMany(models.Resort_Activity, {
-    //         onDelete: "cascade"
-    //     });
-    //     Resort.belongsToMany(models.Activity, { through: models.Resort_Activity });
-    // };
+    User.associate = function (models) {
+        // Associating User with Resort and Resort_Activity
+        User.belongsTo(models.Activity, {
+            foreignKey: {
+            name : "fav_activity",
+            type: DataTypes.INTEGER,
+            allowNull: true
+            }
+        });
+        User.belongsTo(models.Resort, {
+            foreignKey: {
+            name : "fav_resort",
+            type: DataTypes.INTEGER,
+            allowNull: true
+            }
+        });
+    };
 
     User.beforeCreate(function(user){
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);   

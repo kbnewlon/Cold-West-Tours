@@ -121,6 +121,7 @@ html, body {
 /* Account page */
 .account-title {
     font-size: 1.8vmax;
+    color: #36507A;
 }
 
 .account-text {
@@ -135,6 +136,17 @@ html, body {
     background-color: #36507A;
     position: absolute;
     bottom: 20px !important;
+}
+
+.bottom-btn:hover {
+    background-color: #848484;
+}
+
+/* .card-link {
+    color: #36507A;
+} */
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: #36507A;
 }
 
 #indexTitle {

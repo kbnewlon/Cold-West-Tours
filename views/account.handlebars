@@ -3,7 +3,7 @@
         <span class="sub-title">Welcome back, {{user.username}}!</span>
     </header>
     <section class="row">
-        <span class="sub-title">Favorites</span>
+        <span class="text">See your favorites here.</span>
     </section>
     <section class="row">
 
@@ -28,7 +28,7 @@
                     {{/unless}}
                 </div>
                 <div class="card-reveal">
-                    <span class="account-title">{{resort.name}}<i class="material-icons right">close</i></span>
+                    <span class="card-title account-title">{{resort.name}}<i class="material-icons right">close</i></span>
                     <p class="account-text">{{resort.overview}}</p>
                 </div>
                 {{#if user.fav_resort}}
@@ -62,13 +62,13 @@
                 </div>
 
                 <div class="card-reveal">
-                    <span class="account-title">{{activity.name}}<i class="material-icons right">close</i></span>
+                    <span class="card-title account-title">{{activity.name}}<i class="material-icons right">close</i></span>
                     <p class="account-text">{{activity.about}}</p>
                 </div>
 
                 {{#if user.fav_activity}}
                 <div class="card-action">
-                    <a href="/activity/{{user.fav_activity}}">Activity Page</a>
+                    <a class="card-link" href="/activity/{{user.fav_activity}}">Activity Page</a>
                 </div>
                 {{/if}}
             </div>

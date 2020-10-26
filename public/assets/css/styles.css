@@ -17,6 +17,7 @@ body {
 .carousel {
   width: 100%;
   height: 50vh;
+  margin-bottom: -10%;
 }
 
 /* Map in resort page */
@@ -107,3 +108,100 @@ nav .brand-logo {
   margin-top: -2.8rem;
   padding-top: none;
 }
+
+.overlay-background {
+  background-color: #d4dfea;
+  margin-left: 5%;
+}
+/* Commented */
+/* .resortBackground {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    margin: none;
+    background-color:#D4DFEA;
+} */
+
+.overlay-text {
+  color: #d4dfea;
+  font-family: "Kameron", serif;
+  font-size: 55px;
+  margin-top: 15rem;
+  width: 100vw;
+  /* font-size-adjust: inherit;     */
+}
+
+.overlay-sm-text {
+  color: #bfcfdf;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  /* font-size: 35px; */
+  font-size: 18px;
+  margin-bottom: 25rem;
+  width: 100vw;
+}
+
+.button {
+  margin-right: 20px;
+  border-top: 1px solid #36507a;
+  background: #36507a;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#36507a),
+    to(#081a36)
+  );
+  background: -webkit-linear-gradient(top, #36507a, #081a36);
+  background: -moz-linear-gradient(top, #36507a, #081a36);
+  background: -ms-linear-gradient(top, #36507a, #081a36);
+  background: -o-linear-gradient(top, #36507a, #081a36);
+  padding: 20px 40px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 1) 0 3px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 1) 0 3px 0;
+  box-shadow: rgba(0, 0, 0, 1) 0 0px 0;
+  text-shadow: rgba(0, 0, 0, 0.4) 0 0px 0;
+  color: #d4dfea;
+  font-size: 16px;
+  font-family: Georgia, Serif;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-top: 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-top-color: #3b79b6;
+  background: #3b79b6;
+  color: #ffffff;
+}
+
+.button:active {
+  border-top-color: #a4d5ed;
+  background: #a4d5ed;
+  color: #ffffff;
+}
+
+.carousel-pics {
+    width: 100vw; 
+    height: 35vh;
+    object-fit: cover;
+}
+
+.prev {
+    position: absolute;
+    left: 45%;
+    margin-top: 0%;
+    
+}
+
+.next {
+    position: absolute;
+    right: 45%;
+}
+
+/* .activityBackground {
+    margin-top: 40px;
+} */

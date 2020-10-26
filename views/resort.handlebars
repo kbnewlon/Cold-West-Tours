@@ -10,12 +10,14 @@
         </div>
         {{!-- Add carousel --}}
         <div class="carousel">
-            <img src={{pic1}} alt="placeholder">
-            <img src={{pic2}} alt="placeholder">
-            <img src={{pic3}} alt="placeholder">
-            <img src={{pic4}} alt="placeholder">
-            <img src={{pic5}} alt="placeholder">
+            <img src={{pic1}} class="carousel-pics" alt="Resort Photos">
+            <img src={{pic2}} class="carousel-pics" alt="Resort Photos">
+            <img src={{pic3}} class="carousel-pics" alt="Resort Photos">
+            <img src={{pic4}} class="carousel-pics" alt="Resort Photos">
+            <img src={{pic5}} class="carousel-pics" alt="Resort Photos">
         </div>
+        <button class="prev">Previous</button>
+        <button class="next">Next</button>
     </section>
 
     {{!-- Title --}}
@@ -46,7 +48,7 @@
     <section class="row section">
         <div class="col">
             <h2>Overview</h2>
-            <p>{{overview}}</p>
+            <p>{{{overview}}}</p>
         </div>
     </section>
     <div class="divider"></div>
@@ -68,7 +70,7 @@
     <section class="row section">
         <div class="col">
             <h2>Policy</h2>
-            <p>{{policy}}</p>
+            <p>{{{policy}}}</p>
         </div>
     </section>
     <div class="divider"></div>

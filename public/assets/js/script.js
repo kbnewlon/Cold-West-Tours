@@ -28,6 +28,8 @@ $(document).ready(function () {
     // });
 
     $('.carousel').slick({
+        nextArrow: '.next',
+        prevArrow: '.prev',
         centerMode: true,
         centerPadding: '60px',
         slidesToShow: 3,
@@ -169,11 +171,6 @@ function delResort(username, activity, userId){
         window.location.reload();
     });
 }
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     var elems = document.querySelectorAll('.dropdown-trigger');
-//     var instances = M.Dropdown.init(elems, {});
-//   });
 
 
 $('.dropdown-trigger').dropdown({

@@ -118,10 +118,24 @@ html, body {
     color: #848484;
 }
 
-/* .delete-btn {
-    position: relative;
-    z-index: 2;
-}  */
+/* Account page */
+.account-title {
+    font-size: 1.8vmax;
+}
+
+.account-text {
+    font-size: 1vmax;
+}
+
+.account-card {
+    height: 30vh;
+}
+
+.bottom-btn {
+    background-color: #36507A;
+    position: absolute;
+    bottom: 20px !important;
+}
 
 #indexTitle {
     color: #D4DFEA;
@@ -132,6 +146,7 @@ html, body {
     font-weight: 900;
     text-shadow: -4px -4px #36507A;
 }
+
 /*  #36507A*/
 .nav-wrapper { 
     font-family: 'Kameron', serif;

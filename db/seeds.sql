@@ -27,81 +27,66 @@ INSERT INTO resorts (name, address, phone, url, lat, lon, policy, overview, pic1
 
 INSERT INTO activities (name, slope, about, guide, actImage) VALUES 
 ("Skiing", 1, "The oldest documented evidence of skiing is found in the region of Norway and Sweden from primitive carvings dating back to 5000 B.C. Until the 1800’s skiing was primarily used only for transport, it was after the turn of the 18th century that it became a recreational sport. Commercially the popularity of skiing holidays took off in the 19th century which increased substantially during the mid-1900s until today. Also called 'downhill skiing', Alpine skiing typically takes place on a piste at a ski resort. It is characterized by fixed-heel bindings that attach at both the toe and the heel of the skier's boot. Ski lifts, including chairlifts, bring skiers up the slope. Backcountry skiing can be accessed by helicopter, snowcat, hiking and snowmobile. Facilities at resorts can include night skiing, après-ski, and glade skiing under the supervision of the ski patrol and the ski school. Alpine skiing branched off from the older Nordic type of skiing around the 1920s when the advent of ski lifts meant that it was no longer necessary to climb back uphill. Alpine equipment has specialized to the point where it can now only be used with the help of lifts.", 
-"WHAT EQUIPMENT DO I NEED TO GO SKIING?
-The bare minimum needed for skiing is a pair of skis, boots and poles; however, there are plenty of other pieces of gear that make it lot safer and more comfortable.
-
-SHOULD I RENT OR BUY SKI EQUIPMENT?
-For your first time skiing it's best to rent equipment to keep the costs down. Almost all ski centres hire out skis, boots, poles, helmets and some even offer waterproof clothing.
-
-HOW TO CLIP INTO SKIS
-Once you have your boots on and the correct length poles, head out to a flat area of snow and position your skis perpendicular to any kind of slope. You'll want to put on the lower ski first as this will stop you sliding down the hill when you put the other one on. Put the toe of the boot under the front binding then press down the heel of the boot to you hear a click (use your poles for balance); repeat the process for the second ski and you are ready to go. The binding you have clicked your boot into transfers the power from your body through the boot and into the ski. If you fall over, the bindings will open, releasing your foot to avoid twisting and injury.
-
-PACE YOURSELF
-Doing anything for the first time can be intimidating and exhausting. Warm up, stretch and stick to easier runs in the beginning. You can take on more challenging runs as your confidence and skills grow. Take regular breaks. Be patient. Try not to overdo it in the beginning. Have fun! Skiing or snowboarding is about enjoying time with friends or family, creating memories and soaking in majestic views.
-
-KNOW WHEN TO CALL IT
-Skiing and snowboarding are sports that require physical exertion, balance, dexterity and concentration. A day of skiing or riding can be exhausting, especially if you’ve never done it before. While it may be tempting to ride or ski until last chair, it’s better to call it a day when your legs get tired or you can no longer stay in control. Once you’re done for the day, it’s time to enjoy an après ski treat—you’ll have earned it!", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603583427/Activities/skiing_kiniqi.jpg"),
+"<b>What equipment do I need to go skiing?</b> 
+<p> The bare minimum needed for skiing is a pair of skis, boots and poles; however, there are plenty of other pieces of gear that make it lot safer and more comfortable.</p>
+<b> Should I rent or buy ski equipment?</b> 
+<p>For your first time skiing it's best to rent equipment to keep the costs down. Almost all ski centres hire out skis, boots, poles, helmets and some even offer waterproof clothing.</p>
+<b> How to clip into skis</b>
+<p>Once you have your boots on and the correct length poles, head out to a flat area of snow and position your skis perpendicular to any kind of slope. You'll want to put on the lower ski first as this will stop you sliding down the hill when you put the other one on. Put the toe of the boot under the front binding then press down the heel of the boot to you hear a click (use your poles for balance); repeat the process for the second ski and you are ready to go. The binding you have clicked your boot into transfers the power from your body through the boot and into the ski. If you fall over, the bindings will open, releasing your foot to avoid twisting and injury.</p>
+<b> Pace yourself</b> 
+<p>Doing anything for the first time can be intimidating and exhausting. Warm up, stretch and stick to easier runs in the beginning. You can take on more challenging runs as your confidence and skills grow. Take regular breaks. Be patient. Try not to overdo it in the beginning. Have fun! Skiing or snowboarding is about enjoying time with friends or family, creating memories and soaking in majestic views.</p>
+<b>Know when to call it</b> 
+<p>Skiing and snowboarding are sports that require physical exertion, balance, dexterity and concentration. A day of skiing or riding can be exhausting, especially if you’ve never done it before. While it may be tempting to ride or ski until last chair, it’s better to call it a day when your legs get tired or you can no longer stay in control. Once you’re done for the day, it’s time to enjoy an après ski treat—you’ll have earned it!</p>", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603583427/Activities/skiing_kiniqi.jpg"),
 
 ("Cross Country Skiing", 0,"Cross country skiing is fun…  it’s also fun to learn, healthy, family friendly, accessible, affordable, and offers great variety! Cross country skiing is one of the healthiest recreational activities for both body and soul. You can enjoy the beauty of nature – with its towering trees, mountain vistas, or snow-covered meadows – while experiencing a total body workout. It uses all your muscle groups and is a terrific cardiovascular activity! Plus, you can do it at your pace and according to your fitness level… from smooth gliding on gentle trails to bounding up, over, and down varied terrain.
-FAMILY FRIENDLY
-Cross country skiing is a multi-generational activity. Infants and toddlers can ride in a backpack or on a sled… while it’s also gentle for grandparents and great-grandparents. Teenagers who want to go fast can skate ski, a technique that combines the leg motion of ice skating and the arm push of cross country skiing. Even the family dog can join you, as some centers welcome canines on designated dog trails.
-AFFORDABLE
-A cross country skiing day trip costs an average of $25 for a trail fee and $60 for a trail pass, rental equipment, and a lesson package. And compared with other winter vacations, a cross country ski escape costs much less. A weekend vacation for a family of four – including accommodations, breakfast and dinner, trail fees, rental equipment, and a lesson – is available in New England for under $500. A week’s getaway for a couple at a lodge or ranch in the U.S. or Canadian Rockies – including seven nights lodging, all meals, and skiing – is priced from $2000.", 
-"SKIING ETIQUETTE
-When cross country skiing at a ski area, resort, or trail:
-Help maintain the integrity of the ski tracks by not skiing over them.
-Obey posted signs.
-Give downhill skiers the right of way.
-Fill in your divots and sitz-marks.
-Grooming vehicles may be on the trails—use caution.
-Return to the lodge by closing.
-Remove skis at road crossings.
-Stay on the marked trails.
-Never ski alone.
-Choose trails appropriate to your ability and fitness.
-Report any accidents to the nordic center.
-DO THE SHUFFLE
-Having long skinny skis on your feet takes some getting used to, so click into your skis and practice shuffling gently down the trail to get a feel for how they move on the snow. It feels a little like you’re simply walking on the snow.
+<b>Family Friendly</b> 
+<p>Cross country skiing is a multi-generational activity. Infants and toddlers can ride in a backpack or on a sled… while it’s also gentle for grandparents and great-grandparents. Teenagers who want to go fast can skate ski, a technique that combines the leg motion of ice skating and the arm push of cross country skiing. Even the family dog can join you, as some centers welcome canines on designated dog trails.</p>
+<b>Afforable</b> 
+<p>A cross country skiing day trip costs an average of $25 for a trail fee and $60 for a trail pass, rental equipment, and a lesson package. And compared with other winter vacations, a cross country ski escape costs much less. A weekend vacation for a family of four – including accommodations, breakfast and dinner, trail fees, rental equipment, and a lesson – is available in New England for under $500. A week’s getaway for a couple at a lodge or ranch in the U.S. or Canadian Rockies – including seven nights lodging, all meals, and skiing – is priced from $2000.</p>", 
+"<b> Skiing Etiquette</b> 
+<p>When cross country skiing at a ski area, resort, or trail:</p>
+<ul>
+<li>Help maintain the integrity of the ski tracks by not skiing over them.</li>
+<li>Obey posted signs.</li>
+<li>Give downhill skiers the right of way.</li>
+<li>Fill in your divots and sitz-marks.</li>
+<li>Grooming vehicles may be on the trails—use caution.</li>
+<li>Return to the lodge by closing.</li>
+<li>Remove skis at road crossings.</li>
+<li>Stay on the marked trails.</li>
+<li>Never ski alone.</li>
+<li>Choose trails appropriate to your ability and fitness.</li>
+<li>Report any accidents to the nordic center.</li>
+</ul>
+<b>Do the shuffle</b> 
+<p>Having long skinny skis on your feet takes some getting used to, so click into your skis and practice shuffling gently down the trail to get a feel for how they move on the snow. It feels a little like you’re simply walking on the snow.</p>
+<b>Shuffle and Glide</b> 
+<p>Gliding is the motion that distinguishes cross-country skiing from hiking and snowshoeing. It’s also a big part of the fun. This drill takes a basic shuffle and adds a gliding motion to the mix:</p>
+<p>Start by doing the easy shuffle you just learned. After two shuffles, quickly transfer and center your weight onto the front ski, but this time glide on it for a short distance. Keep repeating these steps with a shuffle, shuffle, glide cadence: You’re now doing the basic kick-and-glide motion of classic cross-country skiing.</p>", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603583427/Activities/xc_skiing_cg3f2s.jpg"),
 
-SHUFFLE AND GLIDE
-Gliding is the motion that distinguishes cross-country skiing from hiking and snowshoeing. It’s also a big part of the fun. This drill takes a basic shuffle and adds a gliding motion to the mix:
-
-Start by doing the easy shuffle you just learned.
-After two shuffles, quickly transfer and center your weight onto the front ski, but this time glide on it for a short distance.
-Keep repeating these steps with a shuffle, shuffle, glide cadence: You’re now doing the basic kick-and-glide motion of classic cross-country skiing.", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603583427/Activities/xc_skiing_cg3f2s.jpg"),
-
-("Snowboarding", 1, "Snowboarding is a winter sport that involves descending a slope that is covered with snow while standing on a board attached to a rider’s feet, using a special boot set onto a mounted binding. The development of snowboarding was inspired by skateboarding, sledding, surfing and skiing. It was developed in the United States in the 1960s to 1970s and became a Winter Olympic Sport in 1998.
-
-Snowboarding has been around since the 1920s, when boys and men would tie plywood or wooden planks from barrels to their feet using clotheslines and horse reins in order to steer themselves down hills. Modern snowboarding began in 1965 when Sherman Poppen, an engineer in Muskegon, Michigan, invented a toy for his daughter by fastening two skis together and attaching a rope to one end so she would have some control as she stood on the board and glided downhill.", "BALANCING
-Balancing on a snowboard is easier said done. Snowboarding beginners should start with leg building exercises to strengthen leg muscles. One can practice by standing on one leg and swinging the other leg out in various directions. This should be practiced regularly till you are confident.You must balance your body weight over the center part of your foot’s arch, with the head and hips to be centered too. Both your hands are to be held out a little bit on both sides, but should still be focused at the center of your board. Apart from your arms which are moving on your sides, the next thing to move is your head in the same direction you’re riding. 
-
-Riding and turning a snowboard
-This part is most crucial to practice as it will set you in the right motion if carefully followed, as it constitutes the basic part and focuses on important body movements.
-
-Head should be held up and high.
-Focus on the direction you want to go.
-Your head as well as your shoulders need to be turned in the direction you are riding.
-Core muscles should be solely used to turn your snowboard.
-When you turn, the speed should be should be same as the speed in which you turn your shoulders
-Keep the hips balanced properly in the center of the board.
-Feet should be properly strapped into bindings of the board
-When you ride heel-side, you should motion your feet towards the front of the snowboard
-When you ride toe-side, your feet should face the tail end of your board.
-Feet movement has a lot of impact. For a toe-side turn, first pressure should be totally on the toes of your front foot and when the turn ends, on the back foot toes. Similarly, for a heel-side turn , begin with putting pressure on the heels of your front foot and later, end it on the heels of your back foot. It’s quite easy once you practice and get the hang of it.
-These steps help you understand your body and how it syncs with the snowboard. Practice the above steps, and once learned, combine them all and turn like a professional on your snowboard.
-
-Once you have mastered these, you are set to experiment on different snow surfaces on mountains and make progression on this fun activity.
-
-Remember, there is no easy way to learn snowboarding, though the above tips are a great help. However, the key to success lies in practicing and balancing the movements.", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603583425/Activities/snowboarding_by6ksc.jpg"),
+("Snowboarding", 1, "<p>Snowboarding is a winter sport that involves descending a slope that is covered with snow while standing on a board attached to a rider’s feet, using a special boot set onto a mounted binding. The development of snowboarding was inspired by skateboarding, sledding, surfing and skiing. It was developed in the United States in the 1960s to 1970s and became a Winter Olympic Sport in 1998.</p>
+<p>Snowboarding has been around since the 1920s, when boys and men would tie plywood or wooden planks from barrels to their feet using clotheslines and horse reins in order to steer themselves down hills. Modern snowboarding began in 1965 when Sherman Poppen, an engineer in Muskegon, Michigan, invented a toy for his daughter by fastening two skis together and attaching a rope to one end so she would have some control as she stood on the board and glided downhill.", "Balancing on a snowboard is easier said done. Snowboarding beginners should start with leg building exercises to strengthen leg muscles. One can practice by standing on one leg and swinging the other leg out in various directions. This should be practiced regularly till you are confident.You must balance your body weight over the center part of your foot’s arch, with the head and hips to be centered too. Both your hands are to be held out a little bit on both sides, but should still be focused at the center of your board. Apart from your arms which are moving on your sides, the next thing to move is your head in the same direction you’re riding.</p> 
+<b>Riding and turning a snowboard</b> 
+<p>This part is most crucial to practice as it will set you in the right motion if carefully followed, as it constitutes the basic part and focuses on important body movements.</p>
+<ul>
+<li>Head should be held up and high.</li>
+<li>Focus on the direction you want to go.</li>
+<li>Your head as well as your shoulders need to be turned in the direction you are riding.</li>
+<li>Core muscles should be solely used to turn your snowboard.</li>
+<li>When you turn, the speed should be should be same as the speed in which you turn your shoulders</li>
+<li>Keep the hips balanced properly in the center of the board.</li>
+<li>Feet should be properly strapped into bindings of the board</li>
+<li>When you ride heel-side, you should motion your feet towards the front of the snowboard</li>
+<li>When you ride toe-side, your feet should face the tail end of your board.</li>
+</ul>
+<p>Feet movement has a lot of impact. For a toe-side turn, first pressure should be totally on the toes of your front foot and when the turn ends, on the back foot toes. Similarly, for a heel-side turn , begin with putting pressure on the heels of your front foot and later, end it on the heels of your back foot. It’s quite easy once you practice and get the hang of it.
+These steps help you understand your body and how it syncs with the snowboard. Practice the above steps, and once learned, combine them all and turn like a professional on your snowboard. Once you have mastered these, you are set to experiment on different snow surfaces on mountains and make progression on this fun activity.</p>
+<p>Remember, there is no easy way to learn snowboarding, though the above tips are a great help. However, the key to success lies in practicing and balancing the movements.</p>", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603583425/Activities/snowboarding_by6ksc.jpg"),
 
 ("Snow Shoeing", 0, "Snowshoeing is a great winter sport for a wide array of people from old and young, rich or poor, male and female. The best thing about snowshoeing is that anyone can do it. It’s super easy to learn and will enable you to hike over wintry terrain like never before. On top of that, it’s much safer than other winter sports, making it great for kids and those getting older.Snowshoeing is also great for your health. It helps improve cardiovascular health and, according to the SIA, can burn more than 45 percent more calories than walking or running at the same speed. Perhaps even better is that it’s a relatively cheap sport to get into as opposed to snowboarding and skiing. You’ll need fewer pieces of equipment, and the items you will need are generally less expensive than other winter sports. So if you’ve got the time, you pretty much have everything you need to get started.", "The best thing about snowshoeing is that you can really do it anywhere where there is snow on the ground, but there are some places that make more sense than others. If you’re new to the sport, the best place will probably be some kind of state trail that is unkempt and open during the winter. The terrain will be mostly flat, and you can easily trek out for some distance then turn around and come back. Parks or snow-covered golf-courses are also a place to get your feet wet (not literally though). Next, most ski resorts allow snowshoeing on their grounds. This is a great place to try out some more difficult terrain and build endurance for longer hikes. Just remember that skiers get the right of way because it’s easier for you to stop and step off the trail than it is for them. Be respectful! Finally, when you’re feeling confident about your skills, go for a long hike in a national park or forest. These lands will be mostly untouched and feature incredible views and a deep quiet that is perfect for a hike. If you’re feeling really bold, snowshoe out to a beautiful spot and camp for a couple days. As always, remember to plan ahead. Know what to expect from the weather and know a thing or two about that land you plan on hiking. There are all kinds of surprises out there in nature, and you should be prepared to deal with them. Most importantly, make sure to have fun!", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603583425/Activities/snowshoeing_ta8vbh.jpg"),
 
-("Tubing", 1, "Snow tubing is simply a fun, recreational activity that makes use of gravity to transport oneself to the bottom of a slope while riding an inner tube. A steeper run equals higher speed. There is no skill required to be able to snow tube. There is no training required, no practice needed and no muscle strength necessary. As long as you can sit and hold on, you are good to go. Snow tubing can be likened to going down a straight water slide in a tube. To keep the tube sliding in one direction, snow is often built up along each side of a predetermined lane. At the long run out down the hill, riders will be brought to a stop. This activity is somewhat similar to sledding, but the difference is, you have a softer surface to sit on. With a sled, you can drag your arms in the snow to break; but if you do this with a tube, you may just spin downhill because it would be difficult to control its direction.", " Just like any other sledding outing, dress in warm, non-cotton layers and don't forget the snowpants! If you're tubing at a ski hill there will be a rope tow, magic carpet or something similar to get you back up the hill -- so you don't have to worry about sweating on the way up. If you're doing it yourself and have to walk your own tube uphill, wear layers you can easily unzip or take off so you don't overheat on the trek uphill. Stick a length of cordage in your pocket and you can use it as a makeshift leash for hauling the tube uphill. Last but not least: If you're really getting extreme with your tubing or out in icy conditions, helmets are a good idea; some tubing hills require them for children under a given age. (They usually provide the helmets.)
-
-Watch those turns 
-
-Riding up onto the wall of a banked turn is the best thing ever about groomed tubing parks -- but it's easier than you might think to get flung all the way up that wall and over the far side. Smart tubing parks will either build the 'wall' of the turn extra high or put safety netting on top of it, or both -- but it never hurts to watch other tubers of about the same weight take their runs and see how far up the wall they go. If in doubt, keep it slow on the first run and work up to higher speeds later on.
-
-No brakes! 
-
-Snow tubes have no brakes and they're inherently hard to control -- that's part of the fun! But it also means that once you get up to speed, any attempts to steer by dragging your hands and feet can send you into a spin to make the actors of Top Gun jealous. If you start braking right from the start you can keep yourself slow to a certain degree; but if you miss that slim window of opportunity, even the attempt to brake can be dangerous.", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603583426/Activities/tubing_ahyt4r.jpg");
+("Tubing", 1, "Snow tubing is simply a fun, recreational activity that makes use of gravity to transport oneself to the bottom of a slope while riding an inner tube. A steeper run equals higher speed. There is no skill required to be able to snow tube. There is no training required, no practice needed and no muscle strength necessary. As long as you can sit and hold on, you are good to go. Snow tubing can be likened to going down a straight water slide in a tube. To keep the tube sliding in one direction, snow is often built up along each side of a predetermined lane. At the long run out down the hill, riders will be brought to a stop. This activity is somewhat similar to sledding, but the difference is, you have a softer surface to sit on. With a sled, you can drag your arms in the snow to break; but if you do this with a tube, you may just spin downhill because it would be difficult to control its direction.", "<p> Just like any other sledding outing, dress in warm, non-cotton layers and don't forget the snowpants! If you're tubing at a ski hill there will be a rope tow, magic carpet or something similar to get you back up the hill -- so you don't have to worry about sweating on the way up. If you're doing it yourself and have to walk your own tube uphill, wear layers you can easily unzip or take off so you don't overheat on the trek uphill. Stick a length of cordage in your pocket and you can use it as a makeshift leash for hauling the tube uphill. Last but not least: If you're really getting extreme with your tubing or out in icy conditions, helmets are a good idea; some tubing hills require them for children under a given age. (They usually provide the helmets.)</p>
+<b>Watch those turns</b> 
+<p>Riding up onto the wall of a banked turn is the best thing ever about groomed tubing parks -- but it's easier than you might think to get flung all the way up that wall and over the far side. Smart tubing parks will either build the 'wall' of the turn extra high or put safety netting on top of it, or both -- but it never hurts to watch other tubers of about the same weight take their runs and see how far up the wall they go. If in doubt, keep it slow on the first run and work up to higher speeds later on.</p>
+<b>No brakes!</b>  
+<p>Snow tubes have no brakes and they're inherently hard to control -- that's part of the fun! But it also means that once you get up to speed, any attempts to steer by dragging your hands and feet can send you into a spin to make the actors of Top Gun jealous. If you start braking right from the start you can keep yourself slow to a certain degree; but if you miss that slim window of opportunity, even the attempt to brake can be dangerous.</p>", "https://res.cloudinary.com/dfsddnvoo/image/upload/v1603583426/Activities/tubing_ahyt4r.jpg");

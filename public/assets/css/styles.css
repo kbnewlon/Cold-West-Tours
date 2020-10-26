@@ -159,15 +159,11 @@ nav .brand-logo{
    border-top-color: #a4d5ed;
    background: #a4d5ed;
    }
-<<<<<<< HEAD
-
 
    .activityBackground {
-       margin-top: 40px;
-   }
+    margin-top: 40px;
+}
 
-   .responsive-image{
-       margin-top: 40px;
-   }
-=======
->>>>>>> dev
+.responsive-image{
+    margin-top: 40px;
+}

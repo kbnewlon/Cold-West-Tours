@@ -5,11 +5,18 @@
 
 body {
     background-color: white;
+    font-family: 'Roboto Slab', serif;
+    color: #848484;
 }
 
 html, body {
     height: 100vh;
     width: 100vw;
+}
+
+/* Section class from Materialize */
+.section {
+    margin-bottom: 0;
 }
 
 /* Images in resort and activity page */
@@ -21,6 +28,40 @@ html, body {
 #map-id { 
     height: 30vh;
     width: 100%;
+    margin: 1.5vh 0;
+}
+
+/* Resort and activity page title */
+.page-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 6vmin;
+    color: #36507A;
+}
+
+/* Resort and activity sub title */
+.sub-title {
+    font-size: 4.5vmin;
+    color: #5C90C0;
+}
+
+/* Normal text */
+.text {
+    font-size: 2.5vmin;
+}
+
+/* Check icon */
+.chevron-icon {
+    font-size: 2.5vmin;
+    margin: 0 0.8vw;
+}
+
+/* Resort and activity list */
+.list {
+    color: #848484;
+}
+
+.list:hover {
+    color: #36507A;
 }
 
 /* .card {

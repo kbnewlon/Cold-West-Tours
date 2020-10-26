@@ -19,13 +19,9 @@ $(document).ready(function () {
         instance.close();
     });
 
-    $('.collapsible').collapsible({
-        constrain_width: false
+    $(".about-background").on("click", function () {
+        instance.close();
     });
-
-    // $('.carousel').slick({
-    //     variableWidth: true
-    // });
 
     $('.carousel').slick({
         nextArrow: '.next',
@@ -55,21 +51,25 @@ $(document).ready(function () {
         ]
     });
 
+    // Drop down 
+    $('.collapsible').collapsible({
+        constrain_width: false
+    });
 
-    // $("#star-icon-filled").on("click", function () {
-    //     $.ajax({
-    //         type: "PUT",
-    //         url: "/activity",
-    //         success: function (result) {
-    //             console.log(result);
-    //         }
-    //     })
-    //     // $("#star-icon-filled").html(`<i id="star-icon-empty" class="material-icons">star_border</i>`);
-    //     // $("#star-icon-filled").html("star_border");
-
-    // });
+    $('.dropdown-trigger').dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        constrain_width: false, // Does not change width of dropdown to that of the activator
+        hover: false, // Activate on hover
+        constrainWidth: false, //changed width of dropdown due to content size 
+        gutter: 0, // Spacing from edge
+        belowOrigin: false, // Displays dropdown below the button
+        coverTrigger: false,
+        alignment: 'left' // Displays dropdown with edge aligned to the left of button
+    });
 
 });
+
 function activityFav(icon, id, username, resort, userId) {
     if (icon.textContent === "star") {
         const userObj = {
@@ -171,17 +171,3 @@ function delResort(username, activity, userId) {
         window.location.reload();
     });
 }
-
-
-$('.dropdown-trigger').dropdown({
-    inDuration: 300,
-    outDuration: 225,
-    constrain_width: false, // Does not change width of dropdown to that of the activator
-    hover: false, // Activate on hover
-    constrainWidth: false, //changed width of dropdown due to content size 
-    gutter: 0, // Spacing from edge
-    belowOrigin: false, // Displays dropdown below the button
-    coverTrigger: false,
-    alignment: 'left' // Displays dropdown with edge aligned to the left of button
-});
-

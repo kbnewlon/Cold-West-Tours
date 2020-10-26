@@ -22,6 +22,7 @@ html, body {
 /* Images in resort and activity page */
 .responsive-img { 
     width: 100vw;
+    margin-top: 2vmax;
 }
 
 /* Map in resort page */
@@ -64,15 +65,58 @@ html, body {
     color: #36507A;
 }
 
-/* .card {
-    position: relative;
-    z-index: 1;
+/* Sign in and sign up form */
+.card {
+    height: 55vh;
+    margin-top: 2vmax;
+    /* z-index: 1; */
 }
 
-.delete-btn {
+.signin-title {
+    font-size: 2vmax;
+}
+
+.row .input-field input[type=text], .row .input-field input[type=password], .row .input-field button[type=submit] {
+    margin-top: 2vmax;
+    height: 5vh;
+    width: 96%;
+    padding-left: 1vmax;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1vmax;
+}
+
+.row .input-field input[type=password] {
+    margin-top: 0;
+}
+
+.row .input-field input[type=text], .row .input-field input[type=password]:focus {
+    border-bottom: 1px solid #36507A;
+    box-shadow: 0 1px 0 0 #36507A;
+}
+
+.row .input-field button[type=submit] {
+    margin-top: 0;
+    width: 99%;
+    background-color: #36507A;
+}
+
+.row .input-field .margin {
+    font-size: 1vmax;
+}
+
+.row .input-field .margin a {
+    color: #36507A;
+    font-weight: 700;
+}
+
+.row .input-field .margin a:hover{
+    color: #848484;
+}
+
+/* .delete-btn {
     position: relative;
     z-index: 2;
-} */
+}  */
 
 #indexTitle {
     color: #D4DFEA;

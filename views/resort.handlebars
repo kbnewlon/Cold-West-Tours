@@ -48,10 +48,12 @@
     <section class="row section">
         <div class="col">
             <span class="sub-title">Location</span>
+
             {{!-- Map by leaflet --}}
             <aside id="map-id"></aside>
-            <p class="text">Address: {{address}}</p>
-            <p class="text">Phone Number: {{phone}}</p>
+            <span class="text">Address: {{address}}</span>
+            <br>
+            <span class="text">Phone Number: {{phone}}</span>
         </div>
     </section>
     <div class="divider"></div>
@@ -71,7 +73,8 @@
             <span class="sub-title">Activity</span>
             <ul>
                 {{#each activityList}}
-                <li class="text"><a class="list" href="/activity/{{id}}"><i class="material-icons chevron-icon">chevron_right</i>{{name}}</a></li>
+                <li class="text"><a class="list" href="/activity/{{id}}"><i
+                            class="material-icons chevron-icon">chevron_right</i>{{name}}</a></li>
                 {{/each}}
             </ul>
         </div>

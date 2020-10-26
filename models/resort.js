@@ -60,10 +60,12 @@ module.exports = function (sequelize, DataTypes) {
     Resort.associate = function (models) {
         // Associating Resort with Activity and Resort_Activity
         // When an Resort is deleted, also delete any associated Resort_Activity
-        Resort.hasMany(models.Resort_Activity, {
-            onDelete: "cascade"
+        Resort.hasMany(models.User, {
+            foreignKey: {
+                name: "fav_resort"
+            },
+            onDelete: "Set Null"
         });
-        Resort.belongsToMany(models.Activity, { through: models.Resort_Activity });
     };
 
     return Resort;

@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: white;
+    background-color:#D4DFEA;
 }
 
 #indexTitle {
@@ -15,21 +15,39 @@ body {
     font-weight: 900;
     text-shadow: -4px -4px #36507A;
 }
+#bottomCard{
+    /* position: absolute;  */
+    bottom: 0; 
+    left: 0; width: 100%;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+    color: #051631;
+    text-shadow: -1px -1px #D4DFEA;
+    /* margin-bottom: -2.8rem */
+    font-weight: bold;
+} 
+#tagLine{
+    color: #36507A;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 63px;
+    margin: none;
+    text-align: center;
+    margin-top: -2.8rem;
+    font-weight: 525;
+    text-shadow: 2px 2px #D4DFEA;
+}
+
 /*  #36507A*/
 .nav-wrapper { 
-  
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
-  
     background-color: #D4DFEA;
 }
 nav ul li a{
     color: #36507A;
-  }
-
-.overlayBackground {
-    background-color: #36507A;
 }
+
 
 .coverImg{
     background: url("https://res.cloudinary.com/dpnjzg0ar/image/upload/v1603303328/TD1uDeJc_xp3ogk.jpg") no-repeat center center fixed;
@@ -46,7 +64,8 @@ nav ul li a{
 }
 
 .overlayBackground {
-    background-color: #36507A;
+    background-color: #D4DFEA;
+    margin-left: 5%;   
 }
 
 .resortBackground {
@@ -60,94 +79,58 @@ nav ul li a{
 .overlayText {
     color:#D4DFEA;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 75px;
-
+    font-size: 50px;
+    margin-top: 15rem;
+    width: 100vw;    
 }
 
 .overlaySmText {
     color: #BFCFDF;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 35px;
-} 
-
-#tagLine{
-    color: #36507A;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 63px;
-    margin: none;
-    text-align: center;
-    margin-top: -2.8rem;
-    font-weight: 525;
-    text-shadow: 2px 2px #D4DFEA;
-}
-
-
-#bottomCard{
-    position: absolute; 
-    bottom: 0; 
-    left: 0; width: 100%;
-    text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 40px;
-    color: #051631;
-    text-shadow: -1px -1px #D4DFEA;
-    /* margin-bottom: -2.8rem */
-    font-weight: bold;
-} 
-
-.overlayBackgound{
-
-}
-
-.overlayText{
-    font-size: 50px;
-    margin-top: 15rem;
-    /* height: 100vh; */
-    width: 100vw;
-    /* margin-left: -10rem;
-    margin-right: 10rem; */
-    
-
-}
-
-.overlaySmText{
+    /* font-size: 35px; */
     font-size: 18px;
     margin-bottom: 25rem;
-    /* height: 100vh; */
     width: 100vw;
-}
+} 
+
+
 
 
 .button {
-   border-top: 1px solid #36507a;
-   background: #36507a;
-   background: -webkit-gradient(linear, left top, left bottom, from(#36507a), to(#36507a));
-   background: -webkit-linear-gradient(top, #36507a, #36507a);
-   background: -moz-linear-gradient(top, #36507a, #36507a);
-   background: -ms-linear-gradient(top, #36507a, #36507a);
-   background: -o-linear-gradient(top, #36507a, #36507a);
-   padding: 20px 40px;
-   -webkit-border-radius: 0px;
-   -moz-border-radius: 0px;
-   border-radius: 0px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 3px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 3px 0;
-   box-shadow: rgba(0,0,0,1) 0 0px 0;
-   text-shadow: rgba(0,0,0,.4) 0 3px 0;
-   color: #d4dfea;
-   font-size: 16px;
-   font-family: Georgia, Serif;
-   text-decoration: none;
-   vertical-align: middle;
-   margin-top: 0;
-   cursor: pointer;
-   }
+    margin-right: 20px;
+    border-top: 1px solid #36507a;
+    background: #36507a;
+    background: -webkit-gradient(linear, left top, left bottom, from(#36507a), to(#081a36));
+    background: -webkit-linear-gradient(top, #36507a, #081a36);
+    background: -moz-linear-gradient(top, #36507a, #081a36);
+    background: -ms-linear-gradient(top, #36507a, #081a36);
+    background: -o-linear-gradient(top, #36507a, #081a36);
+    padding: 20px 40px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 3px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 3px 0;
+    box-shadow: rgba(0,0,0,1) 0 0px 0;
+    text-shadow: rgba(0,0,0,.4) 0 0px 0;
+    color: #d4dfea;
+    font-size: 16px;
+    font-family: Georgia, Serif;
+    text-decoration: none;
+    vertical-align: middle;
+    margin-top: 0;
+    cursor: pointer;    
+}
+
 .button:hover {
-   border-top-color: #3b79b6;
-   background: #3b79b6;
-   color: #36507a;
-   }
+    border-top-color: #3b79b6; 
+    background: #3b79b6;
+    color: #ffffff; 
+   
+}
+
 .button:active {
-   border-top-color: #a4d5ed;
-   background: #a4d5ed;
-   }
+    border-top-color: #a4d5ed;
+    background: #a4d5ed;
+    color: #ffffff;
+}

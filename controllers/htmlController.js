@@ -47,6 +47,11 @@ router.get("/resort/:id", function (req, res) {
 
             // Create resort object to be rendered
             const resortObj = {
+                pic1: getResort.pic1,
+                pic2: getResort.pic2,
+                pic3: getResort.pic3,
+                pic4: getResort.pic4,
+                pic5: getResort.pic5,
                 name: getResort.name,
                 address: getResort.address,
                 phone: getResort.phone,
@@ -136,11 +141,13 @@ router.get("/account", function (req, res) {
             }
         }).then(function (getActivity) {
             let activityObj = {
-                name: ""
+                name: "",
+                img: ""
             }
             if((getActivity) && (getActivity !== null)){
                 activityObj = {
                     name: getActivity.name,
+                    img: getActivity.actImage,
                     about: getActivity.about
                 }
             }
@@ -151,12 +158,14 @@ router.get("/account", function (req, res) {
             }).then(function (getResort) {
                 let resortObj = {
                     name: "",
+                    img: "",
                     url: "",
                     overview: ""
                 }
                 if((getResort) && (getResort !== null)){
                     resortObj = {
                         name: getResort.name,
+                        img: getResort.pic1,
                         url: getResort.url,
                         overview: getResort.overview
                     }

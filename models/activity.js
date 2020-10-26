@@ -9,6 +9,18 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             defaultValue: false
 
+        },
+        about: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        guide: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        }, 
+        actImage: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     }, {
         timestamps: false

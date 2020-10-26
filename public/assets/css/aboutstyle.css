@@ -1,54 +1,22 @@
-.about-background{
-  background: url("https://res.cloudinary.com/dpnjzg0ar/image/upload/v1603680229/about_two_pyfa1j.png") no-repeat center center fixed;
+.about-background {
+  background: url("https://res.cloudinary.com/dpnjzg0ar/image/upload/v1603680229/about_two_pyfa1j.png")
+    no-repeat center center fixed;
   background-size: cover;
-  
+
   height: 100vh;
   width: 100vw;
   margin: none;
-  
 }
 
-/* .button {
-  margin-right: 20px;
-  border-top: 1px solid #36507a;
-  background: #36507a;
-  background: -webkit-gradient(linear, left top, left bottom, from(#36507a), to(#081a36));
-  background: -webkit-linear-gradient(top, #36507a, #081a36);
-  background: -moz-linear-gradient(top, #36507a, #081a36);
-  background: -ms-linear-gradient(top, #36507a, #081a36);
-  background: -o-linear-gradient(top, #36507a, #081a36);
-  padding: 20px 40px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-  -webkit-box-shadow: rgba(0,0,0,1) 0 3px 0;
-  -moz-box-shadow: rgba(0,0,0,1) 0 3px 0;
-  box-shadow: rgba(0,0,0,1) 0 0px 0;
-  text-shadow: rgba(0,0,0,.4) 0 0px 0;
-  color: #d4dfea;
-  font-size: 16px;
-  font-family: Georgia, Serif;
-  text-decoration: none;
-  vertical-align: middle;
-  margin-top: 0;
-  cursor: pointer;    
-} */
-
-.row{
- margin-left: 15rem;
-
-
+.row {
+  margin-left: 15rem;
 }
 .our-names {
- font-size: 35px;
- font-family: 'Times New Roman', Times, serif
-}
-.our-names {
- color: white;
-  
+  font-size: 35px;
+  font-family: "Kameron", serif;
+  color: white;
 }
 
 .about-text {
   color: white;
-
-} 
+}

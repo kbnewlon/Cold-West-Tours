@@ -9,56 +9,75 @@
 
         {{!-- Favorite resort --}}
         <div class="col s12 m6">
-            <div class="card">
+            <div class="card large sticky-action">
                 <div class="card-image">
-                    <!-- <img src={{resort.img}}> -->
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                            class="material-icons">delete</i></a>
+                    {{#if user.fav_resort}}
+                    <!-- <img class="responsive-img activator" src={{resort.img}}> -->
+                    <img class="responsive-img activator" src="http://placehold.it/300x200"
+                        srcset="http://placehold.it/300x200 300w" alt="Placeholder" />
+                    <a class="btn-floating halfway-fab waves-effect waves-light red">
+                        <i onclick="delResort('{{user.username}}', '{{user.fav_activity}}', {{user.id}})"
+                            class="material-icons delete-btn">delete</i>
+                    </a>
+                    {{/if}}
                 </div>
                 <div class="card-content">
-                    <span class="card-title">{{resort.name}}</span>
+                    {{#if user.fav_resort}}
+                    <span class="card-title activator">{{resort.name}}</span>
+                    {{/if}}
+                    {{#unless user.fav_resort}}
+                    <span class="card-title">No favorite resort</span>
+                    {{/unless}}
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title">{{resort.name}}<i class="material-icons right">close</i></span>
                     <p>{{resort.overview}}</p>
                 </div>
+                {{#if user.fav_resort}}
                 <div class="card-action">
-                    <a href={{resort.url}}>Resort Website</a>
+                    <a href="/resort/{{user.fav_resort}}">Resort Page</a>
+                    <a href={{resort.url}} target="_blank">Resort Website</a>
                 </div>
+                {{/if}}
             </div>
         </div>
 
         {{!-- Favorite activity --}}
         <div class="col s12 m6">
-            <div class="card">
+            <div class="card large sticky-action">
                 <div class="card-image">
-                    <!-- <img src={{activity.img}}> -->
-                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                            class="material-icons">delete</i></a>
+                    {{#if user.fav_activity}}
+                    <!-- <img class="responsive-img activator" src={{activity.img}}> -->
+                    <img class="responsive-img activator" src="http://placehold.it/300x200"
+                        srcset="http://placehold.it/300x200 300w" alt="Placeholder" />
+                    <a class="btn-floating halfway-fab waves-effect waves-light red">
+                        <i onclick="delActivity('{{user.username}}', '{{user.fav_resort}}', {{user.id}})"
+                            class="material-icons delete-btn">delete</i>
+                    </a>
+                    {{/if}}
                 </div>
                 <div class="card-content">
-                    <span class="card-title">{{activity.name}}</span>
-                    <p>{{activity.name}}</p>
+                    {{#if user.fav_activity}}
+                    <span class="card-title activator">{{activity.name}}</span>
+                    {{/if}}
+                    {{#unless user.fav_activity}}
+                    <span class="card-title">No favorite activity</span>
+                    {{/unless}}
                 </div>
+
+                <div class="card-reveal">
+                    <span class="card-title">{{activity.name}}<i class="material-icons right">close</i></span>
+                    <p>{{activity.about}}</p>
+                </div>
+
+                {{#if user.fav_activity}}
+                <div class="card-action">
+                    <a href="/activity/{{user.fav_activity}}">Activity Page</a>
+                </div>
+                {{/if}}
             </div>
         </div>
 
     </section>
 
-    {{!-- Past favorites --}}
-    {{!-- <section class="row">
-        <h3>Past favorites</h3>
-    </section>
-
-    <section class="row">
-        <div class="col s12 m6">
-            <h4>Resort</h4>
-            {{#each pastFavResort}}
-            {{> pastFavs/pastFavResort-block}}
-            {{/each}}
-        </div>
-        <div class="col s12 m6">
-            <h4>Activity</h4>
-            {{#each pastFavActivity}}
-            {{> pastFavs/pastFavActivity-block}}
-            {{/each}}
-        </div>
-    </section> --}}
 </main>

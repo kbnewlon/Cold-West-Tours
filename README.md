@@ -73,10 +73,10 @@ Thank you [Slick](https://kenwheeler.github.io/slick/) for helping us display ou
 
 ## Questions 
 Please contact our team if you have any questions:
-<br>Email: 
+<br>Github: Email 
 
-[Devin Gillogly](https://github.com/virlym) : virlym@gmail.com
-[Scott Dancer](https://github.com/ScottDancer) : scottpdancer@gmail.com
-[Chris MacGeorge](https://github.com/cmacgeorge1) : christopher.s.macgeorge@gmail.com
-[Zhuoyi Wang](https://github.com/zhouyiartemiswang) : wzyzhouyi@gmail.com
-[Kayla Newlon](https://github.com/kbnewlon) : kayla.b.newlon@gmail.com
+<br>[Devin Gillogly](https://github.com/virlym) : virlym@gmail.com
+<br>[Scott Dancer](https://github.com/ScottDancer) : scottpdancer@gmail.com
+<br>[Chris MacGeorge](https://github.com/cmacgeorge1) : christopher.s.macgeorge@gmail.com
+<br>[Zhuoyi Wang](https://github.com/zhouyiartemiswang) : wzyzhouyi@gmail.com
+<br>[Kayla Newlon](https://github.com/kbnewlon) : kayla.b.newlon@gmail.com

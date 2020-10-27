@@ -63,8 +63,8 @@ Thank you [Slick](https://kenwheeler.github.io/slick/) for helping us display ou
 
 ## Visuals
 ![screenshot of homepage](public/assets/images/screenshot_homepage.PNG);
-![screenshot of sign-in page](public\assets\images\screenshot_signin.PNG);
-![screenshot of favorites](public\assets\images\screenshot_favorites.PNG);
+![screenshot of sign-in page](public/assets/images/screenshot_signin.PNG);
+![screenshot of favorites](public/assets/images/screenshot_favorites.PNG);
 
 ## Links
 [To Repo:](https://github.com/kbnewlon/project2)

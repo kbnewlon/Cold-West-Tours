@@ -27,18 +27,23 @@
     {{!-- Resort Pic --}}
     <section class="row section">
         <div class="col s12">
-            <img class="responsive-img" src={{pic1}} alt="Placeholder" />
+            <div class="row">
+                <img class="responsive-img resort-img" src={{pic1}} alt="Placeholder" />
+            </div>
+            <div class="row">
+                <div class="col s12 carousel">
+                    <img src={{pic1}} class="carousel-pics" alt="Resort Photos">
+                    <img src={{pic2}} class="carousel-pics" alt="Resort Photos">
+                    <img src={{pic3}} class="carousel-pics" alt="Resort Photos">
+                    <img src={{pic4}} class="carousel-pics" alt="Resort Photos">
+                    <img src={{pic5}} class="carousel-pics" alt="Resort Photos">
+                </div>
+            </div>
+            <div class="row s12">
+                <i class="prev material-icons">arrow_back</i>
+                <i class="next material-icons">arrow_forward</i>
+            </div>
         </div>
-        {{!-- Add carousel --}}
-        <div class="carousel">
-            <img src={{pic1}} class="carousel-pics" alt="Resort Photos">
-            <img src={{pic2}} class="carousel-pics" alt="Resort Photos">
-            <img src={{pic3}} class="carousel-pics" alt="Resort Photos">
-            <img src={{pic4}} class="carousel-pics" alt="Resort Photos">
-            <img src={{pic5}} class="carousel-pics" alt="Resort Photos">
-        </div>
-        <button class="prev">Previous</button>
-        <button class="next">Next</button>
     </section>
 
     {{!-- Overview --}}

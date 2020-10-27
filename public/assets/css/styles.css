@@ -38,7 +38,6 @@ nav ul a, nav .brand-logo {
     margin-top: 8vh;
 }
 
-/* Section class from Materialize */
 .section {
     margin-bottom: 0;
 }
@@ -60,14 +59,16 @@ nav ul a, nav .brand-logo {
 }
 
 .carousel {
-    width: 100%;
-    height: 50vh;
-    margin-bottom: -20%;
+    /* width: 100%; */
+    /* /* height: 50vh; */
+    margin-bottom: -15vh; 
 }
 
 .carousel-pics {
-    width: 100vw; 
+    /* width: 100vw;  */
     height: 20vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
     object-fit: cover;
 }
 
@@ -129,7 +130,7 @@ nav ul a, nav .brand-logo {
 
 @media only screen and (max-width: 680px) {
     .carousel {
-        margin-bottom: -65%;
+        margin-bottom: -30vh;
     }
     .prev {
         position: absolute;
@@ -151,6 +152,10 @@ nav ul a, nav .brand-logo {
     .responsive-img {
         width: 100vw;
     }
+    .resort-img {
+        display: none;
+    }
+
     .sidenav li>a {
         font-size: 10px;
     }

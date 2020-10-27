@@ -26,15 +26,15 @@ $(document).ready(function () {
     $('.carousel').slick({
         nextArrow: '.next',
         prevArrow: '.prev',
-        centerMode: true,
-        centerPadding: '60px',
+        centerMode: false,
         slidesToShow: 3,
+        slidesToScroll: 1,
         responsive: [
             {
                 breakpoint: 768,
                 settings: {
                     arrows: false,
-                    centerMode: true,
+                    centerMode: false,
                     centerPadding: '40px',
                     slidesToShow: 3
                 }
@@ -43,7 +43,7 @@ $(document).ready(function () {
                 breakpoint: 480,
                 settings: {
                     arrows: false,
-                    centerMode: true,
+                    centerMode: false,
                     centerPadding: '40px',
                     slidesToShow: 1
                 }

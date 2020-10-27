@@ -9,12 +9,12 @@
             {{#if checkFav}}
             <span class="page-title">{{name}}</span>
             <i onclick="resortFav(this, {{id}}, '{{user.username}}', '{{user.fav_activity}}', {{user.id}})"
-                class="material-icons">star</i>
+                class="material-icons star-icon">star</i>
             {{!-- If not, display empty star --}}
             {{else}}
             <span class="page-title">{{name}}</span>
             <i onclick="resortFav(this, {{id}}, '{{user.username}}', '{{user.fav_activity}}', {{user.id}})"
-                class="material-icons">star_border</i>
+                class="material-icons star-icon">star_border</i>
             {{/if}}
 
             {{!-- User who is not logged in will not see stars --}}
@@ -24,21 +24,29 @@
         </div>
     </section>
 
-    {{!-- Resort Pic --}}
     <section class="row section">
         <div class="col s12">
-            <img class="responsive-img" src={{pic1}} alt="Placeholder" />
+            <div class="row">
+                <div class="col s12">
+                    <img class="responsive-img resort-img" src={{pic1}} alt="Placeholder" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s1">
+                    <i class="prev material-icons right">arrow_back</i>
+                </div>
+                <div class="col s10 carousel">
+                    <img src={{pic1}} class="carousel-pics" alt="Resort Photos">
+                    <img src={{pic2}} class="carousel-pics" alt="Resort Photos">
+                    <img src={{pic3}} class="carousel-pics" alt="Resort Photos">
+                    <img src={{pic4}} class="carousel-pics" alt="Resort Photos">
+                    <img src={{pic5}} class="carousel-pics" alt="Resort Photos">
+                </div>
+                <div class="col s1">
+                    <i class="next material-icons left">arrow_forward</i>
+                </div>
+            </div>
         </div>
-        {{!-- Add carousel --}}
-        <div class="carousel">
-            <img src={{pic1}} class="carousel-pics" alt="Resort Photos">
-            <img src={{pic2}} class="carousel-pics" alt="Resort Photos">
-            <img src={{pic3}} class="carousel-pics" alt="Resort Photos">
-            <img src={{pic4}} class="carousel-pics" alt="Resort Photos">
-            <img src={{pic5}} class="carousel-pics" alt="Resort Photos">
-        </div>
-        <button class="prev">Previous</button>
-        <button class="next">Next</button>
     </section>
 
     {{!-- Overview --}}

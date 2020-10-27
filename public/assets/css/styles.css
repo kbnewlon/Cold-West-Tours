@@ -30,11 +30,23 @@ nav ul a, nav .brand-logo {
     color: #36507A;
 }
 
+/* Side Nav */
+.sidenav li>a, .sidenav li {
+    color: #36507a;
+}
+
 #menu-icon, .dropdown-content li>a {
     color: #36507A;
 }
 
-/* Section class from Materialize */
+#menu-icon {
+    padding-top: 2vw;
+}
+
+.container {
+    margin-top: 8vh;
+}
+
 .section {
     margin-bottom: 0;
 }
@@ -56,29 +68,20 @@ nav ul a, nav .brand-logo {
 }
 
 .carousel {
-    width: 100%;
-    height: 50vh;
-    margin-bottom: -20%;
+    /* width: 100%; */
+    /* /* height: 50vh; */
+    margin-bottom: -15vh; 
 }
 
 .carousel-pics {
-    width: 100vw; 
+    /* width: 100vw;  */
     height: 20vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
     object-fit: cover;
 }
 
-.prev {
-    position: absolute;
-    left: 45%;
-    margin-top: 0%;
-    
-}
-
-.next {
-    position: absolute;
-    right: 45%;
-}
-
+/* Home page */
 #index-title {
     color: #d4dfea;
     font-family: "Kameron", serif;
@@ -101,11 +104,11 @@ nav ul a, nav .brand-logo {
 }
 
 #bottom-text {
-    /* position: absolute; */
     display: grid;
     left: 0;
     bottom: 0;
     text-align: center;
+    height: 20vh;
     width: 100%;
     font-size: 40px;
     font-family: "Times New Roman", Times, serif;
@@ -123,17 +126,15 @@ nav ul a, nav .brand-logo {
     margin: none;
 }
 
+#cover-card {
+    display: grid;
+    margin-top: -2.8rem;
+    padding-top: none;
+}
+
 @media only screen and (max-width: 680px) {
     .carousel {
-        margin-bottom: -65%;
-    }
-    .prev {
-        position: absolute;
-        left: 30%;
-    }
-    .next {
-        position: absolute;
-        right: 30%;
+        margin-bottom: -30vh;
     }
     #index-title {
         font-size: 100px;
@@ -147,9 +148,17 @@ nav ul a, nav .brand-logo {
     .responsive-img {
         width: 100vw;
     }
-    .sidenav li>a {
+    .resort-img {
+        display: none;
+    }
+    .sidenav li>a, .sidenav li {
         font-size: 10px;
     }
+}
+
+.star-icon {
+    font-size: 3vmax;
+    margin-left: 1vw;
 }
 
 /* Map in resort page */
@@ -266,11 +275,5 @@ nav ul a, nav .brand-logo {
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: #36507A;
-}
-
-#cover-card {
-    display: grid;
-    margin-top: -2.8rem;
-    padding-top: none;
 }
 

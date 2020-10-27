@@ -30,6 +30,7 @@ nav ul a, nav .brand-logo {
     color: #36507A;
 }
 
+/* Side Nav */
 .sidenav li>a, .sidenav li {
     color: #36507a;
 }
@@ -80,6 +81,7 @@ nav ul a, nav .brand-logo {
     object-fit: cover;
 }
 
+/* Home page */
 #index-title {
     color: #d4dfea;
     font-family: "Kameron", serif;
@@ -124,6 +126,12 @@ nav ul a, nav .brand-logo {
     margin: none;
 }
 
+#cover-card {
+    display: grid;
+    margin-top: -2.8rem;
+    padding-top: none;
+}
+
 @media only screen and (max-width: 680px) {
     .carousel {
         margin-bottom: -30vh;
@@ -146,6 +154,11 @@ nav ul a, nav .brand-logo {
     .sidenav li>a, .sidenav li {
         font-size: 10px;
     }
+}
+
+.star-icon {
+    font-size: 3vmax;
+    margin-left: 1vw;
 }
 
 /* Map in resort page */
@@ -262,11 +275,5 @@ nav ul a, nav .brand-logo {
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: #36507A;
-}
-
-#cover-card {
-    display: grid;
-    margin-top: -2.8rem;
-    padding-top: none;
 }
 

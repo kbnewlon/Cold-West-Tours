@@ -34,6 +34,10 @@ nav ul a, nav .brand-logo {
     color: #36507A;
 }
 
+.container {
+    margin-top: 8vh;
+}
+
 /* Section class from Materialize */
 .section {
     margin-bottom: 0;
@@ -101,7 +105,6 @@ nav ul a, nav .brand-logo {
 }
 
 #bottom-text {
-    /* position: absolute; */
     display: grid;
     left: 0;
     bottom: 0;

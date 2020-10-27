@@ -2,8 +2,8 @@
 
 Join The Cold West Tours this winter and find your perfect outdoor activity for every mood, style, and condition. Your adventure awaits. 
 
-![issues](https://img.shields.io/github/issues/kbnewlon/project2)
-![GitHub top language](https://img.shields.io/github/languages/top/kbnewlon/project2)
+![issues](https://img.shields.io/github/issues/kbnewlon/Cold-West-Tours)
+![GitHub top language](https://img.shields.io/github/languages/top/kbnewlon/Cold-West-Tours)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
 ## Description 
@@ -67,7 +67,7 @@ Thank you [Slick](https://kenwheeler.github.io/slick/) for helping us display ou
 ![screenshot of favorites](public/assets/images/screenshot_favorites.PNG)Screenshot of user favorites dashboard
 
 ## Links
-[To Repo:](https://github.com/kbnewlon/project2)
+<br>[To Repo:](https://github.com/kbnewlon/Cold-West-Tours)
 <br>[To Demo:](https://drive.google.com/file/d/1dSETviEwiEii2JRWHCnEuqlWr9bY95jU/view)  
 <br>[To deployed application:](https://the-cold-west.herokuapp.com/)
 

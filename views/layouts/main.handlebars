@@ -49,29 +49,30 @@
     </ul>
 
     <!-- Navbar -->
-    <nav>
-        <div class="nav-wrapper">
-            <a href="/" class="brand-logo">CW</a>
-            <a href="#" data-target="sidenav" class="sidenav-trigger"><i class="material-icons"
-                    id="menu-icon">menu</i></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/">home</a></li>
-                <li><a class="dropdown-trigger" href="/resort" data-target="dropdown1">stay</a></li>
-                <li><a class="dropdown-trigger" href="/activity" data-target="dropdown2">play</a></li>
-                <li><a href="/aboutus">about</a></li>
-                <!-- Unless user is signed in, the sign in tab will always show up -->
-                {{#unless user}}
-                <li><a href="/signin">sign in</a></li>
-                {{/unless}}
-
-                <!-- If user is signed in, the account and sing out tab will show up -->
-                {{#if user}}
-                <li><a href="/account">account</a></li>
-                <li><a href="/user/logout">sign out</a></li>
-                {{/if}}
-            </ul>
-        </div>
-    </nav>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo">CW</a>
+                <a href="#" data-target="sidenav" class="sidenav-trigger"><i class="material-icons"
+                        id="menu-icon">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/">home</a></li>
+                    <li><a class="dropdown-trigger" href="/resort" data-target="dropdown1">stay</a></li>
+                    <li><a class="dropdown-trigger" href="/activity" data-target="dropdown2">play</a></li>
+                    <li><a href="/aboutus">about</a></li>
+                    <!-- Unless user is signed in, the sign in tab will always show up -->
+                    {{#unless user}}
+                        <li><a href="/signin">sign in</a></li>
+                    {{/unless}}
+                    <!-- If user is signed in, the account and sing out tab will show up -->
+                    {{#if user}}
+                        <li><a href="/account">account</a></li>
+                        <li><a href="/user/logout">sign out</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+        </nav>
+    </div>
 
     <!-- Slide out navbar when on mobile screen -->
     <ul id="slide-out" class="sidenav navText full" style="width: auto !important">
@@ -98,20 +99,21 @@
             </ul>
         </li>
         <li>
-        <ul class="collapsible collapsible-accordion">
-            <li>
-                <div class="waves-effect collapsible-header">play<i class="mdi-navigation-arrow-drop-down"></i></div>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="/activity/1">Skiing</a></li>
-                        <li><a href="/activity/2">Cross-Country Skiing</a></li>
-                        <li><a href="/activity/3">Snowboarding</a></li>
-                        <li><a href="/activity/4">Snowshoeing</a></li>
-                        <li><a href="/activity/5">Tubing</a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <div class="waves-effect collapsible-header">play<i class="mdi-navigation-arrow-drop-down"></i>
+                    </div>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li><a href="/activity/1">Skiing</a></li>
+                            <li><a href="/activity/2">Cross-Country Skiing</a></li>
+                            <li><a href="/activity/3">Snowboarding</a></li>
+                            <li><a href="/activity/4">Snowshoeing</a></li>
+                            <li><a href="/activity/5">Tubing</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
         </li>
         <li><a class="waves-effect collapsible-header" href="/aboutus">about</a></li>
         {{#unless user}}

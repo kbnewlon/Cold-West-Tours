@@ -310,3 +310,7 @@ nav ul a, nav .brand-logo {
       font-size: 10px;
     }
   }
+
+  .user-error{
+      color: red;
+  }

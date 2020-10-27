@@ -27,6 +27,7 @@ app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// session setup for user checking
 app.set(`trust proxy`, 1);
 
 app.use(session({
@@ -38,9 +39,8 @@ app.use(session({
     }
 }));
 
-// Routes
+// Routes/Controllers
 // =============================================================
-// require("./routes/api-routes.js")(app);
 const resortRoutes = require('./controllers/resortController');
 app.use("/api/resort",resortRoutes);
 const activityRoutes = require('./controllers/activityController');

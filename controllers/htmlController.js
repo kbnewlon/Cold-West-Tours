@@ -7,10 +7,8 @@ router.get("/", function (req, res) {
     res.render("index", {user: req.session.user});
 });
 
-// Test page for resort
+// Test page for resort, shouldn't be pulled up under normal behaviour
 router.get("/resort", function (req, res) {
-    //let newString = process.env.A_TOKEN;
-    //console.log(typeof newString);
     const defaultObj = {
         name: "Mini Mountain Indoor Ski Center",
         address: "1900 132nd Ave NE a3, Bellevue, WA 98005",
@@ -23,21 +21,20 @@ router.get("/resort", function (req, res) {
     res.render("resort", defaultObj);
 });
 
-// Route to get resort by id 
+// GET route to get resort page by resort id 
 router.get("/resort/:id", function (req, res) {
     db.Resort.findOne({
         where: {
             id: req.params.id
         }
     }).then(function (getResort) {
-        // console.log(getResort)
         // Get all activities
         db.Activity.findAll({}).then(function (getActivityList) {
             // Create activity list 
             let activityList = [];
             getActivityList.forEach(function (activityEl) {
                 activityList.push(activityEl.dataValues);
-            })
+            });
 
             let checkFav = false;
             // If user is signed in and current resort matches user favorite resort
@@ -67,20 +64,21 @@ router.get("/resort/:id", function (req, res) {
             }
             res.render("resort", resortObj);
         })
-        // .catch(err => {
-        //     res.status(500).json(getActivityList)
-        // });
+        .catch(err => {
+            res.status(500).json(getActivityList)
+        });
     })
     .catch(err => {
         res.status(500).json(getResort)
     });
 });
 
+// Test page for activity, shouldn't be pulled up under normal behaviour 
 router.get("/activity", function (req, res) {
     res.render("activity", { user: req.session.user });
 });
 
-// Route to get activity by id 
+// GET route to get activity by id 
 router.get("/activity/:id", function (req, res) {
     db.Activity.findOne({
         where: {
@@ -114,25 +112,25 @@ router.get("/activity/:id", function (req, res) {
             }
             res.render("activity", activityJson);
         })
-        // .catch(err => {
-        //     res.status(500).json(getResortList);
-        // });
+        .catch(err => {
+            res.status(500).json(getResortList);
+        });
     }).catch(err => {
         res.status(500).json(getActivity)
     });
 });
 
-// Route to sign in page
+// GET route to sign in page
 router.get("/signin", function (req, res) {
     res.render("signIn", {user: req.session.user});
 });
 
-// Route to sign up page
+// GET route to sign up page
 router.get("/signup", function (req, res) {
     res.render("signUp", {user: req.session.user});
 });
 
-// Route to account page
+// GET route to account page
 router.get("/account", function (req, res) {
     if(req.session.user){
         db.Activity.findOne({
@@ -144,6 +142,7 @@ router.get("/account", function (req, res) {
                 name: "",
                 img: ""
             }
+
             if((getActivity) && (getActivity !== null)){
                 activityObj = {
                     name: getActivity.name,
@@ -151,6 +150,7 @@ router.get("/account", function (req, res) {
                     about: getActivity.about
                 }
             }
+
             db.Resort.findOne({
                 where: {
                     id: req.session.user.fav_resort
@@ -162,6 +162,7 @@ router.get("/account", function (req, res) {
                     url: "",
                     overview: ""
                 }
+
                 if((getResort) && (getResort !== null)){
                     resortObj = {
                         name: getResort.name,
@@ -170,6 +171,7 @@ router.get("/account", function (req, res) {
                         overview: getResort.overview
                     }
                 }
+
                 res.render("account", {activity: activityObj, resort: resortObj, user: req.session.user });
             }).catch(err => {
                 res.status(500).json("internal server error")
@@ -183,17 +185,17 @@ router.get("/account", function (req, res) {
     }
 });
 
-// Route to sign out page
+// GET route to sign out page
 router.get("/signout", function (req, res) {
     res.render("signOut", {user: req.session.user});
 });
 
-// Route to about us page
+// GET route to about us page
 router.get("/aboutus", function (req, res) {
     res.render("aboutUs", { user: req.session.user });
 });
 
-// Route to homepage if url not found above
+// GET route to homepage if url not found above
 router.get("*", function (req, res) {
     res.render("index", {user: req.session.user});
 });

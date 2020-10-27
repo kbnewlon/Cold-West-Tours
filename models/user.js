@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 
 module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define("User", {
-        // Giving the Author model a name of type STRING
+        // only allow letters and numbers with a length between 4 and 24 characters
         username: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -13,6 +13,7 @@ module.exports = function (sequelize, DataTypes) {
                 len: [4,24]
             }
         },
+        // only allow letters and numbers with a length between 6 and 24 characters
         password: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -28,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     User.associate = function (models) {
-        // Associating User with Resort and Resort_Activity
+        // Associating User with Resort and Activity
         User.belongsTo(models.Activity, {
             foreignKey: {
             name : "fav_activity",
@@ -45,6 +46,7 @@ module.exports = function (sequelize, DataTypes) {
         });
     };
 
+    // encrypt the user password before adding it to the database
     User.beforeCreate(function(user){
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);   
     });

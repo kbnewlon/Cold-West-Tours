@@ -14,10 +14,8 @@ const db = require("../models");
 // Routes
 // =============================================================
 
-    // GET route for getting all of the activities
+    // POST route to add a user to the database
     router.post(`/signup`, function (req, res) {
-        // Write code here to retrieve all of the activities from the database and res.json them
-        // back to the user
         db.User.create({
             username:req.body.username,
             password:req.body.password,
@@ -64,6 +62,7 @@ const db = require("../models");
         });
     });
 
+    // POST route for user login
     router.post(`/login`, function(req, res) {
         db.User.findOne({
             where: {username: req.body.username}
@@ -82,7 +81,6 @@ const db = require("../models");
                     fav_resort: user.fav_resort
                 }
                 //return res.status(200).json(req.session);
-                // console.log("redirect wrong");
                 return res.redirect("/account");
             }
             else{
@@ -94,15 +92,18 @@ const db = require("../models");
         });
     });
 
+    // GET route for the user to log out
     router.get(`/logout`, function (req, res) {
         req.session.destroy();
         res.redirect("/signOut");
     });
 
+    // GET api route to see current session details
     router.get("/api/session", (req, res) => {
         res.json(req.session);
     });
 
+    // PUT route to update the user's favorite resort/activity
     router.put("/:id", function (req, res) {
         if(req.session.user){
             db.User.findOne({

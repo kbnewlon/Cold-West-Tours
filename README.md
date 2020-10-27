@@ -38,12 +38,15 @@ No tests available
 ![]()
 ## Links
 [To Repo](https://github.com/kbnewlon/project2)
-<br>To Demo:  
+<br>
+
+[To Demo](https://the-cold-west.herokuapp.com/)
 
 ## Questions 
 Please contact our team if you have any questions:
 <br>Email: 
-<br>Devin Gillogly virlym@gmail.com
+
+[Devin Gillogly](https://github.com/virlym) : virlym@gmail.com
 <br>Scott Dancer scottpdancer@gmail.com
 <br> Chris MacGeorge christopher.s.macgeorge@gmail.com
 <br> Zhuoyi Wang wzyzhouyi@gmail.com

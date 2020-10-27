@@ -1,38 +1,35 @@
 <main class="container">
 
-    {{!-- Title --}}
+    <!-- Title -->
     <section class="row section">
         <div class="col">
-            {{!-- When user is logged in, show star or empty star --}}
+            <!-- When user is logged in, show star or empty star -->
             {{#if user}}
+                <!-- If it matches user favorite, display filled star -->
+                {{#if checkFav}}
+                    <span class="page-title">{{name}}</span>
+                    <i onclick="activityFav(this, {{id}}, '{{user.username}}', '{{user.fav_resort}}', {{user.id}})" class="material-icons">star</i>
+                    <!-- If not, display empty star -->
+                    {{else}}
+                        <span class="page-title">{{name}}</span>
+                        <i onclick="activityFav(this, {{id}}, '{{user.username}}', '{{user.fav_resort}}', {{user.id}})" class="material-icons">star_border</i>
+                {{/if}}
 
-            {{!-- If it matches user favorite, display filled star --}}
-            {{#if checkFav}}
-            <span class="page-title">{{name}}</span>
-            <i onclick="activityFav(this, {{id}}, '{{user.username}}', '{{user.fav_resort}}', {{user.id}})"
-                class="material-icons">star</i>
-            {{!-- If not, display empty star --}}
-            {{else}}
-            <span class="page-title">{{name}}</span>
-            <i onclick="activityFav(this, {{id}}, '{{user.username}}', '{{user.fav_resort}}', {{user.id}})"
-                class="material-icons">star_border</i>
-            {{/if}}
-
-            {{!-- User who is not logged in will not see stars --}}
-            {{else}}
-            <span class="page-title">{{name}}</span>
+                <!-- User who is not logged in will not see stars -->
+                {{else}}
+                    <span class="page-title">{{name}}</span>
             {{/if}}
         </div>
     </section>
 
-    {{!-- Activity Pic --}}
+    <!-- Activity Pic -->
     <section class="row section">
         <div class="col s12">
             <img class="responsive-img" src="{{actImage}}" alt="{{name}} Image">
         </div>
     </section>
 
-    {{!-- About Activity --}}
+    <!-- About Activity -->
     <section class="row section">
         <div class="col">
             <div class="card-panel">
@@ -42,7 +39,7 @@
         </div>
     </section>
 
-    {{!-- Beginner's Guide --}}
+    <!-- Beginner's Guide -->
     <section class="row section">
         <div class="col">
             <div class="card-panel">
@@ -52,15 +49,15 @@
         </div>
     </section>
 
-    {{!-- List of Resorts --}}
+    <!-- List of Resorts -->
     <section class="row section">
         <div class="col s12">
             <div class="card-panel">
                 <span class="sub-title">Resort</span>
                 <ul>
                     {{#each resortList}}
-                    <li class="text"><a class="list" href="/resort/{{id}}"><i
-                                class="material-icons chevron-icon">chevron_right</i>{{name}}</a></li>
+                        <li class="text"><a class="list" href="/resort/{{id}}">
+                        <i class="material-icons chevron-icon">chevron_right</i>{{name}}</a></li>
                     {{/each}}
                 </ul>
             </div>

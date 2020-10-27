@@ -10,24 +10,23 @@
     
     <section class="row">
 
-        {{!-- Favorite resort --}}
+        <!-- Favorite resort -->
         <div class="col s12 m6">
             <div class="card large sticky-action account-card">
                 <div class="card-image">
                     {{#if user.fav_resort}}
-                    <img class="responsive-img activator" src={{resort.img}}>
-                    <a class="btn-floating halfway-fab waves-effect waves-light bottom-btn">
-                        <i onclick="delResort('{{user.username}}', '{{user.fav_activity}}', {{user.id}})"
-                            class="material-icons">delete</i>
-                    </a>
+                        <img class="responsive-img activator" src={{resort.img}}>
+                        <a class="btn-floating halfway-fab waves-effect waves-light bottom-btn">
+                            <i onclick="delResort('{{user.username}}', '{{user.fav_activity}}', {{user.id}})" class="material-icons">delete</i>
+                        </a>
                     {{/if}}
                 </div>
                 <div class="card-content">
                     {{#if user.fav_resort}}
-                    <span class="account-title activator">{{resort.name}}</span>
+                        <span class="account-title activator">{{resort.name}}</span>
                     {{/if}}
                     {{#unless user.fav_resort}}
-                    <span class="account-title">No favorite resort</span>
+                        <span class="account-title">No favorite resort</span>
                     {{/unless}}
                 </div>
                 <div class="card-reveal">
@@ -35,32 +34,31 @@
                     <p class="account-text">{{resort.overview}}</p>
                 </div>
                 {{#if user.fav_resort}}
-                <div class="card-action">
-                    <a href="/resort/{{user.fav_resort}}">Resort Page</a>
-                    <a href={{resort.url}} target="_blank">Resort Website</a>
-                </div>
+                    <div class="card-action">
+                        <a href="/resort/{{user.fav_resort}}">Resort Page</a>
+                        <a href={{resort.url}} target="_blank">Resort Website</a>
+                    </div>
                 {{/if}}
             </div>
         </div>
 
-        {{!-- Favorite activity --}}
+        <!-- Favorite activity -->
         <div class="col s12 m6">
             <div class="card large sticky-action account-card">
                 <div class="card-image">
                     {{#if user.fav_activity}}
-                    <img class="responsive-img activator" src={{activity.img}}>
-                    <a class="btn-floating halfway-fab waves-effect waves-light bottom-btn">
-                        <i onclick="delActivity('{{user.username}}', '{{user.fav_resort}}', {{user.id}})"
-                            class="material-icons">delete</i>
-                    </a>
+                        <img class="responsive-img activator" src={{activity.img}}>
+                        <a class="btn-floating halfway-fab waves-effect waves-light bottom-btn">
+                            <i onclick="delActivity('{{user.username}}', '{{user.fav_resort}}', {{user.id}})" class="material-icons">delete</i>
+                        </a>
                     {{/if}}
                 </div>
                 <div class="card-content">
                     {{#if user.fav_activity}}
-                    <span class="account-title activator">{{activity.name}}</span>
+                        <span class="account-title activator">{{activity.name}}</span>
                     {{/if}}
                     {{#unless user.fav_activity}}
-                    <span class="account-title">No favorite activity</span>
+                        <span class="account-title">No favorite activity</span>
                     {{/unless}}
                 </div>
 

@@ -9,7 +9,6 @@
         "express": "^4.17.1",
         "express-handlebars": "^5.1.0",
         "express-session": "^1.17.1",
-        "fullpage.js": "^3.0.9",
         "mysql2": "^2.2.5",
         "sequelize": "^6.3.5"
     },

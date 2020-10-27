@@ -21,17 +21,26 @@ We've pulled together all ten ski and snowboard resorts in Washington State. Sta
 
 ## Installation
 Clone the repo to your desktop
-Run npm install to download the necessary dependencies
-Check the package.json to ensure the necessary dependencies are downloaded 
-Change the force:false in the server.js file to true. 
-Create the winter_activity_db using workbench
-Refresh your schema
-Change the force:true back to false
-Start the server using npm start or node server.js
-Enjoy
+<br>Run npm install to download the necessary dependencies
+<br>Check the package.json to ensure the necessary dependencies are downloaded 
+<br>Change the force:false in the server.js file to true. 
+<br>Create the winter_activity_db using workbench
+<br>Refresh your schema
+<br>Change the force:true back to false
+<br>Start the server using npm start or node server.js
+<br>Enjoy
 
 ## Usage
-Once you're on the homepage you will see the sticky navbar displaying on the top. Create an account with us by clicking on sign in. Here you can save your favorite resort and activity. Select your favorites once you're signed in by clicking the star icon by the name of the resort or activity. Delete your current favorites with the trash button on the left in the account dashboard. View the resorts webpage for more information using the resort website link under the image. Use this application for resort contact information, address, and current policies. If you're new to the snow sport community, we've got you covered. Check out the beginner's guide for each activity located on the activity pages. View the demo below for more information. 
+Once you're on the homepage you will see the sticky navbar displaying on the top. 
+<br>Create an account with us by clicking on sign in. 
+<br>Here you can save your favorite resort and activity. 
+<br>Select your favorites once you're signed in by clicking the star icon by the name of the resort or activity. 
+<br>Delete your current favorites with the trash button on the left in the account dashboard. 
+<br>View the resorts webpage for more information using the resort website link under the image. 
+<br>Use this application for resort contact information, address, and current policies. 
+<br>If you're new to the snow sport community, we've got you covered. 
+<br>Check out the beginner's guide for each activity located on the activity pages. 
+<br>View the demo below for more information. 
 
 ## License
 Copyright (c) The Cold West (MIT License)

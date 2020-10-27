@@ -62,14 +62,14 @@ Thank you [Slick](https://kenwheeler.github.io/slick/) for helping us display ou
 
 
 ## Visuals
-![screenshot of homepage](public/assets/images/screenshot_homepage.PNG);
-![screenshot of sign-in page](public/assets/images/screenshot_signin.PNG);
-![screenshot of favorites](public/assets/images/screenshot_favorites.PNG);
+![screenshot of homepage](public/assets/images/screenshot_homepage.PNG)Screenshot of homepage
+![screenshot of sign-in page](public/assets/images/screenshot_signin.PNG)Screenshot of user sign in page
+![screenshot of favorites](public/assets/images/screenshot_favorites.PNG)Screenshot of user favorites dashboard
 
 ## Links
 [To Repo:](https://github.com/kbnewlon/project2)
-[To Demo:](https://drive.google.com/file/d/1dSETviEwiEii2JRWHCnEuqlWr9bY95jU/view)  
-[To deployed application:](https://the-cold-west.herokuapp.com/)
+<br>[To Demo:](https://drive.google.com/file/d/1dSETviEwiEii2JRWHCnEuqlWr9bY95jU/view)  
+<br>[To deployed application:](https://the-cold-west.herokuapp.com/)
 
 ## Questions 
 Please contact our team if you have any questions:

@@ -1,10 +1,10 @@
 // On page load
 $(document).ready(function () {
     // Get sidenav element with class sidenav
-    var elem = document.querySelector(".sidenav");
+    const elem = document.querySelector(".sidenav");
 
     // Create new sidenav instance 
-    var instance = new M.Sidenav(elem);
+    const instance = new M.Sidenav(elem);
 
     // Initiate sidenav
     $(".sidenav").sidenav();
@@ -26,24 +26,24 @@ $(document).ready(function () {
     $('.carousel').slick({
         nextArrow: '.next',
         prevArrow: '.prev',
-        centerMode: true,
-        centerPadding: '60px',
+        centerMode: false,
         slidesToShow: 3,
+        slidesToScroll: 1,
         responsive: [
             {
                 breakpoint: 768,
                 settings: {
                     arrows: false,
-                    centerMode: true,
+                    centerMode: false,
                     centerPadding: '40px',
-                    slidesToShow: 3
+                    slidesToShow: 1
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
                     arrows: false,
-                    centerMode: true,
+                    centerMode: false,
                     centerPadding: '40px',
                     slidesToShow: 1
                 }
@@ -70,6 +70,8 @@ $(document).ready(function () {
 
 });
 
+//////////////////// functions to modify user favorites ////////////////////////////////
+// change a user's favorite activity based on star press
 function activityFav(icon, id, username, resort, userId) {
     if (icon.textContent === "star") {
         const userObj = {
@@ -82,9 +84,9 @@ function activityFav(icon, id, username, resort, userId) {
             url: `/user/${userId}`,
             data: userObj
         }).then(function (apiResponse) {
-            console.log(apiResponse[0]);
-            console.log(`removing : ${id}`);
-            icon.textContent = "star_border";
+            if(apiResponse[0] === 1){
+                icon.textContent = "star_border";
+            }
         });
     }
     else {
@@ -98,14 +100,14 @@ function activityFav(icon, id, username, resort, userId) {
             url: `/user/${userId}`,
             data: userObj
         }).then(function (apiResponse) {
-            console.log("hi");
-            console.log(apiResponse[0]);
-            console.log(`adding : ${id}`);
-            icon.textContent = "star";
+            if(apiResponse[0] === 1){
+                icon.textContent = "star";
+            }
         });
     }
 }
 
+// change a user's favorite resort based on star press
 function resortFav(icon, id, username, activity, userId) {
     if (icon.textContent === "star") {
         const userObj = {
@@ -118,9 +120,9 @@ function resortFav(icon, id, username, activity, userId) {
             url: `/user/${userId}`,
             data: userObj
         }).then(function (apiResponse) {
-            console.log(apiResponse[0]);
-            console.log(`removing : ${id}`);
-            icon.textContent = "star_border";
+            if(apiResponse[0] === 1){
+                icon.textContent = "star_border";
+            }
         });
     }
     else {
@@ -134,14 +136,14 @@ function resortFav(icon, id, username, activity, userId) {
             url: `/user/${userId}`,
             data: userObj
         }).then(function (apiResponse) {
-            console.log("hi");
-            console.log(apiResponse[0]);
-            console.log(`adding : ${id}`);
-            icon.textContent = "star";
+            if(apiResponse[0] === 1){
+                icon.textContent = "star";
+            }
         });
     }
 }
 
+// remove user's favorite activity based on delete press
 function delActivity(username, resort, userId) {
     const userObj = {
         username: username,
@@ -153,10 +155,13 @@ function delActivity(username, resort, userId) {
         url: `/user/${userId}`,
         data: userObj
     }).then(function (apiResponse) {
-        window.location.reload();
+        if(apiResponse[0] === 1){
+            window.location.reload();
+        }
     });
 }
 
+// remove user's favorite resort based on delete press
 function delResort(username, activity, userId) {
     const userObj = {
         username: username,
@@ -168,6 +173,8 @@ function delResort(username, activity, userId) {
         url: `/user/${userId}`,
         data: userObj
     }).then(function (apiResponse) {
-        window.location.reload();
+        if(apiResponse[0] === 1){
+            window.location.reload();
+        }
     });
 }

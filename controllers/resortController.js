@@ -14,10 +14,8 @@ const db = require("../models");
 // =============================================================
 
 
-  // GET route for getting all of the resorts
+  // GET api route for getting all of the resorts
   router.get("/", function (req, res) {
-    // Write code here to retrieve all of the resorts from the database and res.json them
-    // back to the user
     db.Resort.findAll({}).then(function (getResort) {
       res.json(getResort);
     }).catch(err=>{
@@ -25,10 +23,8 @@ const db = require("../models");
     });
   });
 
-  // GET route for getting a resort by id
+  // GET api route for getting a resort by id
   router.get("/:id", function (req, res) {
-    // Write code here to retrieve one of the resorts from the database and res.json them
-    // back to the user
     db.Resort.findOne({where: {id: req.params.id}}).then(function (getResort) {
       res.json(getResort);
     }).catch(err=>{

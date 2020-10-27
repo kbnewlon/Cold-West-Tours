@@ -1,6 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
     var Activity = sequelize.define("Activity", {
-        // Giving the Author model a name of type STRING
         name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -27,8 +26,8 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Activity.associate = function (models) {
-        // Associating Activity with Resort and Resort_Activity
-        // When an Activity is deleted, also delete any associated Resort_Activity
+        // Associating Activity with Resort and User
+        // When an Activity is deleted, update any associated User and set the fav activity to NULL
         Activity.hasMany(models.User, {
             foreignKey: {
                 name: "fav_activity"

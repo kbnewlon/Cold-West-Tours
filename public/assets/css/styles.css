@@ -30,8 +30,16 @@ nav ul a, nav .brand-logo {
     color: #36507A;
 }
 
+.sidenav li>a, .sidenav li {
+    color: #36507a;
+}
+
 #menu-icon, .dropdown-content li>a {
     color: #36507A;
+}
+
+#menu-icon {
+    padding-top: 2vw;
 }
 
 .container {
@@ -70,18 +78,6 @@ nav ul a, nav .brand-logo {
     margin-left: 1vw;
     margin-right: 1vw;
     object-fit: cover;
-}
-
-.prev {
-    position: absolute;
-    left: 45%;
-    margin-top: 0%;
-    
-}
-
-.next {
-    position: absolute;
-    right: 45%;
 }
 
 #index-title {
@@ -132,14 +128,6 @@ nav ul a, nav .brand-logo {
     .carousel {
         margin-bottom: -30vh;
     }
-    .prev {
-        position: absolute;
-        left: 30%;
-    }
-    .next {
-        position: absolute;
-        right: 30%;
-    }
     #index-title {
         font-size: 100px;
     }
@@ -155,8 +143,7 @@ nav ul a, nav .brand-logo {
     .resort-img {
         display: none;
     }
-
-    .sidenav li>a {
+    .sidenav li>a, .sidenav li {
         font-size: 10px;
     }
 }

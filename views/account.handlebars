@@ -1,0 +1,82 @@
+<main class="container">
+
+    <header class="row">
+        <span class="sub-title">Welcome back, {{user.username}}!</span>
+    </header>
+
+    <section class="row">
+        <span class="text">See your favorites here.</span>
+    </section>
+    
+    <section class="row">
+
+        {{!-- Favorite resort --}}
+        <div class="col s12 m6">
+            <div class="card large sticky-action account-card">
+                <div class="card-image">
+                    {{#if user.fav_resort}}
+                    <img class="responsive-img activator" src={{resort.img}}>
+                    <a class="btn-floating halfway-fab waves-effect waves-light bottom-btn">
+                        <i onclick="delResort('{{user.username}}', '{{user.fav_activity}}', {{user.id}})"
+                            class="material-icons">delete</i>
+                    </a>
+                    {{/if}}
+                </div>
+                <div class="card-content">
+                    {{#if user.fav_resort}}
+                    <span class="account-title activator">{{resort.name}}</span>
+                    {{/if}}
+                    {{#unless user.fav_resort}}
+                    <span class="account-title">No favorite resort</span>
+                    {{/unless}}
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title account-title">{{resort.name}}<i class="material-icons right">close</i></span>
+                    <p class="account-text">{{resort.overview}}</p>
+                </div>
+                {{#if user.fav_resort}}
+                <div class="card-action">
+                    <a href="/resort/{{user.fav_resort}}">Resort Page</a>
+                    <a href={{resort.url}} target="_blank">Resort Website</a>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+
+        {{!-- Favorite activity --}}
+        <div class="col s12 m6">
+            <div class="card large sticky-action account-card">
+                <div class="card-image">
+                    {{#if user.fav_activity}}
+                    <img class="responsive-img activator" src={{activity.img}}>
+                    <a class="btn-floating halfway-fab waves-effect waves-light bottom-btn">
+                        <i onclick="delActivity('{{user.username}}', '{{user.fav_resort}}', {{user.id}})"
+                            class="material-icons">delete</i>
+                    </a>
+                    {{/if}}
+                </div>
+                <div class="card-content">
+                    {{#if user.fav_activity}}
+                    <span class="account-title activator">{{activity.name}}</span>
+                    {{/if}}
+                    {{#unless user.fav_activity}}
+                    <span class="account-title">No favorite activity</span>
+                    {{/unless}}
+                </div>
+
+                <div class="card-reveal">
+                    <span class="card-title account-title">{{activity.name}}<i class="material-icons right">close</i></span>
+                    <p class="account-text">{{activity.about}}</p>
+                </div>
+
+                {{#if user.fav_activity}}
+                <div class="card-action">
+                    <a href="/activity/{{user.fav_activity}}">Activity Page</a>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+
+    </section>
+
+</main>

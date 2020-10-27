@@ -1,0 +1,96 @@
+<main class="container">
+
+    {{!-- Title --}}
+    <section class="row section">
+        <div class="col">
+            {{#if user}}
+
+            {{!-- If it matches user favorite, display filled star --}}
+            {{#if checkFav}}
+            <span class="page-title">{{name}}</span>
+            <i onclick="resortFav(this, {{id}}, '{{user.username}}', '{{user.fav_activity}}', {{user.id}})"
+                class="material-icons">star</i>
+            {{!-- If not, display empty star --}}
+            {{else}}
+            <span class="page-title">{{name}}</span>
+            <i onclick="resortFav(this, {{id}}, '{{user.username}}', '{{user.fav_activity}}', {{user.id}})"
+                class="material-icons">star_border</i>
+            {{/if}}
+
+            {{!-- User who is not logged in will not see stars --}}
+            {{else}}
+            <span class="page-title">{{name}}</span>
+            {{/if}}
+        </div>
+    </section>
+
+    {{!-- Resort Pic --}}
+    <section class="row section">
+        <div class="col s12">
+            <img class="responsive-img" src={{pic1}} alt="Placeholder" />
+        </div>
+        {{!-- Add carousel --}}
+        <div class="carousel">
+            <img src={{pic1}} class="carousel-pics" alt="Resort Photos">
+            <img src={{pic2}} class="carousel-pics" alt="Resort Photos">
+            <img src={{pic3}} class="carousel-pics" alt="Resort Photos">
+            <img src={{pic4}} class="carousel-pics" alt="Resort Photos">
+            <img src={{pic5}} class="carousel-pics" alt="Resort Photos">
+        </div>
+        <button class="prev">Previous</button>
+        <button class="next">Next</button>
+    </section>
+
+    {{!-- Overview --}}
+    <section class="row section">
+        <div class="col">
+            <div class="card-panel">
+                <span class="sub-title">Overview</span>
+                <p class="text">{{{overview}}}</p>
+            </div>
+        </div>
+    </section>
+
+    {{!-- Location --}}
+    <section class="row section">
+        <div class="col s12">
+            <div class="card-panel">
+                <span class="sub-title">Location</span>
+
+                {{!-- Map by leaflet --}}
+                <aside id="map-id"></aside>
+                <span class="text">Address: {{address}}</span>
+                <br>
+                <span class="text">Phone Number: {{phone}}</span>
+            </div>
+        </div>
+    </section>
+
+    {{!-- Policies --}}
+    <section class="row section">
+        <div class="col">
+            <div class="card-panel">
+                <span class="sub-title">Policy</span>
+                <p class="text">{{{policy}}}</p>
+            </div>
+        </div>
+    </section>
+
+    {{!-- List of Activity --}}
+    <section class="row section">
+        <div class="col s12">
+            <div class="card-panel">
+                <span class="sub-title">Activity</span>
+                <ul>
+                    {{#each activityList}}
+                    <li class="text"><a class="list" href="/activity/{{id}}"><i
+                                class="material-icons chevron-icon">chevron_right</i>{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    {{!-- Map script file --}}
+    {{> map/map-block}}
+</main>

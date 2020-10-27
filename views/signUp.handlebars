@@ -1,0 +1,46 @@
+<main class="container">
+    <div class="row">
+        <div class="col card hoverable s12 m6 push-m3">
+            <form action="/user/signup" method="POST">
+
+                <div class="card-content">
+                    <span class="signin-title">Create Your Account</span>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" name="username" placeholder="Username">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input name="password" type="password" placeholder="Password">
+                        </div>
+                    </div>
+
+                    {{#if error}}
+                    <div class="row">
+                        <div class="col s12">
+                            <p class="user-error">{{error.message}}</p>
+                        </div>
+                    </div>
+                    {{/if}}
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button type="submit" class="btn waves-effect waves-light col s12">
+                                Sign up
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <p class="margin medium-small">Already have an account? <a href="/signin">Sign in</a></p>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+</main>

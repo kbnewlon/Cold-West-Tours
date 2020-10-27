@@ -31,7 +31,7 @@
                 </div>
                 <div class="card-reveal">
                     <span class="card-title account-title">{{resort.name}}<i class="material-icons right">close</i></span>
-                    <p class="account-text">{{resort.overview}}</p>
+                    <p class="account-text">{{{resort.overview}}}</p>
                 </div>
                 {{#if user.fav_resort}}
                     <div class="card-action">
@@ -64,7 +64,7 @@
 
                 <div class="card-reveal">
                     <span class="card-title account-title">{{activity.name}}<i class="material-icons right">close</i></span>
-                    <p class="account-text">{{activity.about}}</p>
+                    <p class="account-text">{{{activity.about}}}</p>
                 </div>
 
                 {{#if user.fav_activity}}
